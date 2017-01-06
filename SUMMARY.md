@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)* [Introduction](README.md)소개](README.md)Introduction](README.md)
+* [소개](README.md)
 * [6 시계열 분해](doc/fpp-kr-6.md)
     * [6.1 시계열 성분](doc/fpp-kr-6-1.md)
     * [6.2 이동 평균](doc/fpp-kr-6-2.md)
