@@ -1,0 +1,6 @@
+{
+  "gitbook": "3.x.x",
+  "title": "fpp-kr",
+  "description":"Translation",
+  "plugins": ["mathjax"]
+}
