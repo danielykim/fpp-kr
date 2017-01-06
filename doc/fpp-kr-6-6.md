@@ -42,4 +42,4 @@ fcast <- forecast(fit, method="naive")
 plot(fcast, ylab="New orders index")
 ```
 
-6.5 STL 분해   up   6.7 연습 문제
+[원문 보기](https://www.otexts.org/fpp/6/6)

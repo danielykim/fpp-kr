@@ -33,7 +33,4 @@ X-12-ARIMA은 여기에서 언급하지는 않았지만 거래일 변동, 주말
 X-12-ARIMA 분해를 지원하는 R 패키지는 없다. 하지만, [미국 인구 조사국 페이지](http://www.census.gov/srd/www/x12a/)에서 이 방법을 구현한 무료 소프트웨어를 구할 수 있고 R의 [x12 패키지](http://cran.r-project.org/web/packages/x12/index.html)에서 이 소프트웨어를 사용할 수 있도록 인터페이스를 지원한다.
 
 
-6.3 고전적인 분해   up   6.5 STL 분해
-
-
 [원문 보기](https://www.otexts.org/fpp/6/4)
