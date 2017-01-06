@@ -1,0 +1,433 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>6.4 X-12-ARIMA 분해 · fpp-kr</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-comment/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="fpp-kr-6-5.html" />
+    
+    
+    <link rel="prev" href="fpp-kr-6-3.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="fpp-kr-6.html">
+            
+                <a href="fpp-kr-6.html">
+            
+                    
+                    6 시계열 분해
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="fpp-kr-6-1.html">
+            
+                <a href="fpp-kr-6-1.html">
+            
+                    
+                    6.1 시계열 성분
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="fpp-kr-6-2.html">
+            
+                <a href="fpp-kr-6-2.html">
+            
+                    
+                    6.2 이동 평균
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="fpp-kr-6-3.html">
+            
+                <a href="fpp-kr-6-3.html">
+            
+                    
+                    6.3 고전적인 분해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="fpp-kr-6-4.html">
+            
+                <a href="fpp-kr-6-4.html">
+            
+                    
+                    6.4 X-12-ARIMA 분해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="fpp-kr-6-5.html">
+            
+                <a href="fpp-kr-6-5.html">
+            
+                    
+                    6.5 STL 분해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="fpp-kr-6-6.html">
+            
+                <a href="fpp-kr-6-6.html">
+            
+                    
+                    6.6 분해를 사용한 예측
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="fpp-kr-6-7.md">
+            
+                <span>
+            
+                    
+                    6.7 연습문제
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="fpp-kr-6-8.md">
+            
+                <span>
+            
+                    
+                    6.8 더 읽을거리
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="fpp-kr-7.html">
+            
+                <a href="fpp-kr-7.html">
+            
+                    
+                    7
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="fpp-kr-7-1.html">
+            
+                <a href="fpp-kr-7-1.html">
+            
+                    
+                    7.1 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >6.4 X-12-ARIMA 분해</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="64-x-12-arima-&#xBD84;&#xD574;">6.4 X-12-ARIMA &#xBD84;&#xD574;</h2>
+<p>4&#xBD84;&#xAE30;&#xC640; &#xC6D4;&#xBCC4; &#xB370;&#xC774;&#xD130;&#xB97C; &#xBD84;&#xD574;&#xD558;&#xB294; &#xBC29;&#xBC95; &#xC911;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xC778;&#xAE30;&#xC788;&#xB294; &#xAC83; &#xC911; &#xD558;&#xB098;&#xB294; X-12-ARIMA&#xC774;&#xB2E4;. &#xC774; &#xBC29;&#xBC95;&#xC740; &#xBBF8;&#xAD6D; &#xC778;&#xAD6C; &#xC870;&#xC0AC;&#xAD6D;&#xC5D0;&#xC11C; &#xAC1C;&#xBC1C;&#xD55C; &#xAE30;&#xBC95;&#xC5D0;&#xC11C; &#xD30C;&#xC0DD;&#xB41C; &#xAC83;&#xC774;&#xB2E4;. &#xC774;&#xC81C;&#xB294; &#xC804;&#xC138;&#xACC4; &#xC870;&#xC0AC;&#xAD6D;&#xACFC; &#xC815;&#xBD80; &#xAE30;&#xAD00;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB418;&#xACE0; &#xC788;&#xB2E4;. &#xC774; &#xAE30;&#xBC95;&#xC758; &#xCD08;&#xAE30; &#xD615;&#xD0DC;&#xB294; X-11&#xACFC; X-11-ARIMA&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xB2E4;. &#xD604;&#xC7AC; &#xBBF8;&#xAD6D; &#xC778;&#xAD6C; &#xC870;&#xC0AC;&#xAD6D;&#xC5D0;&#xC11C;&#xB294; X-13-ARIMA &#xAE30;&#xBC95;&#xC744; &#xAC1C;&#xBC1C;&#xD558;&#xACE0; &#xC788;&#xB2E4;.</p>
+<p>X-12-ARIMA &#xAE30;&#xBC95;&#xC740; &#xACE0;&#xC804;&#xC801;&#xC778; &#xBD84;&#xD574;&#xC5D0; &#xAE30;&#xCD08;&#xD558;&#xACE0; &#xC788;&#xC9C0;&#xB9CC;, &#xC774;&#xC804; &#xC808;&#xC5D0;&#xC11C; &#xC5B8;&#xAE09;&#xD588;&#xB358; &#xACE0;&#xC804;&#xC801;&#xC778; &#xBD84;&#xD574;&#xC758; &#xB2E8;&#xC810;&#xC744; &#xADF9;&#xBCF5;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xC694;&#xC18C;&#xC640; &#xB2E8;&#xACC4;&#xAC00; &#xB354; &#xB4E4;&#xC5B4;&#xAC04;&#xB2E4;. &#xD2B9;&#xBCC4;&#xD788;, &#xC591; &#xB05D; &#xAC12;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xBAA8;&#xB4E0; &#xAD00;&#xCE21;&#xAC12;&#xC5D0; &#xB300;&#xD574; &#xCD94;&#xC138; &#xCD94;&#xC815;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xACE0; &#xAC8C;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC774; &#xC2DC;&#xAC04;&#xC5D0; &#xB530;&#xB77C; &#xB290;&#xB9AC;&#xAC8C; &#xBCC0;&#xD558;&#xB294; &#xAC83;&#xC774; &#xD5C8;&#xC6A9;&#xB41C;&#xB2E4;. &#xACE0;&#xC804;&#xC801;&#xC778; &#xBD84;&#xD574;&#xBC95;&#xBCF4;&#xB2E4; &#xD2B9;&#xC774;&#xD55C; &#xAD00;&#xCE21;&#xAC12;&#xC744; &#xB354; &#xC798; &#xB2E4;&#xB8F0; &#xC218; &#xC788;&#xB2E4;. X-12-ARIMA&#xB294; &#xB367;&#xC148;&#xACFC; &#xACF1;&#xC148; &#xBD84;&#xD574; &#xB458; &#xB2E4; &#xACE0;&#xB824;&#xD558;&#xC9C0;&#xB9CC;, 4&#xBD84;&#xAE30;&#xC640; &#xC6D4;&#xBCC4; &#xB370;&#xC774;&#xD130;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB9CC; &#xC801;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<p>X-12-ARIMA&#xC5D0;&#xC11C; ARIMA &#xBD80;&#xBD84;&#xC740; 7&#xC7A5;&#xC5D0;&#xC11C; &#xB2E4;&#xB8F0; ARIMA &#xBAA8;&#xB378;&#xC744; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;. ARIMA &#xBAA8;&#xB378;&#xB85C; &#xBA87; &#xC2DC;&#xAE30; &#xC55E;&#xC774;&#xB098; &#xB4A4;&#xB97C; &#xC608;&#xCE21;&#xD560; &#xC218; &#xC788;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0;, &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC744; &#xCD94;&#xC138;-&#xC8FC;&#xAE30; &#xCD94;&#xC815;&#xAC12;&#xC744; &#xC5BB;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;, &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xC591; &#xB05D; &#xAC12;&#xC5D0;&#xC11C; &#xAD00;&#xCE21;&#xAC12;&#xC758; &#xC190;&#xC2E4;&#xC774; &#xC5C6;&#xB2E4;.</p>
+<p>&#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC740; &#xACE0;&#xC804;&#xC801;&#xC778; &#xBD84;&#xD574;&#xBC95;&#xACFC; &#xBE44;&#xC2B7;&#xD55C; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC2DC;&#xC791;&#xD55C;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xBA87; &#xAC00;&#xC9C0; &#xBC18;&#xBCF5;&#xC744; &#xD1B5;&#xD574; &#xC131;&#xBD84;&#xC774; &#xC815;&#xC81C;&#xB41C;&#xB2E4;. &#xB2E4;&#xC74C;&#xC758; &#xAC1C;&#xC694;&#xC5D0;&#xC11C; &#xACF1;&#xC148; &#xBD84;&#xD574;&#xB97C; &#xC6D4;&#xBCC4; &#xB370;&#xC774;&#xD130;&#xC5D0; &#xC801;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC744; &#xC11C;&#xC220;&#xD558;&#xC600;&#xB2E4;. &#xBE44;&#xC2B7;&#xD55C; &#xC54C;&#xACE0;&#xB9AC;&#xC998;&#xC744; &#xB367;&#xC148; &#xBD84;&#xD574;&#xC640; 4&#xBD84;&#xAE30; &#xB370;&#xC774;&#xD130;&#xC5D0; &#xC0AC;&#xC6A9;&#xD558;&#xC600;&#xB2E4;.</p>
+<ol>
+<li>&#xBAA8;&#xB4E0; &#xC2DC;&#xAE30;&#xC5D0; &#xB300;&#xD574; &#xCD94;&#xC138;-&#xC8FC;&#xAE30; <script type="math/tex; "> \hat{T}_{t} </script>&#xC758; &#xB300;&#xB7B5;&#xC801;&#xC778; &#xCD94;&#xC815;&#xAC12;&#xC744; &#xC5BB;&#xAE30; &#xC704;&#xD574; &#xC6D0;&#xBCF8; &#xB370;&#xC774;&#xD130;&#xC5D0;&#xC11C; <script type="math/tex; ">2 \times 12</script> &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC744; &#xACC4;&#xC0B0;&#xD55C;&#xB2E4;.</li>
+<li>&quot;&#xC911;&#xC559;&#xD654;&#xB41C; &#xBE44;&#xC728;&quot;&#xC774;&#xB77C;&#xACE0; &#xBD80;&#xB974;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xAC12;&#xC744; &#xACC4;&#xC0B0;&#xD55C;&#xB2E4;: <script type="math/tex; "> y_{t}/\hat{T}_{t} </script>.</li>
+<li><script type="math/tex; "> \hat{S}_{t} </script>&#xC758; &#xB300;&#xB7B5;&#xC801;&#xC778; &#xCD94;&#xC815;&#xAC12;&#xC744; &#xC5BB;&#xAE30; &#xC704;&#xD574; <script type="math/tex; "> 3 \times 3 </script>-MA&#xB97C; &#xC911;&#xC559;&#xD654;&#xB41C; &#xBE44;&#xC728;&#xAC12;&#xC758; &#xAC01; &#xC6D4;&#xB9C8;&#xB2E4; &#xC801;&#xC6A9;&#xD55C;&#xB2E4;.</li>
+<li>&#xB098;&#xBA38;&#xC9C0; &#xC131;&#xBD84; <script type="math/tex; "> \hat{E}_{t} </script>&#xC758; &#xCD94;&#xC815;&#xAC12;&#xC744; &#xC5BB;&#xAE30; &#xC704;&#xD574; &#xC911;&#xC559;&#xD654;&#xB41C; &#xBE44;&#xC728;&#xC744; <script type="math/tex; "> \hat{ S }_{t} </script>&#xB85C; &#xB098;&#xB208;&#xB2E4;.</li>
+<li>&#xC218;&#xC815;&#xB41C; <script type="math/tex; "> \hat{E}_{t} </script>&#xC744; &#xC5BB;&#xAE30; &#xC704;&#xD574; <script type="math/tex; "> E_{t} </script>&#xC758; &#xADF9;&#xD55C; &#xAC12;&#xB4E4;&#xC744; &#xC904;&#xC778;&#xB2E4;.</li>
+<li>&#xC218;&#xC815;&#xB41C; &#xC911;&#xC559;&#xD654;&#xB41C; &#xBE44;&#xC728;&#xC744; &#xC5BB;&#xAE30; &#xC704;&#xD574; <script type="math/tex; "> \hat{E}_{t} </script>&#xC640; <script type="math/tex; "> \hat{S}_{t} </script>&#xB97C; &#xACF1;&#xD55C;&#xB2E4;.</li>
+<li>&#xBCC0;&#xACBD;&#xB41C; <script type="math/tex; "> \hat{S}_{t} </script>&#xB97C; &#xC5BB;&#xAE30; &#xC704;&#xD574; 3&#xB2E8;&#xACC4;&#xB97C; &#xBC18;&#xBCF5;&#xD55C;&#xB2E4;.</li>
+<li>&#xACC4;&#xC808;&#xC801;&#xC73C;&#xB85C; &#xC870;&#xC808;&#xB41C; &#xC608;&#xBE44; &#xC2DC;&#xACC4;&#xC5F4; &#xC5BB;&#xAE30; &#xC704;&#xD574;, &#xC0C8;&#xB85C; &#xCD94;&#xC815;&#xD55C; <script type="math/tex; "> \hat{S}_{t} </script> &#xAC12;&#xC73C;&#xB85C; &#xC6D0;&#xBCF8; &#xB370;&#xC774;&#xD130;&#xB97C; &#xB098;&#xB208;&#xB2E4;.</li>
+<li>&#xAC00;&#xC911;&#xCE58; Henderson MA&#xB97C; &#xACC4;&#xC808;&#xC801;&#xC73C;&#xB85C; &#xC870;&#xC808;&#xB41C; &#xC608;&#xBE44; &#xC2DC;&#xACC4;&#xC5F4;&#xC5D0; &#xC801;&#xC6A9;&#xD558;&#xC5EC; &#xCD94;&#xC138;-&#xC8FC;&#xAE30; <script type="math/tex; "> \hat{T}_{t} </script>&#xB97C; &#xCD94;&#xC815;&#xD55C;&#xB2E4;. (&#xBB34;&#xC791;&#xC704;&#xC131;&#xC774; &#xD074; &#xC218;&#xB85D;, &#xB354; &#xAE34; &#xAE30;&#xAC04;&#xC5D0; &#xB300;&#xD574; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC744; &#xAD6C;&#xD55C;&#xB2E4;.) &#xC6D4;&#xBCC4; &#xB370;&#xC774;&#xD130;&#xC5D0;&#xC11C; 9-, 13-, &#xC544;&#xB2C8;&#xBA74; 23-&#xD56D; Henderson &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC744; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</li>
+<li>2&#xB2E8;&#xACC4;&#xB97C; &#xBC18;&#xBCF5;&#xD55C;&#xB2E4;. &#xC6D0;&#xBCF8; &#xB370;&#xC774;&#xD130;&#xB97C; <script type="math/tex; "> \hat{T}_{t} </script> &#xCD94;&#xC815; &#xAC12;&#xC73C;&#xB85C; &#xB098;&#xB220;&#xC11C; &#xC0C8;&#xB85C;&#xC6B4; &#xBE44;&#xC728; &#xC5BB;&#xB294;&#xB2E4;.</li>
+<li>&#xC0C8;&#xB85C;&#xC6B4; &#xBE44;&#xC728;&#xC744; &#xAC00;&#xC9C0;&#xACE0; 3&#xC5D0;&#xC11C; 6&#xB2E8;&#xACC4;&#xB97C; &#xBC18;&#xBCF5;&#xD558;&#xACE0;, <script type="math/tex; "> 3 \times 3 </script> MA &#xB300;&#xC2E0;&#xC5D0; <script type="math/tex; "> 3 \times 5 </script> MA&#xB97C; &#xC801;&#xC6A9;&#xD55C;&#xB2E4;.</li>
+<li>7&#xB2E8;&#xACC4;&#xB97C; &#xBC18;&#xBCF5;&#xD55C;&#xB2E4;. &#xBC18;&#xBCF5;&#xD560; &#xB54C;, <script type="math/tex; "> 3 \times 3 </script> MA &#xB300;&#xC2E0;&#xC5D0; <script type="math/tex; "> 3 \times 5 </script> MA &#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.</li>
+<li>8&#xB2E8;&#xACC4;&#xB97C; &#xBC18;&#xBCF5;&#xD55C;&#xB2E4;.</li>
+<li>13 &#xB2E8;&#xACC4;&#xC5D0;&#xC11C; &#xACC4;&#xC808;&#xC801;&#xC73C;&#xB85C; &#xC870;&#xC808;&#xB41C; &#xB370;&#xC774;&#xD130;&#xB97C; 9&#xB2E8;&#xAC8C;&#xC5D0;&#xC11C; &#xC5BB;&#xC740; &#xCD94;&#xC138;-&#xC8FC;&#xAE30;&#xB85C; &#xB098;&#xB220;&#xC11C; &#xB098;&#xBA38;&#xC9C0; &#xC131;&#xBD84;&#xC744; &#xAD6C;&#xD55C;&#xB2E4;.</li>
+<li>5&#xB2E8;&#xACC4;&#xCC98;&#xB7FC; &#xB098;&#xBA38;&#xC9C0; &#xC131;&#xBD84;&#xC758; &#xADF9;&#xD55C; &#xAC12;&#xC744; &#xC904;&#xC778;&#xB2E4;.</li>
+<li>&#xCD94;&#xC138;-&#xC8FC;&#xAE30;, &#xAC8C;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;, &#xC870;&#xC808;&#xB41C; &#xB098;&#xBA38;&#xC9C0; &#xC131;&#xBD84;&#xC744; &#xC11C;&#xB85C; &#xACF1;&#xD558;&#xC5EC; &#xBCC0;&#xACBD;&#xB41C; &#xB370;&#xC774;&#xD130;&#xC758; &#xC2DC;&#xAC8C;&#xC5F4;&#xC744; &#xC5BB;&#xB294;&#xB2E4;.</li>
+</ol>
+<p>16&#xB2E8;&#xACC4;&#xC5D0;&#xC11C; &#xC5BB;&#xC740; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC804;&#xCCB4; &#xACFC;&#xC815;&#xC774; &#xB450; &#xBC88; &#xC774;&#xC0C1; &#xBC18;&#xBCF5;&#xB41C;&#xB2E4;. &#xB9C8;&#xC9C0;&#xB9C9; &#xBC18;&#xBCF5;&#xC5D0;&#xC11C; 11&#xB2E8;&#xACC4;&#xC640; 12&#xB2E8;&#xACC4;&#xC758; <script type="math/tex; "> 3 \times 5 </script> MA&#xB294; &#xB370;&#xC774;&#xD130;&#xC758; &#xBCC0;&#xB3D9;&#xC131;&#xC5D0; &#xB530;&#xB77C; <script type="math/tex; "> 3 \times 3 </script>, <script type="math/tex; "> 3 \times 5 </script>, <script type="math/tex; "> 3 \times 9 </script> &#xC774;&#xB3D9; &#xD3C9;&#xADE0; &#xC911;&#xC5D0;&#xC11C; &#xD558;&#xB098;&#xB85C; &#xB300;&#xCCB4;&#xB41C;&#xB2E4;.</p>
+<p>X-12-ARIMA&#xC740; &#xC5EC;&#xAE30;&#xC5D0;&#xC11C; &#xC5B8;&#xAE09;&#xD558;&#xC9C0;&#xB294; &#xC54A;&#xC558;&#xC9C0;&#xB9CC; &#xAC70;&#xB798;&#xC77C; &#xBCC0;&#xB3D9;, &#xC8FC;&#xB9D0; &#xD6A8;&#xACFC;, &#xC54C;&#xB824;&#xC9C4; &#xC608;&#xCE21;&#xAC12;&#xC5D0; &#xC758;&#xD55C; &#xD6A8;&#xACFC; &#xB4F1;&#xC744; &#xB2E4;&#xB8E8;&#xAE30; &#xC704;&#xD55C; &#xBA87; &#xAC00;&#xC9C0; &#xBCF5;&#xC7A1;&#xD55C; &#xBC29;&#xBC95;&#xB3C4; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xB2E4;.</p>
+<p>&#xC804;&#xCCB4; &#xACFC;&#xC815;&#xC740; <a href="http://www.amazon.com/gp/product/0387951717/ref=as_li_ss_tl?ie=UTF8?tag=ote09-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0387951717" target="_blank">Ladiray &#xC640; Quenneville&#xC758; &#xD1B5;&#xACC4;&#xD559; &#xAC15;&#xC758;&#xB178;&#xD2B8;</a>&#xC5D0;&#xC11C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<p>X-12-ARIMA &#xBD84;&#xD574;&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xB294; R &#xD328;&#xD0A4;&#xC9C0;&#xB294; &#xC5C6;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC;, <a href="http://www.census.gov/srd/www/x12a/" target="_blank">&#xBBF8;&#xAD6D; &#xC778;&#xAD6C; &#xC870;&#xC0AC;&#xAD6D; &#xD398;&#xC774;&#xC9C0;</a>&#xC5D0;&#xC11C; &#xC774; &#xBC29;&#xBC95;&#xC744; &#xAD6C;&#xD604;&#xD55C; &#xBB34;&#xB8CC; &#xC18C;&#xD504;&#xD2B8;&#xC6E8;&#xC5B4;&#xB97C; &#xAD6C;&#xD560; &#xC218; &#xC788;&#xACE0; R&#xC758; <a href="http://cran.r-project.org/web/packages/x12/index.html" target="_blank">x12 &#xD328;&#xD0A4;&#xC9C0;</a>&#xC5D0;&#xC11C; &#xC774; &#xC18C;&#xD504;&#xD2B8;&#xC6E8;&#xC5B4;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC9C0;&#xC6D0;&#xD55C;&#xB2E4;.</p>
+<p>6.3 &#xACE0;&#xC804;&#xC801;&#xC778; &#xBD84;&#xD574;   up   6.5 STL &#xBD84;&#xD574;</p>
+<p><a href="https://www.otexts.org/fpp/6/4" target="_blank">&#xC6D0;&#xBB38; &#xBCF4;&#xAE30;</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="fpp-kr-6-3.html" class="navigation navigation-prev " aria-label="Previous page: 6.3 고전적인 분해">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="fpp-kr-6-5.html" class="navigation navigation-next " aria-label="Next page: 6.5 STL 분해">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"6.4 X-12-ARIMA 분해","level":"1.2.4","depth":2,"next":{"title":"6.5 STL 분해","level":"1.2.5","depth":2,"path":"doc/fpp-kr-6-5.md","ref":"doc/fpp-kr-6-5.md","articles":[]},"previous":{"title":"6.3 고전적인 분해","level":"1.2.3","depth":2,"path":"doc/fpp-kr-6-3.md","ref":"doc/fpp-kr-6-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","comment","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"fpp-kr","gitbook":"3.x.x","description":"Translation"},"file":{"path":"doc/fpp-kr-6-4.md","mtime":"2017-01-06T13:08:18.686Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-06T13:11:29.247Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-comment/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

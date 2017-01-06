@@ -1,0 +1,896 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>6.2 이동 평균 · fpp-kr</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-comment/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="fpp-kr-6-3.html" />
+    
+    
+    <link rel="prev" href="fpp-kr-6-1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="fpp-kr-6.html">
+            
+                <a href="fpp-kr-6.html">
+            
+                    
+                    6 시계열 분해
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="fpp-kr-6-1.html">
+            
+                <a href="fpp-kr-6-1.html">
+            
+                    
+                    6.1 시계열 성분
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="fpp-kr-6-2.html">
+            
+                <a href="fpp-kr-6-2.html">
+            
+                    
+                    6.2 이동 평균
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="fpp-kr-6-3.html">
+            
+                <a href="fpp-kr-6-3.html">
+            
+                    
+                    6.3 고전적인 분해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="fpp-kr-6-4.html">
+            
+                <a href="fpp-kr-6-4.html">
+            
+                    
+                    6.4 X-12-ARIMA 분해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="fpp-kr-6-5.html">
+            
+                <a href="fpp-kr-6-5.html">
+            
+                    
+                    6.5 STL 분해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="fpp-kr-6-6.html">
+            
+                <a href="fpp-kr-6-6.html">
+            
+                    
+                    6.6 분해를 사용한 예측
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="fpp-kr-6-7.md">
+            
+                <span>
+            
+                    
+                    6.7 연습문제
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="fpp-kr-6-8.md">
+            
+                <span>
+            
+                    
+                    6.8 더 읽을거리
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="fpp-kr-7.html">
+            
+                <a href="fpp-kr-7.html">
+            
+                    
+                    7
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="fpp-kr-7-1.html">
+            
+                <a href="fpp-kr-7-1.html">
+            
+                    
+                    7.1 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >6.2 이동 평균</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="62-&#xC774;&#xB3D9;-&#xD3C9;&#xADE0;">6.2 &#xC774;&#xB3D9; &#xD3C9;&#xADE0;</h2>
+<p>&#xC2DC;&#xACC4;&#xC5F4;&#xC744; &#xBD84;&#xD574;&#xD558;&#xB294; 1920&#xB144;&#xB300;&#xC758; &#xACE0;&#xC804;&#xC801;&#xC778; &#xBC29;&#xBC95;&#xC740; 1950&#xB144;&#xAE4C;&#xC9C0; &#xB110;&#xB9AC; &#xC0AC;&#xC6A9;&#xB418;&#xC5C8;&#xB2E4;. &#xC774; &#xBC29;&#xBC95;&#xC740; &#xD6C4;&#xB300;&#xC758; &#xC2DC;&#xACC4;&#xC5F4; &#xBD84;&#xC11D; &#xAE30;&#xBC95;&#xC758; &#xAE30;&#xCD08;&#xAC00; &#xB418;&#xACE0; &#xC788;&#xC73C;&#xBA70;, &#xC774; &#xBC29;&#xBC95;&#xC758; &#xC138;&#xBD80; &#xC0AC;&#xD56D;&#xC744; &#xC798; &#xC774;&#xD574;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC911;&#xC694;&#xD558;&#xB2E4;. &#xACE0;&#xC804;&#xC801;&#xC778; &#xBD84;&#xD574; &#xBC29;&#xBC95;&#xC758; &#xCCAB; &#xBC88;&#xC9F8; &#xB2E8;&#xACC4;&#xB294; &#xCD94;&#xC138;-&#xC8FC;&#xAE30;&#xB97C; &#xCE21;&#xC815;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC774;&#xB3D9; &#xD3C9;&#xADE0; &#xBC29;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774;&#xB2C8;, &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC5D0; &#xB300;&#xD55C; &#xB17C;&#xC758;&#xC5D0;&#xC11C; &#xC2DC;&#xC791;&#xD558;&#xC790;.</p>
+<h3 id="&#xC774;&#xB3D9;-&#xD3C9;&#xADE0;">&#xC774;&#xB3D9; &#xD3C9;&#xADE0;</h3>
+<p>&#xCC28;&#xC218; <script type="math/tex; "> m </script> &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC4F8; &#xC218; &#xC788;&#xB2E4;.</p>
+<p><script type="math/tex; ">
+\begin{align*}
+\hat{ T }_{t} = \frac{1}{m} \sum_{j = -k}^{k} y_{t+j} 
+\end{align*}
+</script>,</p>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> m = 2 k + 1 </script>&#xC774;&#xB2E4;. &#xC989;, <script type="math/tex; "> k </script> &#xAE30;&#xAC04; &#xC548;&#xC758; &#xC2DC;&#xACC4;&#xC5F4; &#xAC12;&#xC744; &#xD3C9;&#xADE0;&#xD558;&#xC5EC; &#xC2DC;&#xAC04; <script type="math/tex; "> t </script>&#xC5D0;&#xC11C; &#xCD94;&#xC138;-&#xC8FC;&#xAE30;&#xB97C; &#xCE21;&#xC815;&#xD560; &#xC218; &#xC788;&#xB2E4;. &#xCE21;&#xC815; &#xC2DC;&#xAE30;&#xAC00; &#xBE44;&#xC2B7;&#xD55C; &#xAC12;&#xC740; &#xAC12;&#xC774; &#xBE44;&#xC2B7;&#xD558;&#xAE30;&#xB3C4; &#xD558;&#xB2E4;. &#xD3C9;&#xADE0;&#xC774; &#xB370;&#xC774;&#xD130;&#xC758; &#xBB34;&#xC791;&#xC704;&#xC131;&#xC744; &#xAC10;&#xC18C;&#xC2DC;&#xCF1C;&#xC900;&#xB2E4;. &#xC774; &#xC791;&#xC5C5;&#xC744; &#xD1B5;&#xD574; &#xD3C9;&#xD65C;&#xD654;&#xB41C; &#xCD94;&#xC138;-&#xC8FC;&#xAE30; &#xC131;&#xBD84;&#xC744; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB2E4;. &#xCC28;&#xC218; <script type="math/tex; ">m</script>&#xC758; &#xC774;&#xB3D9; &#xD3C9;&#xADE0; &#xC791;&#xC5C5;&#xC744; <script type="math/tex; "> m </script>-MA &#xB77C;&#xACE0; &#xBD80;&#xB978;&#xB2E4;. &#xC608;&#xB85C;, &#xADF8;&#xB9BC; 6.6&#xC744; &#xBCF4;&#xC790;. &#xC774; &#xADF8;&#xB9BC;&#xC5D0;&#xC11C; 1989&#xB144;&#xBD80;&#xD130; 2008&#xB144;&#xAE4C;&#xC9C0; &#xD638;&#xC8FC; &#xB0A8;&#xBD80;&#xC758; &#xB9E4;&#xB144; &#xC8FC;&#xAC70;&#xC6A9; &#xC804;&#xAE30; &#xD310;&#xB9E4;&#xB7C9;&#xC744; &#xC54C; &#xC218; &#xC788;&#xB2E4;(hot water sales&#xB294; &#xC81C;&#xC678;). &#xD45C; 6.1&#xC5D0; &#xB370;&#xC774;&#xD130;&#xB3C4; &#xC788;&#xB2E4;.</p>
+<p><img src="https://www.otexts.org/sites/default/files/resize/fpp/images/ressales1-570x362.png" alt=""></p>
+<p>&#xADF8;&#xB9BC; 6.6: &#xD638;&#xC8FC; &#xB0A8;&#xBD80; &#xC8FC;&#xAC70;&#xC6A9; &#xC804;&#xAE30; &#xD310;&#xB9E4;&#xB7C9;(&#xC628;&#xC218; &#xC81C;&#xC678;): 1989-2008.</p>
+<p>&#xD45C; 6.1</p>
+<table>
+<thead>
+<tr>
+<th>Year</th>
+<th>Sales (GWh)</th>
+<th>5-MA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1989</td>
+<td>2354.34</td>
+<td></td>
+</tr>
+<tr>
+<td>1990</td>
+<td>2379.71</td>
+<td></td>
+</tr>
+<tr>
+<td>1991</td>
+<td>2318.52</td>
+<td>2381.53</td>
+</tr>
+<tr>
+<td>1992</td>
+<td>2468.99</td>
+<td>2424.56</td>
+</tr>
+<tr>
+<td>1993</td>
+<td>2386.09</td>
+<td>2463.76</td>
+</tr>
+<tr>
+<td>1994</td>
+<td>2569.47</td>
+<td>2552.60</td>
+</tr>
+<tr>
+<td>1995</td>
+<td>2575.72</td>
+<td>2627.70</td>
+</tr>
+<tr>
+<td>1996</td>
+<td>2762.72</td>
+<td>2750.62</td>
+</tr>
+<tr>
+<td>1997</td>
+<td>2844.50</td>
+<td>2858.35</td>
+</tr>
+<tr>
+<td>1998</td>
+<td>3000.70</td>
+<td>3014.70</td>
+</tr>
+<tr>
+<td>1999</td>
+<td>3108.10</td>
+<td>3077.30</td>
+</tr>
+<tr>
+<td>2000</td>
+<td>3357.50</td>
+<td>3144.52</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>3075.70</td>
+<td>3188.70</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>3180.60</td>
+<td>3202.32</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>3221.60</td>
+<td>3216.94</td>
+</tr>
+<tr>
+<td>2004</td>
+<td>3176.20</td>
+<td>3307.30</td>
+</tr>
+<tr>
+<td>2005</td>
+<td>3430.60</td>
+<td>3398.75</td>
+</tr>
+<tr>
+<td>2006</td>
+<td>3527.48</td>
+<td>3485.43</td>
+</tr>
+<tr>
+<td>2007</td>
+<td>3637.89</td>
+<td></td>
+</tr>
+<tr>
+<td>2008</td>
+<td>3655.00</td>
+</tr>
+</tbody>
+</table>
+<p>R code</p>
+<pre><code class="lang-R">ma(elecsales, order=<span class="hljs-number">5</span>)
+</code></pre>
+<p>&#xD45C;&#xC758; &#xB450; &#xBC88;&#xC9F8; &#xC5F4;&#xC5D0; &#xCD94;&#xC138;-&#xC8FC;&#xAE30;&#xC758; &#xC608;&#xC0C1;&#xCE58;&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xCC28;&#xC218; 5&#xC758; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC774; &#xC788;&#xB2E4;. &#xB450; &#xBC88;&#xC9F8; &#xC5F4;&#xC758; &#xCCAB; &#xBC88;&#xC9F8; &#xAC12;&#xC740; &#xCCAB; 5&#xAC1C; &#xAD00;&#xCE21;&#xAC12;(1989-1993)&#xC758; &#xD3C9;&#xADE0;&#xC774;&#xB2E4;. 5-MA&#xAC00; &#xC788;&#xB294; &#xC5F4;&#xC758; &#xB450; &#xBC88;&#xC9F8; &#xAC12;&#xC740; 1990-1994&#xC758; &#xD3C9;&#xADE0;&#xC774;&#xB2E4;. 5-MA&#xAC00; &#xC788;&#xB294; &#xC5F4;&#xC758; &#xAC01; &#xAC12;&#xC740; 5&#xB144;&#xC758; &#xAE30;&#xAC04;&#xC758; &#xAD00;&#xCE21;&#xAC12;&#xC744; &#xD3C9;&#xADE0;&#xD558;&#xC5EC; &#xAC00;&#xC6B4;&#xB370; &#xAC12;&#xC73C;&#xB85C; &#xB098;&#xD0C0;&#xB0B8; &#xAC83;&#xC774;&#xB2E4;. 1989, 1990, 2007, 2008&#xC740; &#xD3C9;&#xADE0;&#xC744; &#xACC4;&#xC0B0;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xAD00;&#xCE21;&#xAC12;&#xC774; &#xBD80;&#xC871;&#xD574;&#xC11C; &#xC5C6;&#xB2E4;. &#xC704;&#xC758; &#xC2DD;&#xC5D0;&#xC11C; 5-MA&#xAC00; &#xC788;&#xB294; &#xC5F4;&#xC5D0;&#xB294; <script type="math/tex; ">k=2</script>&#xC778; <script type="math/tex; "> \hat{T}_{t} </script> &#xAC12;&#xC774; &#xC788;&#xB2E4;. &#xCD94;&#xC138;-&#xC8FC;&#xAE30; &#xCD94;&#xC815;&#xCE58;&#xAC00; &#xC5B4;&#xB5A4;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xAE30; &#xC704;&#xD574;, &#xC6D0;&#xBCF8; &#xB370;&#xC774;&#xD130;&#xC640; &#xD568;&#xAED8; &#xB098;&#xD0C0;&#xB0B4;&#xC5B4; &#xC0B4;&#xD3B4;&#xBCF4;&#xC790;(&#xADF8;&#xB9BC; 6.7).</p>
+<p><img src="https://www.otexts.org/sites/default/files/resize/fpp/images/ressales2-570x362.png" alt=""></p>
+<p>&#xADF8;&#xB9BC; 6.7: &#xC8FC;&#xAC70;&#xC6A9; &#xC804;&#xAE30; &#xD310;&#xB9E4;&#xB7C9;(&#xAC80;&#xC815;)&#xACFC; &#xCD94;&#xC138;-&#xC8FC;&#xAE30;&#xC758; 5-MA &#xCD94;&#xC815;&#xCE58;(&#xBE68;&#xAC15;).</p>
+<pre><code class="lang-R">plot(elecsales, main=<span class="hljs-string">&quot;Residential electricity sales&quot;</span>,
+  ylab=<span class="hljs-string">&quot;GWh&quot;</span>, xlab=<span class="hljs-string">&quot;Year&quot;</span>)
+lines(ma(elecsales,<span class="hljs-number">5</span>),col=<span class="hljs-string">&quot;red&quot;</span>)
+</code></pre>
+<p>&#xCD94;&#xC138;(&#xBE68;&#xAC04;&#xC0C9;)&#xAC00; &#xC6D0;&#xBCF8; &#xB370;&#xC774;&#xD130;&#xBCF4;&#xB2E4; &#xC5BC;&#xB9C8;&#xB098; &#xB354; &#xB9E4;&#xB044;&#xB7EC;&#xC6B4;&#xC9C0;&#xC640; &#xBD80;&#xAC00;&#xC801;&#xC778; &#xC694;&#xB3D9;&#xC744; &#xC81C;&#xC678;&#xD55C; &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xC8FC;&#xB41C; &#xC6C0;&#xC9C1;&#xC784;&#xC744; &#xC5B4;&#xB5BB;&#xAC8C; &#xD3EC;&#xCC29;&#xD558;&#xB294;&#xC9C0; &#xC0B4;&#xD3B4;&#xBCF4;&#xC790;. &#xC774;&#xB7EC;&#xD55C; &#xC774;&#xB3D9; &#xD3C9;&#xADE0; &#xAE30;&#xBC95;&#xC73C;&#xB85C;&#xB294; &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xB05D;&#xBD80;&#xBD84;&#xC5D0; &#xAC00;&#xAE4C;&#xC6B4; &#xCD94;&#xC815;&#xCE58;&#xB97C; &#xAD6C;&#xD560; &#xC218; &#xC5C6;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; &#xBE68;&#xAC04;&#xC0C9; &#xC120;&#xC774; &#xADF8;&#xB798;&#xD504; &#xC591; &#xB05D;&#xAE4C;&#xC9C0; &#xB298;&#xC5B4;&#xB098;&#xC9C0;&#xB294; &#xC54A;&#xB294;&#xB2E4;. &#xC774;&#xD6C4;&#xC5D0; &#xB05D;&#xBD80;&#xBD84; &#xC8FC;&#xBCC0;&#xC758; &#xCD94;&#xC138;-&#xC8FC;&#xAE30; &#xCD94;&#xC815;&#xCE58;&#xB97C; &#xAD6C;&#xD558;&#xB294; &#xB354;&#xC6B1; &#xBCF5;&#xC7A1;&#xD55C; &#xBC29;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xAC83;&#xC774;&#xB2E4;.</p>
+<p>&#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC758; &#xCC28;&#xC218;&#xB294; &#xCD94;&#xC138;-&#xC8FC;&#xAE30; &#xCD94;&#xC815;&#xCE58;&#xC758; &#xB9E4;&#xB044;&#xB7EC;&#xC6B4; &#xC815;&#xB3C4;&#xB97C; &#xACB0;&#xC815;&#xD55C;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C;, &#xB354; &#xD070; &#xCC28;&#xC218;&#xAC00; &#xB354; &#xB9E4;&#xB044;&#xB7EC;&#xC6B4; &#xACE1;&#xC120;&#xC744; &#xC758;&#xBBF8;&#xD55C;&#xB2E4;. &#xB2E4;&#xC74C;&#xC758; &#xADF8;&#xB798;&#xD504;&#xC5D0;&#xC11C; &#xC8FC;&#xAC70;&#xC6A9; &#xC804;&#xAE30; &#xD310;&#xB9E4;&#xB7C9; &#xB370;&#xC774;&#xD130;&#xC5D0;&#xC11C; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC758; &#xCC28;&#xC218;&#xB97C; &#xBC14;&#xAFC0; &#xB54C; &#xC77C;&#xC5B4;&#xB098;&#xB294; &#xC77C;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xB2E4;.</p>
+<p><img src="https://www.otexts.org/sites/default/files/resize/fpp/images/ressales3-570x360.png" alt=""></p>
+<p>&#xADF8;&#xB9BC; 6.8: &#xC8FC;&#xAC70;&#xC6A9; &#xC804;&#xAE30; &#xD310;&#xB9E4;&#xB7C9; &#xB370;&#xC774;&#xD130;&#xC5D0; &#xC801;&#xC6A9;&#xB41C; &#xB2E4;&#xC591;&#xD55C; &#xC774;&#xB3D9; &#xD3C9;&#xADE0; &#xAE30;&#xBC95;.</p>
+<p>&#xB2E8;&#xC21C; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC740; &#xBCF4;&#xD1B5; 3,5,7 &#xAC19;&#xC740; &#xD640;&#xC218; &#xCC28;&#xC218;&#xC774;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; &#xC774; &#xBC29;&#xBC95;&#xC740; &#xB300;&#xCE6D;&#xC801;&#xC774;&#xB2E4;. &#xC989;, <script type="math/tex; "> m = 2k+1 </script> &#xCC28;&#xC218;&#xC758; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC5D0;&#xC11C; <script type="math/tex; ">k</script>&#xAC1C;&#xC758; &#xC774;&#xC804; &#xAD00;&#xCE21;&#xAC12;&#xACFC; <script type="math/tex; ">k</script>&#xAC1C;&#xC758; &#xC774;&#xD6C4; &#xAD00;&#xCE21;&#xAC12; &#xADF8;&#xB9AC;&#xACE0; &#xAC00;&#xC6B4;&#xB370; &#xAD00;&#xCE21;&#xAC12;&#xC744; &#xD3C9;&#xADE0;&#xD558;&#xC5EC; &#xAD6C;&#xD55C;&#xB2E4;. <script type="math/tex; ">m</script>&#xC774; &#xC9DD;&#xC218;&#xC774;&#xBA74;, &#xB354;&#xC774;&#xC0C1; &#xB300;&#xCE6D;&#xC801;&#xC774;&#xC9C0; &#xC54A;&#xC744; &#xAC83;&#xC774;&#xB2E4;.</p>
+<h3 id="&#xC774;&#xB3D9;-&#xD3C9;&#xADE0;&#xC758;-&#xC774;&#xB3D9;-&#xD3C9;&#xADE0;">&#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC758; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;</h3>
+<p>&#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC744; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xD558;&#xB294; &#xAC83;&#xB3C4; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.&#xC9DD;&#xC218; &#xCC28;&#xC218; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC744; &#xB300;&#xCE6D;&#xC801;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xC774;&#xB7EC;&#xD55C; &#xC791;&#xC5C5;&#xC744; &#xD55C;&#xB2E4;.</p>
+<p>&#xC608;&#xB85C;, &#xCC28;&#xC218; 4&#xC758; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC744; &#xAD6C;&#xD55C;&#xB2E4;&#xACE0; &#xD558;&#xACE0;, &#xADF8; &#xB2E4;&#xC74C; &#xADF8; &#xACB0;&#xACFC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xCC28;&#xC218; 2&#xC758; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC744; &#xAD6C;&#xD55C;&#xB2E4;&#xACE0; &#xD558;&#xC790;. &#xD638;&#xC8FC; 4&#xBD84;&#xAE30;&#xBCC4; &#xB9E5;&#xC8FC; &#xC0DD;&#xC0B0;&#xB7C9; &#xCC98;&#xC74C; &#xBA87; &#xB144; &#xB370;&#xC774;&#xD130;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC774;&#xB7EC;&#xD55C; &#xC791;&#xC5C5;&#xC744; &#xD558;&#xC5EC; &#xD45C; 6.2&#xC5D0; &#xB098;&#xD0C0;&#xB0B4;&#xC5C8;&#xB2E4;.</p>
+<p>&#xD45C; 6.2</p>
+<table>
+<thead>
+<tr>
+<th>Year</th>
+<th>Data</th>
+<th>4-MA</th>
+<th>2x4-MA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1992 Q1</td>
+<td>443.00</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1992 Q2</td>
+<td>410.00</td>
+<td>451.25</td>
+<td></td>
+</tr>
+<tr>
+<td>1992 Q3</td>
+<td>420.00</td>
+<td>448.75</td>
+<td>450.00</td>
+</tr>
+<tr>
+<td>1992 Q4</td>
+<td>532.00</td>
+<td>451.50</td>
+<td>450.12</td>
+</tr>
+<tr>
+<td>1993 Q1</td>
+<td>433.00</td>
+<td>449.00</td>
+<td>450.25</td>
+</tr>
+<tr>
+<td>1993 Q2</td>
+<td>421.00</td>
+<td>444.00</td>
+<td>446.50</td>
+</tr>
+<tr>
+<td>1993 Q3</td>
+<td>410.00</td>
+<td>448.00</td>
+<td>446.00</td>
+</tr>
+<tr>
+<td>1993 Q4</td>
+<td>512.00</td>
+<td>438.00</td>
+<td>443.00</td>
+</tr>
+<tr>
+<td>1994 Q1</td>
+<td>449.00</td>
+<td>441.25</td>
+<td>439.62</td>
+</tr>
+<tr>
+<td>1994 Q2</td>
+<td>381.00</td>
+<td>446.00</td>
+<td>443.62</td>
+</tr>
+<tr>
+<td>1994 Q3</td>
+<td>423.00</td>
+<td>440.25</td>
+<td>443.12</td>
+</tr>
+<tr>
+<td>1994 Q4</td>
+<td>531.00</td>
+<td>447.00</td>
+<td>443.62</td>
+</tr>
+<tr>
+<td>1995 Q1</td>
+<td>426.00</td>
+<td>445.25</td>
+<td>446.12</td>
+</tr>
+<tr>
+<td>1995 Q2</td>
+<td>408.00</td>
+<td>442.50</td>
+<td>443.88</td>
+</tr>
+<tr>
+<td>1995 Q3</td>
+<td>416.00</td>
+<td>438.25</td>
+<td>440.38</td>
+</tr>
+<tr>
+<td>1995 Q4</td>
+<td>520.00</td>
+<td>435.75</td>
+<td>437.00</td>
+</tr>
+<tr>
+<td>1996 Q1</td>
+<td>409.00</td>
+<td>431.25</td>
+<td>433.50</td>
+</tr>
+<tr>
+<td>1996 Q2</td>
+<td>398.00</td>
+<td>428.00</td>
+<td>429.62</td>
+</tr>
+<tr>
+<td>1996 Q3</td>
+<td>398.00</td>
+<td>433.75</td>
+<td>430.88</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-R">beer2 &lt;- window(ausbeer,start=<span class="hljs-number">1992</span>)
+ma4 &lt;- ma(beer2, order=<span class="hljs-number">4</span>, centre=<span class="hljs-literal">FALSE</span>)
+ma2x4 &lt;- ma(beer2, order=<span class="hljs-number">4</span>, centre=<span class="hljs-literal">TRUE</span>)
+</code></pre>
+<p>&#xB9C8;&#xC9C0;&#xB9C9; &#xC5F4;&#xC758; <script type="math/tex; "> 2 \times 4 </script>-MA&#xB294; 4-MA &#xB2E4;&#xC74C; 2-MA&#xB97C; &#xAD6C;&#xD588;&#xB2E4;&#xB294; &#xC758;&#xBBF8;&#xC774;&#xB2E4;. &#xB9C8;&#xC9C0;&#xB9C9; &#xC5F4;&#xC758; &#xAC12;&#xC740; &#xC774;&#xC804; &#xC5F4;&#xC5D0; &#xC788;&#xB294; &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xCC28;&#xC218; 2&#xC778; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC744; &#xACC4;&#xC0B2;&#xC5EC; &#xAD6C;&#xD55C; &#xAC83;&#xC774;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xBA74;, 4-MA &#xC5F4;&#xC758; &#xCCAB; &#xB450; &#xAC12;&#xC740; <script type="math/tex; "> 451.2=(443+410+420+532)/4 </script> &#xC640; <script type="math/tex; "> 448.8=(410+420+532+433)/4 </script>&#xC774;&#xB2E4;. <script type="math/tex; "> 2 \times 4 </script>-MA&#xC5F4;&#xC758; &#xCCAB; &#xBC88;&#xC9F8; &#xAC12;&#xC740; &#xC774; &#xB450; &#xAC12;&#xC758; &#xD3C9;&#xADE0;&#xC774;&#xB2E4;: <script type="math/tex; "> 450.0=(451.2+448.8)/2 </script>. 2-MA&#xAC00; (&#xC608;&#xB85C; &#xB4E0; 4&#xC640; &#xAC19;&#xC774;) &#xC9DD;&#xC218; &#xCC28;&#xC218; &#xC774;&#xB3D9; &#xD3C9;&#xADE0; &#xB2E4;&#xC74C;&#xC5D0; &#xC624;&#xBA74;, &quot;&#xCC28;&#xC218; 4&#xC758; &#xC911;&#xC2EC;&#xD654;&#xB41C; &#xC774;&#xB3D9;&#xD3C9;&#xADE0;&quot;&#xC774;&#xB77C;&#xACE0; &#xBD80;&#xB978;&#xB2E4;. &#xACB0;&#xACFC;&#xAC00; &#xB300;&#xCE6D;&#xC801;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC774;&#xB807;&#xAC8C; &#xBD80;&#xB978;&#xB2E4;. &#xC9C0;&#xAE08; &#xB2E4;&#xB8E8;&#xACE0; &#xC788;&#xB294; &#xC608;&#xC5D0;&#xC11C; &#xC0B4;&#xD3B4;&#xBCF4;&#xAE30; &#xC704;&#xD574;, <script type="math/tex; "> 2 \times 4 </script>-MA&#xB97C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC4F8; &#xC218; &#xC788;&#xB2E4;.</p>
+<p><script type="math/tex; ">
+\begin{align*}
+\hat{T}_{t} &=
+\frac{1}{2}\Big[\frac{1}{4} (y_{t-2}+y_{t-1}+y_{t}+y_{t+1}) + \frac{1}{4} (y_{t-1}+y_{t}+y_{t+1}+y_{t+2})\Big] \\ 
+&= \frac{1}{8}y_{t-2}+\frac{1}{4}y_{t-1}+\frac{1}{4}y_{t}+\frac{1}{4}y_{t+1}+\frac{1}{8}y_{t+2}.
+\end{align*}
+</script></p>
+<p>&#xAD00;&#xCE21;&#xAC12;&#xC758; &#xAC00;&#xC911; &#xD3C9;&#xADE0;&#xC774;&#xBA74;&#xC11C; &#xB300;&#xCE6D;&#xC801;&#xC774;&#xB2E4;. &#xB2E4;&#xB978; &#xC774;&#xB3D9; &#xD3C9;&#xADE0; &#xC870;&#xD569;&#xB3C4; &#xBB3C;&#xB860; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xBA74;, &#xCC28;&#xC218; 3&#xC758; &#xC774;&#xB3D9; &#xD3C9;&#xADE0; &#xB2E4;&#xC74C;&#xC5D0; &#xCC28;&#xC218; 3&#xC758; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC744; &#xAD6C;&#xD558;&#xB294; <script type="math/tex; "> 3 \times 3 </script>-MA&#xB3C4; &#xC885;&#xC885; &#xC4F0;&#xC778;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C;, &#xC9DD;&#xC218; &#xCC28;&#xC218; MA&#xB97C; &#xB300;&#xCE6D;&#xC801;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574; &#xC9DD;&#xC218; &#xCC28;&#xC218; MA&#xB97C; &#xADF8; &#xB2E4;&#xC74C;&#xC5D0; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD55C;&#xB2E4;. &#xBE44;&#xC2B7;&#xD55C; &#xC774;&#xC720;&#xC5D0;&#xC11C;, &#xD640;&#xC218; &#xCC28;&#xC218; MA &#xB2E4;&#xC74C;&#xC5D0; &#xD640;&#xC218; &#xCC28;&#xC218; MA&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.</p>
+<h3 id="&#xACC4;&#xC808;&#xC801;&#xC778;-&#xB370;&#xC774;&#xD130;&#xB85C;-&#xCD94;&#xC138;-&#xC8FC;&#xAE30;-&#xCD94;&#xC815;&#xD558;&#xAE30;">&#xACC4;&#xC808;&#xC801;&#xC778; &#xB370;&#xC774;&#xD130;&#xB85C; &#xCD94;&#xC138;-&#xC8FC;&#xAE30; &#xCD94;&#xC815;&#xD558;&#xAE30;</h3>
+<p>&#xC911;&#xC2EC;&#xD654;&#xB41C; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC758; &#xC8FC; &#xC6A9;&#xB3C4;&#xB294; &#xACC4;&#xC808;&#xC801;&#xC778; &#xB370;&#xC774;&#xD130;&#xC5D0;&#xC11C; &#xCD94;&#xC138;-&#xC8FC;&#xAE30;&#xB97C; &#xCD94;&#xC815;&#xC774;&#xB2E4;. <script type="math/tex; "> 2 \times 4 </script>-MA&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xC790;:</p>
+<p><script type="math/tex; ">
+\hat{T}_{t} = \frac{1}{8}y_{t-2}+\frac{1}{4}y_{t-1}+\frac{1}{4}y_{t}+\frac{1}{4}y_{t+1}+\frac{1}{8}y_{t+2}.
+</script></p>
+<p>4&#xBD84;&#xAE30; &#xB370;&#xC774;&#xD130;&#xC5D0; &#xC801;&#xC6A9;&#xD558;&#xBA74;, &#xCCAB; &#xBC88;&#xC9F8;&#xC640; &#xB9C8;&#xC9C0;&#xB9C9; &#xD56D;&#xC774; &#xC55E;&#xB4A4; &#xC5F0;&#xB3C4;&#xC758; &#xC601;&#xD5A5;&#xC744; &#xBC1B;&#xC544;&#xC11C; &#xD55C; &#xD574;&#xC758; &#xAC01; &#xBD84;&#xAE30;&#xC5D0; &#xAC19;&#xC740; &#xAC00;&#xC911;&#xCE58;&#xAC00; &#xC8FC;&#xC5B4;&#xC9C4;&#xB2E4;. &#xADF8; &#xACB0;&#xACFC;&#xB85C;, &#xD3C9;&#xADE0; &#xB54C;&#xBB38;&#xC5D0; &#xACC4;&#xC808;&#xC801;&#xC778; &#xBCC0;&#xB3D9;&#xC774; &#xC0AC;&#xB77C;&#xC9C0;&#xACE0; &#xACB0;&#xACFC; &#xAC12; <script type="math/tex; "> \hat{T}_{t} </script>&#xC5D0; &#xACC4;&#xC808;&#xC801;&#xC778; &#xBCC0;&#xB3D9;&#xC774; &#xBCC4;&#xB85C; &#xB0A8;&#xC9C0; &#xC54A;&#xAC8C; &#xB41C;&#xB2E4;. <script type="math/tex; "> 2 \times 8 </script>-MA &#xC774;&#xB098; <script type="math/tex; "> 2 \times 12 </script>-MA &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xB3C4; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xC774;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; <script type="math/tex; "> 2 \times m </script>-MA&#xC740; <script type="math/tex; ">m+1</script> &#xCC28;&#xC218;&#xC758; &#xAC00;&#xC911; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xACFC; &#xAC19;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xAC00;&#xC911; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC5D0;&#xC11C; &#xCCAB; &#xBC88;&#xC9F8;&#xC640; &#xB9C8;&#xC9C0;&#xB9C9; &#xAC12;&#xC744; &#xC81C;&#xC678;&#xD55C; &#xBAA8;&#xB4E0; &#xAD00;&#xCE21;&#xAC12;&#xC5D0; <script type="math/tex; ">1/m</script> &#xAC00;&#xC911;&#xCE58;&#xB97C; &#xB450;&#xACE0; &#xACC4;&#xC0B0;&#xD558;&#xACE0; &#xCCAB; &#xBC88;&#xC9F8;&#xC640; &#xB9C8;&#xC9C0;&#xB9C9; &#xAC12;&#xC5D0;&#xB294; <script type="math/tex; ">1/(2m)</script>&#xC758; &#xAC00;&#xC911;&#xCE58;&#xB97C; &#xB450;&#xACE0; &#xACC4;&#xC0B0;&#xD55C;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xC774;&#xC720;&#xC5D0;&#xC11C; &#xACC4;&#xC808;&#xC801; &#xC8FC;&#xAE30;&#xAC00; &#xC9DD;&#xC218;&#xC774;&#xBA74;&#xC11C; &#xCC28;&#xC218; m&#xC774;&#xBA74;, &#xCD94;&#xC138;-&#xC8FC;&#xAE30;&#xB97C; &#xCD94;&#xC815;&#xD558;&#xAE30; &#xC704;&#xD574; <script type="math/tex; "> 2 \times m </script>-MA&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;. &#xACC4;&#xC808;&#xC801;&#xC778; &#xC8FC;&#xAE30;&#xAC00; &#xD640;&#xC218;&#xC774;&#xBA74;&#xC11C; &#xCC28;&#xC218; <script type="math/tex; ">m</script>&#xC774;&#xBA74;, &#xCD94;&#xC138;-&#xC8FC;&#xAE30;&#xB97C; &#xCD94;&#xC815;&#xD558;&#xAE30; &#xC704;&#xD574; <script type="math/tex; "> m </script>-MA&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;. <script type="math/tex; "> 2 \times 12 </script>-MA&#xB294; &#xC6D4;&#xBCC4; &#xB370;&#xC774;&#xD130;&#xC758; &#xCD94;&#xC138;-&#xC8FC;&#xAE30;&#xB97C; &#xCD94;&#xC815;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xACE0;, 7-MA&#xB294; &#xC77C;&#xBCC4; &#xB370;&#xC774;&#xD130;&#xC758; &#xCD94;&#xC138;-&#xC8FC;&#xAE30;&#xB97C; &#xCD94;&#xC815;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;. &#xD754;&#xD788; &#xB2E4;&#xB978; &#xCC28;&#xC218;&#xC758; MA&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xB370;&#xC774;&#xD130;&#xC758; &#xACC4;&#xC808;&#xC131; &#xB54C;&#xBB38;&#xC5D0; &#xCD94;&#xC138;-&#xC8FC;&#xAE30; &#xCD94;&#xC815;&#xC774; &#xC815;&#xD655;&#xD558;&#xC9C0; &#xC54A;&#xAC8C; &#xB41C;&#xB2E4;.</p>
+<h3 id="&#xC608;&#xC81C;-62-&#xC804;&#xC790;-&#xC7A5;&#xBE44;-&#xC0DD;&#xC0B0;">&#xC608;&#xC81C; 6.2 &#xC804;&#xC790; &#xC7A5;&#xBE44; &#xC0DD;&#xC0B0;</h3>
+<p>&#xADF8;&#xB9BC; 6.9&#xC740; &#xC804;&#xC790; &#xC7A5;&#xBE44; &#xC0DD;&#xC0B0; &#xC9C0;&#xC218;&#xC5D0; <script type="math/tex; "> 2 \times 12 </script>-MA &#xB97C; &#xC801;&#xC6A9;&#xD55C; &#xACB0;&#xACFC;&#xC774;&#xB2E4;. &#xB9E4;&#xB044;&#xB7EC;&#xC6B4; &#xC120;&#xC5D0;&#xC11C; &#xACC4;&#xC808;&#xC131;&#xC774; &#xC5C6;&#xB2E4;. &#xADF8;&#xB9BC; 6.2&#xC758; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xBCF4;&#xB2E4; &#xB354; &#xBCF5;&#xC7A1;&#xD55C; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xCD94;&#xC815;&#xD55C; &#xCD94;&#xC138;-&#xC8FC;&#xAE30;&#xC640; &#xAC70;&#xC758; &#xAC19;&#xB2E4;. &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC758; &#xCC28;&#xC218;&#xB97C; 24, 36 &#xAC19;&#xC740; &#xAC83;&#xC744; &#xC81C;&#xC678;&#xD55C; &#xAC12;&#xC73C;&#xB85C; &#xC120;&#xD0DD;&#xD558;&#xBA74; &#xB9E4;&#xB044;&#xB7EC;&#xC6B4; &#xC120;&#xC5D0; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC694;&#xB3D9;&#xC774; &#xC57D;&#xAC04; &#xBCF4;&#xC77C; &#xAC83;&#xC774;&#xB2E4;.</p>
+<p><img src="https://www.otexts.org/sites/default/files/resize/fpp/images/elecequip2-570x360.png" alt=""></p>
+<p>&#xADF8;&#xB9BC; 6.9: <script type="math/tex; "> 2 \times 12 </script>&#xB97C; &#xC804;&#xC790; &#xC7A5;&#xBE44; &#xC0DD;&#xC0B0; &#xC9C0;&#xC218;&#xC5D0; &#xC801;&#xC6A9;&#xD55C; &#xACB0;&#xACFC;.</p>
+<pre><code class="lang-R">plot(elecequip, ylab=<span class="hljs-string">&quot;New orders index&quot;</span>, col=<span class="hljs-string">&quot;gray&quot;</span>,
+  main=<span class="hljs-string">&quot;Electrical equipment manufacturing (Euro area)&quot;</span>)
+lines(ma(elecequip, order=<span class="hljs-number">12</span>), col=<span class="hljs-string">&quot;red&quot;</span>)
+</code></pre>
+<h3 id="&#xAC00;&#xC911;-&#xC774;&#xB3D9;-&#xD3C9;&#xADE0;">&#xAC00;&#xC911; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;</h3>
+<p>&#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC758; &#xC870;&#xD569;&#xC774; &#xAC00;&#xC911; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC774; &#xB418;&#xB294; &#xAC83;&#xC744; &#xD655;&#xC778;&#xD588;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xBA74;, &#xC704;&#xC5D0;&#xC11C; &#xC5B8;&#xAE09;&#xD55C; <script type="math/tex; ">2 \times 4</script>-MA&#xB294; &#xAC00;&#xC911;&#xCE58;&#xB97C; <script type="math/tex; "> \frac{1}{8}, \frac{1}{4}, \frac{1}{4}, \frac{1}{4}, \frac{1}{8} </script>&#xB85C; &#xC8FC;&#xB294; &#xAC00;&#xC911; 5-MA&#xC640; &#xAC19;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C;, &#xAC00;&#xC911; <script type="math/tex; ">m</script>-MA&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC4F8; &#xC218; &#xC788;&#xB2E4;.</p>
+<p><script type="math/tex; ">
+\hat{T}_t = \sum_{j=-k}^k a_j y_{t+j},
+</script></p>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> k = (m-1)/2 </script>&#xC774;&#xACE0; &#xAC00;&#xC911;&#xCE58;&#xB294; <script type="math/tex; "> \left[ a_{-k}, \cdots, a_{k} \right] </script>&#xB85C; &#xC8FC;&#xC5B4;&#xC9C4;&#xB2E4;. &#xAC00;&#xC911;&#xCE58;&#xB97C; &#xBAA8;&#xB450; &#xB354;&#xD558;&#xBA74; 1&#xC774;&#xACE0; &#xAC00;&#xC911;&#xCE58;&#xB4E4;&#xC740; <script type="math/tex; "> a_{j} = a_{-j} </script>&#xC640; &#xAC19;&#xC774; &#xB300;&#xCE6D;&#xC801;&#xC774;&#xB2E4;. &#xB2E8;&#xC21C; <script type="math/tex; ">m</script>-MA&#xB294; &#xBAA8;&#xB4E0; &#xAC00;&#xC911;&#xCE58;&#xB97C; <script type="math/tex; ">1/m</script>&#xC73C;&#xB85C; &#xAC19;&#xAC8C; &#xB454; &#xD2B9;&#xBCC4;&#xD55C; &#xACBD;&#xC6B0;&#xC774;&#xB2E4;. &#xB354;&#xC6B1; &#xB9E4;&#xB044;&#xB7EC;&#xC6B4; &#xCD94;&#xC138;-&#xC8FC;&#xAE30;&#xB97C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xC810;&#xC774; &#xAC00;&#xC911; &#xD3C9;&#xADE0;&#xC758; &#xC8FC;&#xB41C; &#xC7A5;&#xC810;&#xC774;&#xB2E4;. &#xAD00;&#xCE21;&#xAC12;&#xC5D0; &#xAC00;&#xC911;&#xCE58;&#xB97C; &#xC804;&#xBD80; &#xACE0;&#xB824;&#xD558;&#xC9C0; &#xC54A;&#xACE0;, &#xCC9C;&#xCC9C;&#xD788; &#xC99D;&#xAC00;&#xD558;&#xB2E4;&#xAC00; &#xAC10;&#xC18C;&#xD558;&#xB294; &#xAC00;&#xC911;&#xCE58;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xB354; &#xB9E4;&#xB044;&#xB7EC;&#xC6B4; &#xACE1;&#xC120;&#xC744; &#xAD6C;&#xD55C;&#xB2E4;. &#xD45C; 6.3&#xC5D0; &#xBA87; &#xAC00;&#xC9C0; &#xB110;&#xB9AC; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xAD6C;&#xCCB4;&#xC801;&#xC778; &#xAC00;&#xC911;&#xCE58;&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xC5C8;&#xB2E4;.</p>
+<p>&#xD45C; 6.3: &#xAC00;&#xC911; &#xD3C9;&#xADE0;&#xC5D0;&#xC11C; &#xD754;&#xD788; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xAC00;&#xC911;&#xCE58; &#xBAA9;&#xB85D;</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>a0</th>
+<th>a1</th>
+<th>a2</th>
+<th>a3</th>
+<th>a4</th>
+<th>a5</th>
+<th>a6</th>
+<th>a7</th>
+<th>a8</th>
+<th>a9</th>
+<th>a10</th>
+<th>a11</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3-MA</td>
+<td>.333</td>
+<td>.333</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5 MA</td>
+<td>.200</td>
+<td>.200</td>
+<td>.200</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2x12-MA</td>
+<td>.083</td>
+<td>.083</td>
+<td>.083</td>
+<td>.083</td>
+<td>.083</td>
+<td>.083</td>
+<td>.042</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3x3-MA</td>
+<td>.333</td>
+<td>.222</td>
+<td>.111</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3x5-MA</td>
+<td>.200</td>
+<td>.200</td>
+<td>.133</td>
+<td>.067</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>S15-MA</td>
+<td>.231</td>
+<td>.209</td>
+<td>.144</td>
+<td>.066</td>
+<td>.009</td>
+<td>-.016</td>
+<td>-.019</td>
+<td>-.009</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>S21-MA</td>
+<td>.171</td>
+<td>.163</td>
+<td>.134</td>
+<td>.037</td>
+<td>.051</td>
+<td>.017</td>
+<td>-.006</td>
+<td>-.014</td>
+<td>-.014</td>
+<td>-.009</td>
+<td>-.003</td>
+<td></td>
+</tr>
+<tr>
+<td>H5-MA</td>
+<td>.558</td>
+<td>.294</td>
+<td>-.073</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>H9-MA</td>
+<td>.330</td>
+<td>.267</td>
+<td>.119</td>
+<td>-.010</td>
+<td>-.041</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>H13-MA</td>
+<td>.240</td>
+<td>.214</td>
+<td>.147</td>
+<td>.066</td>
+<td>.000</td>
+<td>-.028</td>
+<td>-.019</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>H23-MA</td>
+<td>.148</td>
+<td>.138</td>
+<td>.122</td>
+<td>.097</td>
+<td>.068</td>
+<td>.039</td>
+<td>.013</td>
+<td>-.005</td>
+<td>-.015</td>
+<td>-.016</td>
+<td>-.011</td>
+<td>-.004</td>
+</tr>
+</tbody>
+</table>
+<p>S = Spencer&#xC758; &#xAC00;&#xC911; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;</p>
+<p>H = Henderson&#xC758; &#xAC00;&#xC911; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;</p>
+<p>6.1 &#xC2DC;&#xACC4;&#xC5F4; &#xC131;&#xBD84;   &#xC704;  6.3 &#xACE0;&#xC804;&#xC801;&#xC778; &#xBD84;&#xD574;&#xBC95;</p>
+<p><a href="https://www.otexts.org/fpp/6/2" target="_blank">&#xC6D0;&#xBB38; &#xBCF4;&#xAE30;</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="fpp-kr-6-1.html" class="navigation navigation-prev " aria-label="Previous page: 6.1 시계열 성분">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="fpp-kr-6-3.html" class="navigation navigation-next " aria-label="Next page: 6.3 고전적인 분해">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"6.2 이동 평균","level":"1.2.2","depth":2,"next":{"title":"6.3 고전적인 분해","level":"1.2.3","depth":2,"path":"doc/fpp-kr-6-3.md","ref":"doc/fpp-kr-6-3.md","articles":[]},"previous":{"title":"6.1 시계열 성분","level":"1.2.1","depth":2,"path":"doc/fpp-kr-6-1.md","ref":"doc/fpp-kr-6-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","comment","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"fpp-kr","gitbook":"3.x.x","description":"Translation"},"file":{"path":"doc/fpp-kr-6-2.md","mtime":"2017-01-06T13:02:54.981Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-06T13:11:29.247Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-comment/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

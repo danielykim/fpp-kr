@@ -1,0 +1,424 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>6.5 STL 분해 · fpp-kr</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-comment/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="fpp-kr-6-6.html" />
+    
+    
+    <link rel="prev" href="fpp-kr-6-4.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="fpp-kr-6.html">
+            
+                <a href="fpp-kr-6.html">
+            
+                    
+                    6 시계열 분해
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="fpp-kr-6-1.html">
+            
+                <a href="fpp-kr-6-1.html">
+            
+                    
+                    6.1 시계열 성분
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="fpp-kr-6-2.html">
+            
+                <a href="fpp-kr-6-2.html">
+            
+                    
+                    6.2 이동 평균
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="fpp-kr-6-3.html">
+            
+                <a href="fpp-kr-6-3.html">
+            
+                    
+                    6.3 고전적인 분해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="fpp-kr-6-4.html">
+            
+                <a href="fpp-kr-6-4.html">
+            
+                    
+                    6.4 X-12-ARIMA 분해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5" data-path="fpp-kr-6-5.html">
+            
+                <a href="fpp-kr-6-5.html">
+            
+                    
+                    6.5 STL 분해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="fpp-kr-6-6.html">
+            
+                <a href="fpp-kr-6-6.html">
+            
+                    
+                    6.6 분해를 사용한 예측
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="fpp-kr-6-7.md">
+            
+                <span>
+            
+                    
+                    6.7 연습문제
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="fpp-kr-6-8.md">
+            
+                <span>
+            
+                    
+                    6.8 더 읽을거리
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="fpp-kr-7.html">
+            
+                <a href="fpp-kr-7.html">
+            
+                    
+                    7
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="fpp-kr-7-1.html">
+            
+                <a href="fpp-kr-7-1.html">
+            
+                    
+                    7.1 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >6.5 STL 분해</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="65-stl-&#xBD84;&#xD574;">6.5 STL &#xBD84;&#xD574;</h2>
+<p>STL&#xC740; &#xC544;&#xC8FC; &#xB2E4;&#xC591;&#xD55C; &#xC0C1;&#xD669;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294; &#xAC15;&#xB825;&#xD55C; &#xC2DC;&#xACC4;&#xC5F4; &#xBD84;&#xD574; &#xAE30;&#xBC95;&#xC774;&#xB2E4;. STL&#xC740; &quot;Seasonal and Trend decomposition using Loess&quot;&#xC758; &#xC57D;&#xC790;&#xC774;&#xB2E4;. &#xC5EC;&#xAE30;&#xC5D0;&#xC11C; Loess&#xB294; &#xBE44;&#xC120;&#xD615; &#xAD00;&#xACC4;&#xB97C; &#xCD94;&#xC815;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xAE30;&#xBC95;&#xC774;&#xB2E4;. STL &#xBC29;&#xBC95;&#xC740; Cleveland&#xC640; &#xACF5;&#xB3D9; &#xC5F0;&#xAD6C;&#xC790;&#xB4E4;&#xC774; &#xAC1C;&#xBC1C;&#xD558;&#xC5EC; 1990&#xB144;&#xC5D0; &#xBC1C;&#xD45C;&#xD55C; &#xBC29;&#xBC95;&#xC774;&#xB2E4;.</p>
+<p>STL&#xC740; &#xACE0;&#xC804;&#xC801;&#xC778; &#xBD84;&#xD574;&#xC640; X-12-ARIMA&#xB97C; &#xB6F0;&#xC5B4;&#xB118;&#xB294; &#xBA87; &#xAC00;&#xC9C0; &#xC7A5;&#xC810;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;.</p>
+<ul>
+<li>X-12-ARIMA&#xC640;&#xB294; &#xB2E4;&#xB974;&#xAC8C;, STL&#xC740; &#xC6D4;&#xBCC4;&#xC774;&#xB098; 4&#xBD84;&#xAE30;&#xBCC4; &#xB370;&#xC774;&#xD130;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xC5EC; &#xC5B4;&#xB5A4; &#xC885;&#xB958;&#xC758; &#xACC4;&#xC808;&#xC131;&#xB3C4; &#xB2E4;&#xB8F0; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC774; &#xC2DC;&#xAC04;&#xC5D0; &#xB530;&#xB77C; &#xBCC0;&#xD574;&#xB3C4; &#xAD1C;&#xCC2E;&#xB2E4;. &#xBCC0;&#xD654;&#xC728;&#xC744; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC870;&#xC808;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xCD94;&#xC138;-&#xC8FC;&#xAE30;&#xC758; &#xB9E4;&#xB044;&#xB7EC;&#xC6B4; &#xC815;&#xB3C4;&#xB97C; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC870;&#xC808;&#xD560; &#xC218; &#xC788;&#xB2E4;.</li>
+<li>&#xC774;&#xC0C1;&#xD55C; &#xCE21;&#xC815;&#xAC12;&#xC774; &#xC788;&#xC744; &#xB54C; &#xC0AC;&#xC6A9;&#xD574;&#xB3C4; &#xC548;&#xC804;&#xD558;&#xB2E4;. (&#xC989;, &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xAC15;&#xB825;&#xD55C; &#xBD84;&#xD574;&#xBC95;&#xC744; &#xBA85;&#xC2DC;&#xD560; &#xC218; &#xC788;&#xB2E4;.) &#xAC00;&#xB054; &#xC788;&#xB294; &#xD2B9;&#xC774;&#xD55C; &#xAD00;&#xCE21;&#xAC12;&#xC740; &#xCD94;&#xC138;-&#xC8FC;&#xAE30;&#xC640; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC;, &#xB098;&#xBA38;&#xC9C0; &#xC131;&#xBD84;&#xC5D0;&#xB294; &#xC601;&#xD5A5;&#xC744; &#xC900;&#xB2E4;.</li>
+</ul>
+<p>&#xBC18;&#xBA74;&#xC5D0;, STL&#xC740; &#xBA87; &#xAC00;&#xC9C0; &#xB2E8;&#xC810;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;. &#xD2B9;&#xBCC4;&#xD788; &#xAC70;&#xB798;&#xC77C;&#xC774;&#xB098; &#xB2EC;&#xB825; &#xBCC0;&#xB3D9;&#xC744; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xB2E4;&#xB8E8;&#xC9C0; &#xC54A;&#xC73C;&#xBA70; &#xB367;&#xC148; &#xBD84;&#xD574;&#xB9CC; &#xC9C0;&#xC6D0;&#xD55C;&#xB2E4;.</p>
+<p>&#xB370;&#xC774;&#xD130;&#xC5D0; &#xBA3C;&#xC800; &#xB85C;&#xADF8;&#xB97C; &#xCDE8;&#xD558;&#xACE0; &#xC131;&#xBD84;&#xC744; &#xB2E4;&#xC2DC; &#xC6D0;&#xB798;&#xB300;&#xB85C; &#xB418;&#xB3CC;&#xB9AC;&#xB294; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xACF1;&#xC148; &#xBD84;&#xD574;&#xB97C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB2E4;. <script type="math/tex; "> 0 < \lambda < 1 </script>&#xB85C; &#xB370;&#xC774;&#xD130;&#xC758; Box-Cox &#xBCC0;&#xD658;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xB367;&#xC148;&#xACFC; &#xACF1;&#xC148; &#xC0AC;&#xC774;&#xC758; &#xBD84;&#xD574;&#xB97C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB2E4;. <script type="math/tex; "> \lambda = 0 </script>&#xC740; &#xACF1;&#xC148; &#xBD84;&#xD574;, <script type="math/tex; "> \lambda = 1 </script>&#xC740; &#xB367;&#xC148; &#xBD84;&#xD574;&#xC640; &#xAC19;&#xB2E4;.</p>
+<p>&#xBA87; &#xAC00;&#xC9C0; &#xC124;&#xC815;&#xACFC; &#xD568;&#xAED8; &#xC608;&#xC81C;&#xC640; &#xC2E4;&#xD5D8;&#xC744; &#xC0B4;&#xD3B4;&#xBCF4;&#xB294; &#xAC83;&#xC774; STL &#xC0AC;&#xC6A9;&#xBC95;&#xC744; &#xC775;&#xD790; &#xB54C; &#xAC00;&#xC7A5; &#xC88B;&#xC740; &#xBC29;&#xBC95;&#xC774;&#xB2E4;. &#xADF8;&#xB9BC; 6.3&#xC740; &#xC804;&#xC790; &#xC7A5;&#xBE44; &#xC9C0;&#xC218; &#xB370;&#xC774;&#xD130;&#xC5D0; STL&#xC744; &#xC801;&#xC6A9;&#xD55C; &#xC608;&#xC774;&#xB2E4;. &#xADF8;&#xB9BC; 6.10&#xC740; &#xCD94;&#xC138;&#xAC00; &#xB354; &#xC720;&#xB3D9;&#xC801;&#xC778; &#xB610; &#xB2E4;&#xB978; STL &#xBD84;&#xD574;&#xC640; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC774; &#xC2DC;&#xAC04;&#xC5D0; &#xB530;&#xB77C;&#xC11C; &#xBCC0;&#xD558;&#xC9C0; &#xC54A;&#xACE0;, &#xC548;&#xC804;&#xD55C; &#xC635;&#xC158;&#xC744; &#xC0AC;&#xC6A9;&#xD55C; &#xACB0;&#xACFC;&#xC774;&#xB2E4;. &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xB05D;&#xC5D0; &#xAC10;&#xC18C; &#xCD94;&#xC138;&#xAC00; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xACFC; 2009&#xB144;&#xC758; &#xAC12;&#xC774; &#xD2B9;&#xC774;&#xD558;&#xAC8C; &#xB0AE;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xBD84;&#xBA85;&#xD558;&#xAC8C; &#xC54C; &#xC218; &#xC788;&#xB2E4;(&#xB098;&#xBA38;&#xC9C0; &#xC131;&#xBD84;&#xC5D0;&#xC11C; &#xD070; &#xC74C;&#xC218;&#xAC12; &#xBA87;&#xBA87;&#xACFC; &#xAD00;&#xACC4; &#xC788;&#xB2E4;).</p>
+<p><img src="https://www.otexts.org/sites/default/files/resize/fpp/images/elecequip_stl2-600x596.png" alt=""></p>
+<p>&#xADF8;&#xB9BC; 6.10: &#xC804;&#xC790; &#xC7A5;&#xBE44; &#xC9C0;&#xC218;(&#xC704;)&#xC640; &#xC548;&#xC804;&#xD55C; STL &#xBD84;&#xD574;&#xB85C; &#xC5BB;&#xC740; &#xC720;&#xB3D9;&#xC801;&#xC778; &#xCD94;&#xC138;&#xC640; &#xACE0;&#xC815;&#xB41C; &#xACC4;&#xC808;&#xC131;&#xC744; &#xAC00;&#xC9C4; &#xC138; &#xAC00;&#xC9C0; &#xB367;&#xC148; &#xC131;&#xBD84;.</p>
+<pre><code class="lang-R">fit &lt;- stl(elecequip, t.window=<span class="hljs-number">15</span>, s.window=<span class="hljs-string">&quot;periodic&quot;</span>, robust=<span class="hljs-literal">TRUE</span>)
+plot(fit)
+</code></pre>
+<p>STL&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC120;&#xD0DD;&#xD55C; &#xB450; &#xAC1C;&#xC758; &#xC8FC;&#xB41C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB4E4;&#xC740; &#xCD94;&#xC138; &#xC708;&#xB3C4;&#xC6B0;(t.window)&#xC640; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC708;&#xB3C4;&#xC6B0;(s.window)&#xC774;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB4E4;&#xB85C; &#xCD94;&#xC138;&#xC640; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC774; &#xAE09;&#xACA9;&#xD558;&#xAC8C; &#xBCC0;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC870;&#xC808;&#xD560; &#xC218; &#xC788;&#xB2E4;. &#xAC12;&#xC774; &#xC791;&#xC73C;&#xBA74; &#xB354; &#xAE09;&#xACA9;&#xD558;&#xAC8C; &#xBCC0;&#xD55C;&#xB2E4;. &#xACC4;&#xC808;&#xC801;&#xC778; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xBB34;&#xD55C;&#xB300;&#xB85C; &#xC124;&#xC815;&#xD558;&#xBA74; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC744; &#xC8FC;&#xAE30;&#xC801;&#xC73C;&#xB85C; &#xACE0;&#xC815;&#xD558;&#xB294; &#xAC83;&#xACFC; &#xAC19;&#xB2E4;(&#xC989;, &#xB9E4;&#xB144; &#xAC19;&#xAC8C; &#xB450;&#xB294; &#xAC83;).</p>
+<p>6.4 X-12-ARIMA &#xBD84;&#xD574;   up   6.6 &#xBD84;&#xD574;&#xBC95;&#xC73C;&#xB85C; &#xC608;&#xCE21;&#xD558;&#xAE30;</p>
+<p><a href="https://www.otexts.org/fpp/6/5" target="_blank">&#xC6D0;&#xBB38; &#xBCF4;&#xAE30;</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="fpp-kr-6-4.html" class="navigation navigation-prev " aria-label="Previous page: 6.4 X-12-ARIMA 분해">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="fpp-kr-6-6.html" class="navigation navigation-next " aria-label="Next page: 6.6 분해를 사용한 예측">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"6.5 STL 분해","level":"1.2.5","depth":2,"next":{"title":"6.6 분해를 사용한 예측","level":"1.2.6","depth":2,"path":"doc/fpp-kr-6-6.md","ref":"doc/fpp-kr-6-6.md","articles":[]},"previous":{"title":"6.4 X-12-ARIMA 분해","level":"1.2.4","depth":2,"path":"doc/fpp-kr-6-4.md","ref":"doc/fpp-kr-6-4.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","comment","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"fpp-kr","gitbook":"3.x.x","description":"Translation"},"file":{"path":"doc/fpp-kr-6-5.md","mtime":"2017-01-06T13:10:25.209Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-06T13:11:29.247Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-comment/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
