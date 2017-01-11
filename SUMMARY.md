@@ -11,5 +11,5 @@
     * [6.7 연습문제](doc/fpp-kr-6-7.md)
     * [6.8 더 읽을거리](doc/fpp-kr-6-8.md)
 * [7](doc/fpp-kr-7.md)
-    * [7.1 ](doc/fpp-kr-7-1.md)
+    * [7.1 단순 지수 평활](doc/fpp-kr-7-1.md)
 
