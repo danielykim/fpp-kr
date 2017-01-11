@@ -10,6 +10,11 @@
     * [6.6 분해를 사용한 예측](doc/fpp-kr-6-6.md)
     * [6.7 연습문제](doc/fpp-kr-6-7.md)
     * [6.8 더 읽을거리](doc/fpp-kr-6-8.md)
-* [7](doc/fpp-kr-7.md)
+* [7 지수 평활](doc/fpp-kr-7.md)
     * [7.1 단순 지수 평활](doc/fpp-kr-7-1.md)
-
+    * [7.2 Holt의 선형 추세 기법](doc/fpp-kr-7-2.md)
+    * [7.3 지수 추세 기법](doc/fpp-kr-7-3.md)
+    * [7.4 감쇠 추세 기법](doc/fpp-kr-7-4.md)
+    * [7.5 Holt-Winters 계절적인 기법](doc/fpp-kr-7-5.md)
+    * [7.6 지수 평활 기법 분류](doc/fpp-kr-7-6.md)
+    * [7.7 지수 평활에 대한 혁신 상태 공간 모델](doc/fpp-kr-7-7.md)

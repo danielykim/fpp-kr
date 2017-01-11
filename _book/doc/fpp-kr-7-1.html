@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>7.1  · fpp-kr</title>
+        <title>7.1 단순 지수 평활 · fpp-kr</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,6 +61,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="fpp-kr-7-2.html" />
+    
     
     <link rel="prev" href="fpp-kr-7.html" />
     
@@ -96,7 +98,7 @@
                 <a href="../">
             
                     
-                    Introduction
+                    소개
             
                 </a>
             
@@ -232,7 +234,7 @@
                 <a href="fpp-kr-7.html">
             
                     
-                    7
+                    7 지수 평활
             
                 </a>
             
@@ -246,7 +248,85 @@
                 <a href="fpp-kr-7-1.html">
             
                     
-                    7.1 
+                    7.1 단순 지수 평활
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="fpp-kr-7-2.html">
+            
+                <a href="fpp-kr-7-2.html">
+            
+                    
+                    7.2 Holt의 선형 추세 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="fpp-kr-7-3.html">
+            
+                <a href="fpp-kr-7-3.html">
+            
+                    
+                    7.3 지수 추세 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="fpp-kr-7-4.html">
+            
+                <a href="fpp-kr-7-4.html">
+            
+                    
+                    7.4 감쇠 추세 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="fpp-kr-7-5.html">
+            
+                <a href="fpp-kr-7-5.html">
+            
+                    
+                    7.5 Holt-Winters 계절적인 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="fpp-kr-7-6.html">
+            
+                <a href="fpp-kr-7-6.html">
+            
+                    
+                    7.6 지수 평활 기법 분류
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="fpp-kr-7-7.html">
+            
+                <a href="fpp-kr-7-7.html">
+            
+                    
+                    7.7 지수 평활에 대한 혁신 상태 공간 모델
             
                 </a>
             
@@ -289,7 +369,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >7.1 </a>
+        <a href=".." >7.1 단순 지수 평활</a>
     </h1>
 </div>
 
@@ -304,7 +384,372 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="71-&#xB2E8;&#xC21C;-&#xC9C0;&#xC218;-&#xD3C9;&#xD65C;">7.1 &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;</h2>
+<p>&#xC9C0;&#xC218;&#xC801;&#xC73C;&#xB85C; &#xD3C9;&#xD65C;&#xD558;&#xB294; &#xAE30;&#xBC95; &#xC911;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xB2E8;&#xC21C;&#xD55C; &#xBC29;&#xBC95;&#xC744; &quot;&#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&quot;(simple exponential smoothing, SES)&#xC774;&#xB77C;&#xACE0; &#xBD80;&#xB978;&#xB2E4;. (&#xC5B4;&#xB5A4; &#xAD50;&#xACFC;&#xC11C;&#xC5D0;&#xC11C;&#xB294; &quot;&#xB2E8;&#xC77C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C; single exponential smoothing&quot;&#xC774;&#xB77C;&#xACE0; &#xD558;&#xAE30;&#xB3C4; &#xD55C;&#xB2E4;.) &#xC774; &#xBC29;&#xBC95;&#xC740; &#xCD94;&#xC138;&#xB098; &#xACC4;&#xC808;&#xC801;&#xC778; &#xD328;&#xD134;&#xC774; &#xC5C6;&#xB294; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC608;&#xCE21;&#xD560; &#xB54C; &#xC4F0;&#xAE30; &#xC88B;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xBA74;, &#xADF8;&#xB9BC; 7.1&#xC5D0; &#xC788;&#xB294; &#xB370;&#xC774;&#xD130;&#xB97C; &#xBCF4;&#xBA74; &#xD3C9;&#xADE0;&#xAC12;&#xC774; &#xC2DC;&#xAC04;&#xC5D0; &#xB530;&#xB77C; &#xB290;&#xB9AC;&#xAC8C; &#xBCC0;&#xD558;&#xB294; &#xAC83; &#xAC19;&#xAE34; &#xD558;&#xC9C0;&#xB9CC;, &#xBD84;&#xBA85;&#xD55C; &#xCD94;&#xC138;&#xB098; &#xACC4;&#xC808;&#xC131;&#xC774; &#xBCF4;&#xC774;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC608;&#xCE21;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xBC29;&#xBC95;&#xC73C;&#xB85C;, &#xB2E8;&#xC21C; &#xAE30;&#xBC95;&#xACFC; &#xD3C9;&#xADE0; &#xAE30;&#xBC95;&#xC744; &#xC55E;&#xC11C; &#xB2E4;&#xB8E8;&#xC5C8;&#xB2E4;(2.3 &#xC808;).</p>
+<p><img src="https://www.otexts.org/sites/default/files/resize/fpp/images/oil-570x346.png" alt=""></p>
+<p>&#xADF8;&#xB9BC; 7.1 1996&#xB144;&#xBD80;&#xD130; 2007&#xB144;&#xAE4C;&#xC9C0; &#xC0AC;&#xC6B0;&#xB514; &#xC544;&#xB77C;&#xBE44;&#xC544;&#xC758; &#xC6D0;&#xC720; &#xC0DD;&#xC0B0;&#xB7C9;.</p>
+<pre><code class="lang-R">oildata &lt;- window(oil,start=<span class="hljs-number">1996</span>,end=<span class="hljs-number">2007</span>)
+plot(oildata, ylab=<span class="hljs-string">&quot;Oil (millions of tonnes)&quot;</span>,xlab=<span class="hljs-string">&quot;Year&quot;</span>)
+</code></pre>
+<p>&#xB2E8;&#xC21C; &#xAE30;&#xBC95;&#xC740; &#xBAA8;&#xB4E0; &#xBBF8;&#xB798; &#xC608;&#xCE21;&#xAC12;&#xC744; &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xB9C8;&#xC9C0;&#xB9C9; &#xAD00;&#xCE21;&#xAC12;&#xACFC; &#xBAA8;&#xB450; &#xAC19;&#xAC8C; &#xB450;&#xB294; &#xAC83;&#xC774;&#xB2E4;. &#xC989;, <script type="math/tex; "> h = 1, 2, ... </script>&#xC5D0; &#xB300;&#xD574;</p>
+<p><script type="math/tex; ">
+\hat{y}_{T+h | T} = y_{T},
+</script></p>
+<p>&#xC640; &#xAC19;&#xB2E4;. &#xB2E8;&#xC21C; &#xAE30;&#xBC95;&#xC5D0;&#xC11C;&#xB294; &#xAC00;&#xC7A5; &#xCD5C;&#xADFC; &#xAD00;&#xCE21;&#xB9CC; &#xAC00;&#xC7A5; &#xC911;&#xC694;&#xD558;&#xACE0; &#xC774;&#xC804;&#xC758; &#xBAA8;&#xB4E0; &#xAD00;&#xCE21;&#xAC12;&#xC740; &#xBBF8;&#xB798;&#xB97C; &#xC608;&#xCE21;&#xD560; &#xB54C; &#xC544;&#xBB34; &#xC815;&#xBCF4;&#xB3C4; &#xC8FC;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD55C;&#xB2E4;. &#xC774; &#xBC29;&#xBC95;&#xC744; &#xBAA8;&#xB4E0; &#xAC00;&#xC911;&#xCE58;&#xB97C; &#xB9C8;&#xC9C0;&#xB9C9; &#xAD00;&#xCE21;&#xC5D0;&#xB9CC; &#xD560;&#xB2F9;&#xD558;&#xB294; &#xAC00;&#xC911; &#xD3C9;&#xADE0;&#xC73C;&#xB85C; &#xBCFC; &#xC218;&#xB3C4; &#xC788;&#xB2E4;.</p>
+<p>&#xD3C9;&#xADE0; &#xAE30;&#xBC95;&#xC5D0;&#xC11C;&#xB294; &#xBAA8;&#xB4E0; &#xBBF8;&#xB798; &#xC608;&#xCE21;&#xCE58;&#xB294; &#xBAA8;&#xB4E0; &#xAD00;&#xCE21;&#xAC12;&#xC758; &#xB2E8;&#xC21C; &#xD3C9;&#xADE0;&#xACFC; &#xAC19;&#xB2E4;. &#xC989;, <script type="math/tex; "> h = 1, 2, ... </script>&#xC5D0; &#xB300;&#xD574;</p>
+<p><script type="math/tex; ">
+\hat{y}_{T+h | T} = \frac{1}{T} \sum_{t=1}^{T} y_{t},
+</script></p>
+<p>&#xC640; &#xAC19;&#xB2E4;.
+&#xD3C9;&#xADE0; &#xAE30;&#xBC95;&#xC5D0;&#xC11C;&#xB294; &#xBAA8;&#xB4E0; &#xAD00;&#xCE21;&#xAC12;&#xC774; &#xB611;&#xAC19;&#xC774; &#xC911;&#xC694;&#xD558;&#xACE0; &#xC608;&#xCE21;&#xCE58;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xB54C; &#xAC19;&#xC740; &#xAC00;&#xC911;&#xCE58;&#xB9CC;&#xD07C; &#xAE30;&#xC5EC;&#xD55C;&#xB2E4;.</p>
+<p>&#xC6B0;&#xB9AC;&#xB294; &#xC885;&#xC885; &#xBC29;&#xAE08; &#xC0B4;&#xD3B4;&#xBCF8; &#xC591;&#xADF9;&#xB2E8; &#xC0AC;&#xC774;&#xC758; &#xBB34;&#xC5B8;&#xAC00;&#xAC00; &#xD544;&#xC694;&#xD560; &#xB54C;&#xAC00; &#xC788;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xBA74;, &#xC624;&#xB798;&#xB41C; &#xAD00;&#xCE21;&#xAC12;&#xBCF4;&#xB2E4; &#xB354; &#xCD5C;&#xADFC; &#xAD00;&#xCE21;&#xAC12;&#xC5D0; &#xB354; &#xD070; &#xAC00;&#xC911;&#xCE58;&#xB97C; &#xC8FC;&#xB294; &#xACBD;&#xC6B0; &#xB9D0;&#xC774;&#xB2E4;. &#xC774;&#xAC83;&#xC774; &#xBC14;&#xB85C; &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C; &#xAE30;&#xBC95;&#xC758; &#xAE30;&#xBCF8; &#xAC1C;&#xB150;&#xC774;&#xB2E4;. &#xB354; &#xC624;&#xB798;&#xB420; &#xC218;&#xB85D; &#xAC00;&#xC911;&#xCE58;&#xAC00; &#xC9C0;&#xC218;&#xC801;&#xC73C;&#xB85C; &#xAC10;&#xC18C;&#xD558;&#xB294;(&#xAC00;&#xC7A5; &#xC624;&#xB798;&#xB41C; &#xAD00;&#xCE21;&#xAC12;&#xC5D0; &#xAC00;&#xC7A5; &#xC791;&#xC740; &#xAC00;&#xC911;&#xCE58;&#xAC00; &#xBD99;&#xB294;) &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC608;&#xCE21;&#xCE58;&#xB97C; &#xACC4;&#xC0B0;&#xD55C;&#xB2E4;:</p>
+<p><script type="math/tex; ">
+\hat{y}_{T+1 | T} = \alpha y_{T} + \alpha (1-\alpha)y_{T-1} + \alpha (1-\alpha)^{2}y_{T-2} + \cdots , \qquad (7.1)
+</script></p>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> 0 \le \alpha \le 1 </script> &#xC740; &#xD3C9;&#xD65C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC774;&#xB2E4;. <script type="math/tex; "> T+1 </script> &#xC2DC;&#xAC04;&#xC5D0; &#xB300;&#xD55C; &#xD55C; &#xB2E8;&#xACC4; &#xC55E; &#xC608;&#xCE21;&#xCE58;&#xB294; &#xC2DC;&#xACC4;&#xC5F4; <script type="math/tex; ">y_{1}, \cdots, y_{T}</script>&#xC5D0;&#xC11C; &#xBAA8;&#xB4E0; &#xAD00;&#xCE21;&#xAC12;&#xC744; &#xAC00;&#xC911; &#xD3C9;&#xADE0;&#xD558;&#xC5EC; &#xC5BB;&#xC740; &#xAC12;&#xC774;&#xB2E4;. &#xAC00;&#xC911;&#xCE58;&#xAC00; &#xAC10;&#xC18C;&#xD558;&#xB294; &#xBE44;&#xC728;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; <script type="math/tex; ">\alpha</script>&#xB85C; &#xC870;&#xC808;&#xD55C;&#xB2E4;.</p>
+<p>&#xD45C; 7.1&#xB294; &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xB85C; &#xC608;&#xCE21;&#xD560; &#xB54C;, 4&#xAC1C;&#xC758; &#xC11C;&#xB85C; &#xB2E4;&#xB978; <script type="math/tex; ">\alpha</script>&#xB85C; &#xAD00;&#xCE21;&#xAC12;&#xC5D0; &#xAC00;&#xC911;&#xCE58;&#xB97C; &#xD560;&#xB2F9;&#xD55C; &#xAC83;&#xC744; &#xBCF4;&#xC5EC;&#xC900;&#xB2E4;. &#xC791;&#xC740; <script type="math/tex; ">\alpha</script>&#xAC12;&#xC774;&#xB354;&#xB77C;&#xB3C4; &#xAC00;&#xC911;&#xCE58;&#xC758; &#xD569;&#xC740; &#xC5B4;&#xB5A0;&#xD55C; &#xC801;&#xC808;&#xD55C; &#xD45C;&#xBCF8; &#xD06C;&#xAE30;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB3C4; &#xADFC;&#xC0AC;&#xC801;&#xC73C;&#xB85C; 1&#xC774; &#xB41C;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>Observation</th>
+<th><script type="math/tex; ">\alpha=0.2</script></th>
+<th><script type="math/tex; ">\alpha=0.4</script></th>
+<th><script type="math/tex; ">\alpha=0.6</script></th>
+<th><script type="math/tex; ">\alpha=0.8</script></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><script type="math/tex; ">y_T</script></td>
+<td><script type="math/tex; ">0.2</script></td>
+<td><script type="math/tex; ">0.4</script></td>
+<td><script type="math/tex; ">0.6</script></td>
+<td><script type="math/tex; ">0.8</script></td>
+</tr>
+<tr>
+<td><script type="math/tex; ">y_{T−1}</script></td>
+<td><script type="math/tex; ">0.16</script></td>
+<td><script type="math/tex; ">0.24</script></td>
+<td><script type="math/tex; ">0.24</script></td>
+<td><script type="math/tex; ">0.16</script></td>
+</tr>
+<tr>
+<td><script type="math/tex; ">y_{T−2}</script></td>
+<td><script type="math/tex; ">0.128</script></td>
+<td><script type="math/tex; ">0.144</script></td>
+<td><script type="math/tex; ">0.096</script></td>
+<td><script type="math/tex; ">0.032</script></td>
+</tr>
+<tr>
+<td><script type="math/tex; ">y_{T−3}</script></td>
+<td><script type="math/tex; ">0.1024</script></td>
+<td><script type="math/tex; ">0.0864</script></td>
+<td><script type="math/tex; ">0.0384</script></td>
+<td><script type="math/tex; ">0.0064</script></td>
+</tr>
+<tr>
+<td><script type="math/tex; ">y_{T−4}</script></td>
+<td><script type="math/tex; "> (0.2)(0.8)^4 </script></td>
+<td><script type="math/tex; "> (0.4)(0.6)^4 </script></td>
+<td><script type="math/tex; "> (0.6)(0.4)^4 </script></td>
+<td><script type="math/tex; "> (0.8)(0.2)^4 </script></td>
+</tr>
+<tr>
+<td><script type="math/tex; ">y_{T−5}</script></td>
+<td><script type="math/tex; "> (0.2)(0.8)^5 </script></td>
+<td><script type="math/tex; "> (0.4)(0.6)^5 </script></td>
+<td><script type="math/tex; "> (0.6)(0.4)^5 </script></td>
+<td><script type="math/tex; "> (0.8)(0.2)^5 </script></td>
+</tr>
+</tbody>
+</table>
+<p>0&#xACFC; 1 &#xC0AC;&#xC774;&#xC758; &#xC5B4;&#xB5A4; <script type="math/tex; "> \alpha </script>&#xC5D0; &#xB300;&#xD574;, &#xAD00;&#xCE21;&#xAC12;&#xC5D0; &#xBD99;&#xB294; &#xAC00;&#xC911;&#xCE58;&#xAC00; &#xACFC;&#xAC70;&#xB85C; &#xAC08; &#xC218;&#xB85D; &#xC9C0;&#xC218;&#xC801;&#xC73C;&#xB85C; &#xAC10;&#xC18C;&#xD55C;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; &quot;&#xC9C0;&#xC218; &#xD3C9;&#xD65C;&quot;&#xC774;&#xB77C;&#xB294; &#xC774;&#xB984;&#xC774; &#xBD99;&#xC740; &#xAC83;&#xC774;&#xB2E4;. &#xB9CC;&#xC57D;&#xC5D0; <script type="math/tex; "> \alpha </script>&#xAC00; &#xC791;&#xB2E4;&#xBA74;(&#xC608;&#xB97C; &#xB4E4;&#xBA74;, 0&#xC5D0; &#xAC00;&#xAE5D;&#xB2E4;&#xBA74;), &#xB354; &#xBA3C; &#xACFC;&#xAC70; &#xAD00;&#xCE21;&#xAC12;&#xC5D0; &#xBD99;&#xB294; &#xAC00;&#xC911;&#xCE58;&#xAC00; &#xB298;&#xC5B4;&#xB09C;&#xB2E4;. <script type="math/tex; "> \alpha </script>&#xAC00; &#xD06C;&#xBA74;(&#xC608;&#xB97C; &#xB4E4;&#xBA74;, 1&#xC5D0; &#xAC00;&#xAE4C;&#xC6B4; &#xACBD;&#xC6B0;), &#xB354; &#xCD5C;&#xADFC; &#xAD00;&#xCE21;&#xAC12;&#xC5D0; &#xBD99;&#xB294; &#xAC00;&#xC911;&#xCE58;&#xAC00; &#xB298;&#xC5B4;&#xB09C;&#xB2E4;. <script type="math/tex; "> \alpha=1, \hat{y}_{T+1|T}=y_{T} </script>&#xC778; &#xADF9;&#xB2E8;&#xC801;&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xC608;&#xCE21;&#xCE58;&#xAC00; &#xB2E8;&#xC21C; &#xAE30;&#xBC95;&#xC758; &#xACBD;&#xC6B0;&#xC640; &#xAC19;&#xAC8C; &#xB41C;&#xB2E4;.</p>
+<p>&#xC608;&#xCE21;&#xC2DD; 7.1&#xC744; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB294; 3&#xAC00;&#xC9C0; &#xB3D9;&#xC77C;&#xD55C; &#xD615;&#xD0DC;&#xC758; &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC744; &#xC0B4;&#xD3B4;&#xBCF4;&#xC790;.</p>
+<h3 id="&#xAC00;&#xC911;-&#xD3C9;&#xADE0;-&#xD615;&#xD0DC;">&#xAC00;&#xC911; &#xD3C9;&#xADE0; &#xD615;&#xD0DC;</h3>
+<p><script type="math/tex; ">t+1</script>&#xC2DC;&#xAC04;&#xC5D0;&#xC11C; &#xC608;&#xCE21;&#xC740; &#xAC00;&#xC7A5; &#xCD5C;&#xADFC; &#xAD00;&#xCE21;&#xAC12; <script type="math/tex; ">y_{t}</script>&#xC640; &#xAC00;&#xC7A5; &#xCD5C;&#xADFC; &#xC608;&#xCE21;&#xCE58; <script type="math/tex; "> \hat{y}_{t|t-1} </script>&#xC758; &#xAC00;&#xC911; &#xD3C9;&#xADE0;&#xACFC; &#xAC19;&#xB2E4;. <script type="math/tex; "> t=1,...,T </script>&#xC5D0; &#xB300;&#xD574;,
+<script type="math/tex; ">
+  \hat{y}_{t+1|t} = \alpha y_{t} + (1-\alpha)\hat{y}_{t|t-1}
+</script>
+&#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> 0 \le \alpha \le 1 </script>&#xC740; &#xD3C9;&#xD65C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC774;&#xB2E4;. &#xC9C4;&#xD589; &#xACFC;&#xC815;&#xC744; &#xC5B4;&#xB514;&#xC5D0;&#xC120;&#xAC00; &#xC2DC;&#xC791;&#xD574;&#xC57C;&#xB9CC; &#xD558;&#xBBC0;&#xB85C;, &#xCCAB; &#xC608;&#xCE21;&#xCE58; <script type="math/tex; ">y_{1}</script>&#xC744; <script type="math/tex; "> l_{0} </script>&#xC73C;&#xB85C; &#xB450;&#xC790;. &#xADF8;&#xB7EC;&#xBA74;,</p>
+<p><script type="math/tex; ">
+\begin{align*}
+\hat{y}_{2|1} &= \alpha y_{1} + (1-\alpha)l_{0} \\
+\hat{y}_{3|2} &= \alpha y_{2} + (1-\alpha)\hat{y}_{2|1} \\
+\hat{y}_{4|3} &= \alpha y_{3} + (1-\alpha)\hat{y}_{3|2} \\
+\vdots & \\
+\hat{y}_{T+1|T} &= \alpha y_{T} + (1-\alpha)\hat{y}_{T|T-1}
+\end{align*}
+</script></p>
+<p>&#xAC01; &#xC2DD;&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB300;&#xC785;&#xD558;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACB0;&#xACFC;&#xB97C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB2E4;.</p>
+<p><script type="math/tex; ">
+\begin{align*}
+\hat{y}_{3|2} & = \alpha y_{2} + (1-\alpha)\left[ \alpha y_{1} + (1-\alpha)l_{0} \right] \\
+              & = \alpha y_{2} + \alpha(1-\alpha)y_{1} + (1-\alpha)^{2}l_{0} \\
+\hat{y}_{4|3} & = \alpha y_{3} + (1-\alpha)\left[ \alpha y_{2} + (1-\alpha)l_{0} \right] \\
+              & = \alpha y_{3} + \alpha(1-\alpha)y_{2} + (1-\alpha)^{2}l_{0} \\
+              & \vdots \\
+\hat{y}_{T+1|T} & = \sum_{j=1}^{T-1} \alpha (1-\alpha)^{j} y_{T-j} + (1-\alpha)^{T}l_{0}. \qquad (7.2)
+\end{align*}
+</script></p>
+<p>&#xAC00;&#xC911; &#xD3C9;&#xADE0; &#xD615;&#xD0DC;&#xB85C; &#xAC19;&#xC740; &#xC608;&#xCE21;&#xC2DD;&#xC744; &#xC5BB;&#xC5C8;&#xB2E4;.</p>
+<h3 id="&#xC131;&#xBD84;-&#xD615;&#xD0DC;">&#xC131;&#xBD84; &#xD615;&#xD0DC;</h3>
+<p>&#xC131;&#xBD84; &#xD615;&#xD0DC;&#xB85C;&#xB3C4; &#xD45C;&#xD604;&#xD560; &#xC218; &#xC788;&#xB2E4;. &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC5D0;&#xC11C; &#xD3EC;&#xD568;&#xB41C; &#xC720;&#xC77C;&#xD55C; &#xC131;&#xBD84;&#xC740; &#xC218;&#xC900;&#xAC12; <script type="math/tex; "> l_{t} </script>&#xC774;&#xB2E4;. (&#xC774; &#xC7A5;&#xC758; &#xB4A4;&#xC5D0;&#xC11C; &#xB2E4;&#xB8E8;&#xB294; &#xB2E4;&#xB978; &#xAE30;&#xBC95;&#xC5D0;&#xB294; &#xCD94;&#xC138; <script type="math/tex; ">b_{t}</script>&#xC640; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84; <script type="math/tex; ">s_{t}</script>&#xB3C4; &#xC788;&#xC744; &#xC218; &#xC788;&#xB2E4;. ) &#xC9C0;&#xC218; &#xD3C9;&#xD65C; &#xAE30;&#xBC95;&#xC758; &#xC131;&#xBD84; &#xD615;&#xD0DC; &#xD45C;&#xD604;&#xC740; &#xC774; &#xAE30;&#xBC95;&#xC758; &#xAC01; &#xC131;&#xBD84;&#xC5D0; &#xB300;&#xD55C; &#xC608;&#xCE21; &#xC2DD;&#xACFC; &#xD3C9;&#xD65C;&#xC2DD;&#xC73C;&#xB85C; &#xAD6C;&#xC131;&#xB418;&#xC5B4;&#xC788;&#xB2E4;. &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC758; &#xC131;&#xBD84; &#xD615;&#xD0DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC8FC;&#xC5B4;&#xC9C4;&#xB2E4;:</p>
+<p><script type="math/tex; ">
+\begin{equation}
+\begin{aligned}
+
+\text{예측 식} \quad  \hat{y}_{t+1|t} &= l_{t} \\
+\text{평활 식} \quad\quad\quad  l_{t} &= \alpha y_{t} + (1-\alpha)l_{t-1},
+
+\end{aligned}
+\end{equation}
+</script></p>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> l_{t} </script>&#xB294; &#xC2DC;&#xAC04; <script type="math/tex; ">t</script>&#xC5D0;&#xC11C; &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xC218;&#xC900;&#xAC12;(&#xB610;&#xB294; &#xD3C9;&#xD65C;&#xD654;&#xB41C; &#xAC12;)&#xC774;&#xB2E4;. &#xC608;&#xCE21; &#xC2DD;&#xC740; <script type="math/tex; "> t+1 </script> &#xC2DC;&#xAC04;&#xC5D0;&#xC11C;&#xC758; &#xC608;&#xCE21;&#xAC12;&#xC774; &#xC2DC;&#xAC04; <script type="math/tex; ">t</script>&#xC5D0;&#xC11C;&#xC758; &#xCD94;&#xC815;&#xB41C; &#xC218;&#xC900;&#xC774;&#xB77C;&#xB294; &#xAC83;&#xC744; &#xBCF4;&#xC5EC;&#xC900;&#xB2E4;. &#xC218;&#xC900;&#xC5D0; &#xB300;&#xD55C; &#xD3C9;&#xD65C; &#xC2DD;&#xC740;(&#xBCF4;&#xD1B5; &#xC218;&#xC900; &#xC2DD;&#xC774;&#xB77C;&#xACE0; &#xBD80;&#xB974;&#xB294;) &#xAC01; &#xC2DC;&#xC810; <script type="math/tex; ">t</script>&#xC5D0;&#xC11C; &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xCD94;&#xC815;&#xB41C; &#xC218;&#xC900;&#xC744; &#xB098;&#xD0C0;&#xB0B8;&#xB2E4;. &#xC2DC;&#xAC04; <script type="math/tex; ">T</script>&#xC5D0; &#xB300;&#xD574; &#xC608;&#xCE21; &#xC2DD;&#xC744; &#xC801;&#xC6A9;&#xD55C; &#xAC83;&#xC740; <script type="math/tex; "> \hat{y}_{T+1|T}=l_{T} </script> &#xCD94;&#xC815;&#xB41C; &#xC218;&#xC900;&#xC758; &#xAC00;&#xC7A5; &#xCD5C;&#xADFC; &#xAC12;&#xC744; &#xB098;&#xD0C0;&#xB0B8;&#xB2E4;. &#xB9CC;&#xC57D;&#xC5D0; &#xD3C9;&#xD65C; &#xC2DD;&#xC5D0;&#xC11C; <script type="math/tex; ">l_{t}</script>&#xB97C; <script type="math/tex; "> \hat{y}_{t+1|t} </script>&#xB85C; <script type="math/tex; ">l_{t-1}</script>&#xC744; <script type="math/tex; ">\hat{y}_{t|t-1}</script>&#xB85C; &#xBC14;&#xAFB8;&#xBA74;, &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC758; &#xAC00;&#xC911; &#xD3C9;&#xADE0; &#xD615;&#xD0DC;&#xB97C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB2E4;.</p>
+<h3 id="&#xC624;&#xCC28;-&#xBCF4;&#xC815;-&#xD615;&#xD0DC;">&#xC624;&#xCC28; &#xBCF4;&#xC815; &#xD615;&#xD0DC;</h3>
+<p>&#xC624;&#xCC28; &#xBCF4;&#xC815; &#xD615;&#xD0DC;&#xB77C;&#xACE0; &#xBD80;&#xB974;&#xB294; &#xAC83;&#xC744; &#xC5BB;&#xAE30; &#xC704;&#xD574;, &#xC131;&#xBD84; &#xD615;&#xD0DC;&#xC5D0;&#xC11C; &#xC218;&#xC900; &#xC2DD;&#xC744; &#xC7AC;&#xBC30;&#xCE58;&#xD558;&#xC5EC; &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC758; &#xC138; &#xBC88;&#xC9F8; &#xD615;&#xD0DC;&#xB97C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB2E4;,</p>
+<p><script type="math/tex; ">
+\begin{align*}
+l_{t} & = l_{t-1} + \alpha ( y_{t} - l_{t-1} ) \\
+      & = l_{t-1} + \alpha e_{t}
+\end{align*}
+</script></p>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> t=1,\cdots,T </script>&#xC5D0; &#xB300;&#xD574; <script type="math/tex; "> e_{t} = y_{t} - l_{t-1} = y_{t} - \hat{y}_{t|t-1} </script>&#xC774;&#xB2E4;. &#xC989;, <script type="math/tex; "> e_{t} </script>&#xB294; &#xC2DC;&#xAC04; <script type="math/tex; ">t</script>&#xC5D0;&#xC11C; &#xD45C;&#xBCF8; &#xB0B4;&#xC758; &#xD55C; &#xB2E8;&#xACC4; &#xC608;&#xCE21; &#xC624;&#xCC28;&#xC774;&#xB2E4;.  <script type="math/tex; ">t=1,\cdots,T</script>&#xC5D0; &#xB300;&#xD55C; &#xD3C9;&#xD65C; &#xACFC;&#xC815;&#xC744; &#xD1B5;&#xD574;, &#xD45C;&#xBCF8; &#xB0B4; &#xC608;&#xCE21; &#xC624;&#xCC28;&#xC5D0;&#xC11C; &#xCD94;&#xC815;&#xB41C; &#xC218;&#xC900;&#xC758; &#xC218;&#xC815;/&#xBCF4;&#xC815;&#xC774; &#xC0DD;&#xAE34;&#xB2E4;. &#xC608;&#xB85C;, &#xB9CC;&#xC57D; &#xC2DC;&#xAC04; <script type="math/tex; ">t</script>&#xC5D0;&#xC11C; &#xC624;&#xCC28;&#xAC00; &#xC74C;&#xC218;&#xB77C;&#xBA74;, <script type="math/tex; "> \hat{y}_{t|t-1} > y_{t} </script>&#xC774;&#xACE0; <script type="math/tex; "> t-1 </script>&#xC5D0;&#xC11C;&#xC758; &#xC218;&#xC900;&#xC740; &#xACFC;&#xB300;&#xCD94;&#xC815;&#xB41C;&#xB2E4;. &#xADF8;&#xB7EC;&#xBA74; &#xC0C8;&#xB85C;&#xC6B4; &#xC218;&#xC900; <script type="math/tex; ">ㅣ_{t}</script>&#xB294; &#xC774;&#xC804; &#xC218;&#xC900; <script type="math/tex; "> l_{t-1} </script>&#xC5D0; &#xD558;&#xD5A5; &#xC801;&#xC751;&#xB41C;&#xB2E4;. <script type="math/tex; "> \alpha </script>&#xAC00; 1&#xC5D0; &#xAC00;&#xAE4C;&#xC6B8; &#xC218;&#xB85D; &#xB35C; &#xC815;&#xD655;&#xD55C; &#xC218;&#xC900; &#xCD94;&#xC815;&#xC774; &#xB41C;&#xB2E4;(&#xD070; &#xBCF4;&#xC815;&#xC774; &#xB4E4;&#xC5B4;&#xAC00;&#xBBC0;&#xB85C;). <script type="math/tex; "> \alpha </script>&#xAC00; &#xC791;&#xC744; &#xC218;&#xB85D; &#xC218;&#xC900;&#xAC12;&#xC740; &#xB354; &quot;&#xD3C9;&#xD65C;&#xD654;&quot;&#xB41C;&#xB2E4;(&#xC791;&#xC740; &#xBCF4;&#xC815;&#xC774; &#xB4E4;&#xC5B4;&#xAC00;&#xBBC0;&#xB85C;).</p>
+<h3 id="&#xB2E4;&#xCC44;-&#xC218;&#xD3C9;&#xC120;-&#xC608;&#xCE21;">&#xB2E4;&#xCC44; &#xC218;&#xD3C9;&#xC120; &#xC608;&#xCE21;</h3>
+<p>&#xC9C0;&#xAE08;&#xAE4C;&#xC9C0; &#xB2E8; &#xD55C; &#xB2E8;&#xACC4; &#xC55E;&#xB9CC; &#xC608;&#xCE21;&#xD558;&#xB294; &#xC2DD;&#xC744; &#xB2E4;&#xB8E8;&#xC5C8;&#xB2E4;. &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC740; &quot;&#xD3C9;&#xD3C9;&quot;&#xD55C; &#xC608;&#xCE21; &#xD568;&#xC218;&#xB97C; &#xAC16;&#xACE0;, &#xB354; &#xAE34; &#xC608;&#xCE21; &#xC218;&#xD3C9;&#xC120;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB294;,</p>
+<p><script type="math/tex; ">
+\hat{y}_{T+h|T} = \hat{y}_{T+1|T} = l_{T},  \qquad h=2,3,\cdots.
+</script></p>
+<p>&#xC704;&#xC640; &#xAC19;&#xC774; &#xC8FC;&#xC5B4;&#xC9C4;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xC608;&#xCE21;&#xC740; &#xC2DC;&#xACC4;&#xC5F4;&#xC5D0; &#xCD94;&#xC138;&#xB098; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC774; &#xC5C6;&#xC744; &#xB54C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xC0AC;&#xC2E4;&#xC744; &#xAE30;&#xC5B5;&#xD558;&#xC790;.</p>
+<h3 id="&#xCD08;&#xAE30;&#xD654;">&#xCD08;&#xAE30;&#xD654;</h3>
+<p>&#xBAA8;&#xB4E0; &#xC9C0;&#xC218; &#xD3C9;&#xD65C; &#xAE30;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB824;&#xBA74; &#xD3C9;&#xD65C; &#xACFC;&#xC815;&#xC744; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xB294; &#xC791;&#xC5C5;&#xC774; &#xD544;&#xC694;&#xD558;&#xB2E4;. &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC5D0; &#xB300;&#xD574;, &#xC2DD; 7.2&#xC758; &#xB9C8;&#xC9C0;&#xB9C9; &#xD56D;&#xC5D0; &#xB4E4;&#xC5B4;&#xAC00;&#xB294; &#xC218;&#xC900;&#xAC12; <script type="math/tex; "> l_{0} </script>&#xC5D0; &#xB300;&#xD55C; &#xCD08;&#xAE30;&#xAC12;&#xC744; &#xC815;&#xD558;&#xB294; &#xC791;&#xC5C5;&#xC774; &#xD544;&#xC694;&#xD558;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; <script type="math/tex; ">l_{0}</script>&#xC740; &#xD3C9;&#xD65C; &#xACFC;&#xC815;&#xC5D0; &#xC758;&#xD574; &#xC0DD;&#xC131;&#xB418;&#xB294; &#xBAA8;&#xB4E0; &#xC608;&#xCE21;&#xC5D0;&#xC11C; &#xC911;&#xC694;&#xD55C; &#xC5ED;&#xD560;&#xC744; &#xD55C;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; <script type="math/tex; ">l_{0}</script>&#xC5D0; &#xBD99;&#xB294; &#xAC00;&#xC911;&#xCE58;&#xB294; &#xC791;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC;, <script type="math/tex; ">\alpha</script>&#xAC00; &#xC791;&#xACE0;/&#xC791;&#xAC70;&#xB098; &#xC2DC;&#xACC4;&#xC5F4;&#xC774; &#xC0C1;&#xB300;&#xC801;&#xC73C;&#xB85C; &#xC791;&#xC740; &#xACBD;&#xC6B0;&#xC5D0;, &#xAC00;&#xC911;&#xCE58;&#xB294; &#xC608;&#xCE21; &#xACB0;&#xACFC;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xC8FC;&#xAE30;&#xC5D0; &#xCDA9;&#xBD84;&#xD788; &#xD074; &#xC218; &#xC788;&#xB2E4;. &#xB530;&#xB77C;&#xC11C;, &#xCD08;&#xAE30;&#xAC12;&#xC744; &#xC801;&#xC808;&#xD558;&#xAC8C; &#xC120;&#xD0DD;&#xD558;&#xB294; &#xAC83;&#xC740; &#xAF64; &#xC911;&#xC694;&#xD560; &#xC218; &#xC788;&#xB2E4;. &#xD754;&#xD788; <script type="math/tex; "> l_{0} = y_{1} </script>&#xB85C; &#xB454;&#xB2E4;(<script type="math/tex; "> l_{0}=\hat{y}_{1|0} </script>).</p>
+<p>&#xCD94;&#xC138;&#xC640; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xB3C4; &#xC788;&#xB294; &#xB2E4;&#xB978; &#xC9C0;&#xC218; &#xD3C9;&#xD65C; &#xAE30;&#xBC95;&#xB3C4; &#xC774;&#xB7EC;&#xD55C; &#xC131;&#xBD84;&#xC5D0; &#xB300;&#xD55C; &#xCD08;&#xAE30;&#xAC12;&#xC774; &#xD544;&#xC694;&#xD558;&#xB2E4;. &#xD45C; 7.9&#xC5D0; &#xCD08;&#xAE30;&#xAC12;&#xC744; &#xC120;&#xD0DD;&#xD558;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC804;&#xB7B5;&#xC744; &#xC815;&#xB9AC;&#xD558;&#xC600;&#xB2E4;.</p>
+<p><script type="math/tex; ">l_{0}</script> &#xAC12;&#xC744; &#xCD94;&#xC815;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC5B4;&#xB5A4; &#xAC12;&#xC73C;&#xB85C; &#xC815;&#xD558;&#xB294; &#xB300;&#xC2E0; &#xCD5C;&#xC801;&#xD654;&#xD558;&#xB294; &#xAC83;&#xB3C4; &#xB610; &#xD558;&#xB098;&#xC758; &#xBC29;&#xBC95;&#xC774;&#xB2E4;(&#xC544;&#xB798;&#xB97C; &#xBCF4;&#xB77C;). &#xCD5C;&#xC801;&#xD654;&#xD558;&#xB354;&#xB77C;&#xB3C4;, &#xC801;&#xC808;&#xD558;&#xAC8C; &#xCD08;&#xAE30;&#xAC12;&#xC744; &#xC120;&#xD0DD;&#xD558;&#xBA74; &#xBE60;&#xB974;&#xAC8C; &#xCD5C;&#xC801;&#xD654;&#xD558;&#xAC70;&#xB098; &#xCD5C;&#xC801;&#xD654; &#xACB0;&#xACFC;&#xC758; &#xC815;&#xD655;&#xB3C4;&#xC5D0; &#xB3C4;&#xC6C0;&#xC774; &#xB420; &#xC218; &#xC788;&#xB2E4;.</p>
+<h3 id="&#xCD5C;&#xC801;&#xD654;">&#xCD5C;&#xC801;&#xD654;</h3>
+<p>&#xBAA8;&#xB4E0; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xBC95;&#xC5D0; &#xB300;&#xD574;, &#xD3C9;&#xD65C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC5D0; &#xB300;&#xD55C; &#xAC12;&#xC744; &#xC120;&#xD0DD;&#xD558;&#xB294; &#xAC83;&#xB3C4; &#xD544;&#xC694;&#xD558;&#xB2E4;. &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC758; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xB2E8; &#xD558;&#xB098;&#xC758; &#xD3C9;&#xD638;&#xB77C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;(<script type="math/tex; ">\alpha</script>)&#xB9CC; &#xC788;&#xC9C0;&#xB9CC;, &#xB2E4;&#xC74C;&#xC5D0; &#xC18C;&#xAC1C;&#xD558;&#xB294; &#xAE30;&#xBC95;&#xC5D0;&#xB294; &#xBCF4;&#xD1B5; &#xD558;&#xB098; &#xC774;&#xC0C1;&#xC758; &#xD3C9;&#xD65C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xAC00; &#xC788;&#xB2E4;.</p>
+<p>&#xD3C9;&#xD65C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; &#xC8FC;&#xAD00;&#xC801;&#xC73C;&#xB85C; &#xC120;&#xD0DD;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;, &#xC608;&#xCE21;&#xD558;&#xB294; &#xC0AC;&#xB78C;&#xC774; &#xC774;&#xC804;&#xC758; &#xACBD;&#xD5D8;&#xC5D0; &#xADFC;&#xAC70;&#xD558;&#xC5EC; &#xD3C9;&#xD65C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xAC12;&#xC744; &#xC815;&#xD55C;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC;, &#xAD00;&#xCE21; &#xB370;&#xC774;&#xD130;&#xC5D0;&#xC11C; &#xCD94;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC5B4;&#xB5A0;&#xD55C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C; &#xAE30;&#xBC95;&#xB3C4; &#xD3EC;&#xD568;&#xD558;&#xC5EC; &#xC54C;&#xB824;&#xC9C0;&#xC9C0; &#xC54A;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xAC12;&#xC744; &#xC5BB;&#xC744; &#xB54C; &#xB354; &#xC548;&#xC804;&#xD558;&#xACE0; &#xAC1D;&#xAD00;&#xC801;&#xC774;&#xB2E4;.</p>
+<p>4.2&#xC808;&#xC5D0;&#xC11C; &#xC81C;&#xACF1;&#xC624;&#xCC28;&#xD569;(SSE)&#xC744; &#xCD5C;&#xC18C;&#xD654;&#xD558;&#xC5EC; &#xD68C;&#xADC0; &#xBAA8;&#xB378;&#xC758; &#xACC4;&#xC218;&#xB97C; &#xCD94;&#xC815;&#xD558;&#xC600;&#xB2E4;. &#xBE44;&#xC2B7;&#xD558;&#xAC8C;, SSE&#xB97C; &#xCD5C;&#xC18C;&#xD654;&#xD558;&#xC5EC; &#xC5B4;&#xB5A4; &#xC9C0;&#xC218; &#xD3C9;&#xD65C; &#xAE30;&#xBC95;&#xC5D0; &#xB300;&#xD574; &#xC54C;&#xB824;&#xC9C0;&#xC9C0; &#xC54A;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB4E4;&#xACFC; &#xCD08;&#xAE30;&#xAC12;&#xC744; &#xAD6C;&#xD560; &#xC218; &#xC788;&#xB2E4;. <script type="math/tex; "> t=1, \cdots, T </script>&#xC5D0; &#xB300;&#xD574; &#xC624;&#xCC28;&#xB97C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC4F8; &#xC218; &#xC788;&#xB2E4;. <script type="math/tex; "> e_{t} = y_{t} - \hat{y}_{t|t-1} </script> (&#xD55C; &#xB2E8;&#xACC4; &#xC55E; &#xD45C;&#xBCF8; &#xB0B4; &#xC608;&#xCE21; &#xC624;&#xCC28;). &#xB530;&#xB77C;&#xC11C; SSE&#xB97C; &#xCD5C;&#xC18C;&#xD654;&#xD558;&#xB294; &#xC54C;&#xB824;&#xC9C0;&#xC9C0; &#xC54A;&#xC740; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xCD08;&#xAE30;&#xAC12;&#xC744; &#xCC3E;&#xB294;&#xB2E4;. &#xC5EC;&#xAE30;&#xC5D0;&#xC11C; SSE&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC8FC;&#xC5B4;&#xC9C4;&#xB2E4;.</p>
+<p><script type="math/tex; ">
+SSE = \sum_{t=1}^{T} \left( y_{t} - \hat{y}_{t|t-1} \right)^{2} = \sum_{t=1}^{T} e_{t}^{2}. \qquad (7.3)
+</script></p>
+<p>&#xD68C;&#xADC0; &#xBAA8;&#xB378; &#xACBD;&#xC6B0;(SSE&#xB97C; &#xCD5C;&#xC18C;&#xD654;&#xD558;&#xB294; &#xD68C;&#xADC0; &#xACC4;&#xC218;&#xAC12;&#xC744; &#xB3CC;&#xB824; &#xBC1B;&#xB294; &#xACF5;&#xC2DD;&#xC774; &#xC788;&#xB294;)&#xC640;&#xB294; &#xB2E4;&#xB974;&#xAC8C;, &#xC774; &#xACBD;&#xC6B0;&#xB294; &#xBE44;&#xC120;&#xD615; &#xCD5C;&#xC18C;&#xD654; &#xBB38;&#xC81C;&#xC774;&#xACE0; &#xCD5C;&#xC18C;&#xD654;&#xD558;&#xAE30; &#xC704;&#xD574; &#xCD5C;&#xC801;&#xD654; &#xB3C4;&#xAD6C;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.</p>
+<h3 id="&#xC608;&#xC81C;-71-&#xC6D0;&#xC720;-&#xC0DD;&#xC0B0;&#xB7C9;">&#xC608;&#xC81C; 7.1 &#xC6D0;&#xC720; &#xC0DD;&#xC0B0;&#xB7C9;</h3>
+<p><img src="https://www.otexts.org/sites/default/files/resize/fpp/images/fig_7_ses-570x346.png" alt=""></p>
+<p>&#xADF8;&#xB9BC; 7.2: &#xC0AC;&#xC6B0;&#xB514; &#xC544;&#xB77C;&#xBE44;&#xC544;&#xC758; &#xC6D0;&#xC720; &#xC0DD;&#xC0B0;&#xB7C9;&#xC5D0; &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC744; &#xC801;&#xC6A9;&#xD55C; &#xAC83;(1996-2007).</p>
+<pre><code class="lang-R">fit1 &lt;- ses(oildata, alpha=<span class="hljs-number">0.2</span>, initial=<span class="hljs-string">&quot;simple&quot;</span>, h=<span class="hljs-number">3</span>)
+fit2 &lt;- ses(oildata, alpha=<span class="hljs-number">0.6</span>, initial=<span class="hljs-string">&quot;simple&quot;</span>, h=<span class="hljs-number">3</span>)
+fit3 &lt;- ses(oildata, h=<span class="hljs-number">3</span>)
+
+plot(fit1, plot.conf=<span class="hljs-literal">FALSE</span>, ylab=<span class="hljs-string">&quot;Oil (millions of tonnes)&quot;</span>,
+  xlab=<span class="hljs-string">&quot;Year&quot;</span>, main=<span class="hljs-string">&quot;&quot;</span>, fcol=<span class="hljs-string">&quot;white&quot;</span>, type=<span class="hljs-string">&quot;o&quot;</span>)
+
+lines(fitted(fit1), col=<span class="hljs-string">&quot;blue&quot;</span>, type=<span class="hljs-string">&quot;o&quot;</span>)
+lines(fitted(fit2), col=<span class="hljs-string">&quot;red&quot;</span>, type=<span class="hljs-string">&quot;o&quot;</span>)
+lines(fitted(fit3), col=<span class="hljs-string">&quot;green&quot;</span>, type=<span class="hljs-string">&quot;o&quot;</span>)
+
+lines(fit1$mean, col=<span class="hljs-string">&quot;blue&quot;</span>, type=<span class="hljs-string">&quot;o&quot;</span>)
+lines(fit2$mean, col=<span class="hljs-string">&quot;red&quot;</span>, type=<span class="hljs-string">&quot;o&quot;</span>)
+lines(fit3$mean, col=<span class="hljs-string">&quot;green&quot;</span>, type=<span class="hljs-string">&quot;o&quot;</span>)
+
+legend(<span class="hljs-string">&quot;topleft&quot;</span>,lty=<span class="hljs-number">1</span>, col=c(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;blue&quot;</span>,<span class="hljs-string">&quot;red&quot;</span>,<span class="hljs-string">&quot;green&quot;</span>), 
+  c(<span class="hljs-string">&quot;data&quot;</span>, expression(alpha == <span class="hljs-number">0.2</span>), expression(alpha == <span class="hljs-number">0.6</span>),
+  expression(alpha == <span class="hljs-number">0.89</span>)),pch=<span class="hljs-number">1</span>)
+</code></pre>
+<p>&#xC774; &#xC608;&#xC81C;&#xC5D0;&#xC11C;, &#xC0AC;&#xC6B0;&#xB514; &#xC544;&#xB77C;&#xBE44;&#xC544;&#xC758; &#xC6D0;&#xC720; &#xC0DD;&#xC0B0;&#xB7C9;&#xC744; &#xC608;&#xCE21;&#xD558;&#xAE30; &#xC704;&#xD574; &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC744; &#xC801;&#xC6A9;&#xD558;&#xC600;&#xB2E4;. &#xADF8;&#xB9BC; 7.2&#xC758; &#xAC80;&#xC740; &#xC120;&#xC740; 1996&#xB144;&#xBD80;&#xD130; 2007&#xB144;&#xAE4C;&#xC9C0; &#xB370;&#xC774;&#xD130;&#xB97C; &#xB098;&#xD0C0;&#xB0B8; &#xAC83;&#xC774;&#xB2E4;. &#xC2DC;&#xAC04;&#xC5D0; &#xB530;&#xB77C; &#xBCC0;&#xD654;&#xB294; &#xC788;&#xC9C0;&#xB9CC; &#xBD84;&#xBA85;&#xD55C; &#xCD94;&#xC138;&#xB294; &#xC5C6;&#xB2E4;.</p>
+<p>&#xD45C; 7.2&#xB294; &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC744; &#xC801;&#xC6A9;&#xD55C; &#xACB0;&#xACFC;&#xC774;&#xB2E4;. &#xB9C8;&#xC9C0;&#xB9C9; 3&#xAC1C;&#xC758; &#xC5F4;&#xC740; <script type="math/tex; ">t=0</script>&#xBD80;&#xD130; <script type="math/tex; ">t=12</script>&#xAE4C;&#xC9C0; &#xCD94;&#xC815;&#xB41C; &#xC218;&#xC900;&#xACFC; 3&#xAC1C;&#xC758; &#xC11C;&#xB85C; &#xB2E4;&#xB978; <script type="math/tex; ">\alpha</script>&#xC5D0; &#xB300;&#xD574; <script type="math/tex; ">h=1,2,3</script>&#xC5D0; &#xB300;&#xD55C; &#xC608;&#xCE21;&#xC744; &#xB098;&#xD0C0;&#xB0B8;&#xB2E4;. &#xCCAB; &#xB450; &#xC5F4;&#xC740; &#xD3C9;&#xD65C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; <script type="math/tex; ">\alpha</script>&#xB97C; &#xAC01;&#xAC01; 0.2&#xC640; 0.6&#xB85C; &#xC815;&#xD558;&#xACE0; &#xB450; &#xACBD;&#xC6B0; &#xBAA8;&#xB450; &#xCD08;&#xAE30; &#xC218;&#xC900; <script type="math/tex; ">l_{0}</script>&#xC744; <script type="math/tex; ">y_{1}</script>&#xB85C; &#xC815;&#xD55C; &#xAC83;&#xC774;&#xB2E4;. &#xC138; &#xBC88;&#xC9F8; &#xC5F4;&#xC5D0;&#xC11C; &#xD3C9;&#xD65C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC640; &#xCD08;&#xAE30; &#xC218;&#xC900;&#xC744; &#xCD94;&#xC815;&#xD558;&#xC600;&#xB2E4;. &#xCD5C;&#xC801;&#xD654; &#xB3C4;&#xAD6C;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC;, <script type="math/tex; ">0 \le \alpha \le 1</script> &#xC870;&#xAC74;&#xC5D0;&#xC11C; SSE&#xB97C; &#xCD5C;&#xC18C;&#xD654;&#xD558;&#xB294; <script type="math/tex; ">\alpha</script>&#xC640; <script type="math/tex; ">l_{0}</script> &#xAC12;&#xC744; &#xCC3E;&#xB294;&#xB2E4;. &#xD45C;&#xC758; &#xB9C8;&#xC9C0;&#xB9C9; &#xD589;&#xC5D0; &#xB098;&#xD0C0;&#xB0B8; &#xCD94;&#xCCAD;&#xB41C; <script type="math/tex; ">\alpha</script>&#xC640; <script type="math/tex; ">l_{0}</script>&#xC5D0; &#xB300;&#xD55C; SSE &#xAC12;&#xC740; &#xB2E4;&#xB978; <script type="math/tex; ">\alpha</script>&#xC640; <script type="math/tex; ">l_{0}</script>&#xC5D0; &#xB300;&#xD55C; &#xB2E4;&#xB978; &#xAC12;&#xBCF4;&#xB2E4; &#xC791;&#xB2E4;&#xB294; &#xAC83;&#xC5D0; &#xC8FC;&#xBAA9;&#xD558;&#xC790;.</p>
+<table>
+<thead>
+<tr>
+<th>&#xC5F0;&#xB3C4;</th>
+<th>&#xC2DC;&#xAE30; <script type="math/tex; ">t</script></th>
+<th>&#xAD00;&#xCE21;&#xAC12; <script type="math/tex; ">y_{t}</script></th>
+<th>&#xC218;&#xC900; <script type="math/tex; ">l_{t}</script> <script type="math/tex; ">\alpha=0.2</script></th>
+<th>&#xC218;&#xC900; <script type="math/tex; ">l_{t}</script> <script type="math/tex; ">\alpha=0.6</script></th>
+<th>&#xC218;&#xC900; <script type="math/tex; ">l_{t}</script> <script type="math/tex; ">\alpha=0.89^{*}</script></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--</td>
+<td>0</td>
+<td>--</td>
+<td>446.7</td>
+<td>446.7</td>
+<td>447.5</td>
+</tr>
+<tr>
+<td>1996</td>
+<td>1</td>
+<td>446.7</td>
+<td>446.7</td>
+<td>446.7</td>
+<td>446.7</td>
+</tr>
+<tr>
+<td>1997</td>
+<td>2</td>
+<td>454.5</td>
+<td>448.2</td>
+<td>451.3</td>
+<td>453.6</td>
+</tr>
+<tr>
+<td>1998</td>
+<td>3</td>
+<td>455.7</td>
+<td>449.7</td>
+<td>453.9</td>
+<td>455.4</td>
+</tr>
+<tr>
+<td>1999</td>
+<td>4</td>
+<td>423.6</td>
+<td>444.5</td>
+<td>435.8</td>
+<td>427.1</td>
+</tr>
+<tr>
+<td>2000</td>
+<td>5</td>
+<td>456.3</td>
+<td>446.8</td>
+<td>448.1</td>
+<td>453.1</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>6</td>
+<td>440.6</td>
+<td>445.6</td>
+<td>443.6</td>
+<td>441.9</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>7</td>
+<td>425.3</td>
+<td>441.5</td>
+<td>432.6</td>
+<td>427.1</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>8</td>
+<td>485.1</td>
+<td>450.3</td>
+<td>464.1</td>
+<td>478.9</td>
+</tr>
+<tr>
+<td>2004</td>
+<td>9</td>
+<td>506.0</td>
+<td>461.4</td>
+<td>489.3</td>
+<td>503.1</td>
+</tr>
+<tr>
+<td>2005</td>
+<td>10</td>
+<td>526.8</td>
+<td>474.5</td>
+<td>511.8</td>
+<td>524.2</td>
+</tr>
+<tr>
+<td>2006</td>
+<td>11</td>
+<td>514.3</td>
+<td>482.5</td>
+<td>513.3</td>
+<td>515.3</td>
+</tr>
+<tr>
+<td>2007</td>
+<td>12</td>
+<td>494.2</td>
+<td>484.8</td>
+<td>501.8</td>
+<td>496.5</td>
+</tr>
+<tr>
+<td></td>
+<td><script type="math/tex; ">h</script></td>
+<td></td>
+<td>&#xC608;&#xCE21;&#xCE58; <script type="math/tex; ">\hat{y}_{T+h \vert T}</script></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2008</td>
+<td>1</td>
+<td>--</td>
+<td>484.8</td>
+<td>501.8</td>
+<td>496.5</td>
+</tr>
+<tr>
+<td>2009</td>
+<td>2</td>
+<td>--</td>
+<td>484.8</td>
+<td>501.8</td>
+<td>496.5</td>
+</tr>
+<tr>
+<td>2010</td>
+<td>3</td>
+<td>--</td>
+<td>484.8</td>
+<td>501.8</td>
+<td>496.5</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MAE</td>
+<td></td>
+<td></td>
+<td>24.7</td>
+<td>20.2</td>
+<td>20.1</td>
+</tr>
+<tr>
+<td>RMSE</td>
+<td></td>
+<td></td>
+<td>32.1</td>
+<td>26.0</td>
+<td>25.1</td>
+</tr>
+<tr>
+<td>MAPE</td>
+<td></td>
+<td></td>
+<td>5.1</td>
+<td>4.2</td>
+<td>4.3</td>
+</tr>
+<tr>
+<td>SSE</td>
+<td></td>
+<td></td>
+<td>12391.7</td>
+<td>8098.6</td>
+<td>7573.4</td>
+</tr>
+</tbody>
+</table>
+<p>&#xD45C; 7.2: &#xC138; &#xAC1C;&#xC758; &#xC11C;&#xB85C; &#xB2E4;&#xB978; &#xD3C9;&#xD65C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; <script type="math/tex; ">\alpha</script>&#xC5D0; &#xB300;&#xD574; &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC0AC;&#xC6B0;&#xB514; &#xC544;&#xB77C;&#xBE44;&#xC544; &#xC804;&#xCCB4; &#xC6D0;&#xC720; &#xC0DD;&#xC0B0;&#xB7C9; &#xBC31;&#xB9CC; &#xD1A4; &#xB2E8;&#xC704; &#xC608;&#xCE21;&#xD55C; &#xACB0;&#xACFC;.</p>
+<p>*<script type="math/tex; "> \alpha=0.89 </script>&#xC640; <script type="math/tex; ">l_{0}=447.5</script>&#xB294; <script type="math/tex; ">t=1,2,\cdots,12</script>&#xC5D0; &#xB300;&#xD574; SSE&#xB97C; &#xCD5C;&#xC18C;&#xD654;&#xD558;&#xC5EC; &#xC5BB;&#xC740; &#xAC12;&#xC774;&#xB2E4;.</p>
+<p>2008&#xB144;&#xBD80;&#xD130; 2010&#xB144;&#xAE4C;&#xC9C0;&#xC758; &#xAE30;&#xAC04;&#xC5D0; &#xB300;&#xD574; &#xC138; &#xAC00;&#xC9C0; &#xC11C;&#xB85C; &#xB2E4;&#xB978; &#xC608;&#xCE21;&#xC744; &#xADF8;&#xB9BC; 7.2&#xC5D0; &#xB098;&#xD0C0;&#xB0B4;&#xC5C8;&#xB2E4;. 1996&#xB144;&#xBD80;&#xD130; 1997&#xB144; &#xAE30;&#xAC04;&#xC5D0; &#xB300;&#xD574; &#xD55C; &#xB2E8;&#xACC4; &#xC55E; &#xD45C;&#xBCF8; &#xB0B4; &#xC608;&#xCE21;&#xB3C4; &#xB370;&#xC774;&#xD130; &#xC606;&#xC5D0; &#xB098;&#xD0C0;&#xB0B4;&#xC5C8;&#xB2E4;. &#xD3C9;&#xD65C; &#xACFC;&#xC815;&#xC5D0;&#xC11C; <script type="math/tex; ">\alpha</script>&#xC758; &#xC601;&#xD5A5;&#xC774; &#xBD84;&#xBA85;&#xD558;&#xAC8C; &#xBCF4;&#xC778;&#xB2E4;. <script type="math/tex; ">\alpha</script>&#xAC00; &#xD074; &#xC218;&#xB85D; &#xC774;&#xC804; &#xB370;&#xC774;&#xD130; &#xBC29;&#xD5A5;&#xC73C;&#xB85C; &#xB354; &#xD070; &#xC870;&#xC815;&#xC774; &#xC77C;&#xC5B4;&#xB09C;&#xB2E4;. <script type="math/tex; ">\alpha</script>&#xAC00; &#xC791;&#xC744; &#xC218;&#xB85D; &#xC870;&#xC815;&#xB7C9;&#xC774; &#xC791;&#xACE0; &#xD55C; &#xB2E8;&#xACC4; &#xD45C;&#xBCF8; &#xB0B4; &#xC608;&#xCE21;&#xC758; &#xC2DC;&#xACC4;&#xC5F4;&#xC774; &#xB354; &#xB9E4;&#xB044;&#xB7FD;&#xB2E4;.</p>
+
                                 
                                 </section>
                             
@@ -331,10 +776,14 @@
 
             
                 
-                <a href="fpp-kr-7.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 7">
+                <a href="fpp-kr-7.html" class="navigation navigation-prev " aria-label="Previous page: 7 지수 평활">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="fpp-kr-7-2.html" class="navigation navigation-next " aria-label="Next page: 7.2 Holt의 선형 추세 기법">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -343,7 +792,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"7.1 ","level":"1.3.1","depth":2,"previous":{"title":"7","level":"1.3","depth":1,"path":"doc/fpp-kr-7.md","ref":"doc/fpp-kr-7.md","articles":[{"title":"7.1 ","level":"1.3.1","depth":2,"path":"doc/fpp-kr-7-1.md","ref":"doc/fpp-kr-7-1.md","articles":[]}]},"dir":"neutral"},"config":{"plugins":["mathjax","comment","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"fpp-kr","gitbook":"3.x.x","description":"Translation"},"file":{"path":"doc/fpp-kr-7-1.md","mtime":"2017-01-06T10:56:20.302Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-06T13:11:29.247Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"7.1 단순 지수 평활","level":"1.3.1","depth":2,"next":{"title":"7.2 Holt의 선형 추세 기법","level":"1.3.2","depth":2,"path":"doc/fpp-kr-7-2.md","ref":"doc/fpp-kr-7-2.md","articles":[]},"previous":{"title":"7 지수 평활","level":"1.3","depth":1,"path":"doc/fpp-kr-7.md","ref":"doc/fpp-kr-7.md","articles":[{"title":"7.1 단순 지수 평활","level":"1.3.1","depth":2,"path":"doc/fpp-kr-7-1.md","ref":"doc/fpp-kr-7-1.md","articles":[]},{"title":"7.2 Holt의 선형 추세 기법","level":"1.3.2","depth":2,"path":"doc/fpp-kr-7-2.md","ref":"doc/fpp-kr-7-2.md","articles":[]},{"title":"7.3 지수 추세 기법","level":"1.3.3","depth":2,"path":"doc/fpp-kr-7-3.md","ref":"doc/fpp-kr-7-3.md","articles":[]},{"title":"7.4 감쇠 추세 기법","level":"1.3.4","depth":2,"path":"doc/fpp-kr-7-4.md","ref":"doc/fpp-kr-7-4.md","articles":[]},{"title":"7.5 Holt-Winters 계절적인 기법","level":"1.3.5","depth":2,"path":"doc/fpp-kr-7-5.md","ref":"doc/fpp-kr-7-5.md","articles":[]},{"title":"7.6 지수 평활 기법 분류","level":"1.3.6","depth":2,"path":"doc/fpp-kr-7-6.md","ref":"doc/fpp-kr-7-6.md","articles":[]},{"title":"7.7 지수 평활에 대한 혁신 상태 공간 모델","level":"1.3.7","depth":2,"path":"doc/fpp-kr-7-7.md","ref":"doc/fpp-kr-7-7.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["mathjax","comment","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"fpp-kr","gitbook":"3.x.x","description":"Translation"},"file":{"path":"doc/fpp-kr-7-1.md","mtime":"2017-01-11T11:37:48.179Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-11T12:41:12.311Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

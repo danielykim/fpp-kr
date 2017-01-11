@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>7 지수 평활 · fpp-kr</title>
+        <title>7.6 지수 평활 기법 분류 · fpp-kr</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="fpp-kr-7-1.html" />
+    <link rel="next" href="fpp-kr-7-7.html" />
     
     
-    <link rel="prev" href="fpp-kr-6-8.md" />
+    <link rel="prev" href="fpp-kr-7-5.html" />
     
 
     </head>
@@ -229,7 +229,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="fpp-kr-7.html">
+        <li class="chapter " data-level="1.3" data-path="fpp-kr-7.html">
             
                 <a href="fpp-kr-7.html">
             
@@ -308,7 +308,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="fpp-kr-7-6.html">
+        <li class="chapter active" data-level="1.3.6" data-path="fpp-kr-7-6.html">
             
                 <a href="fpp-kr-7-6.html">
             
@@ -369,7 +369,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >7 지수 평활</a>
+        <a href=".." >7.6 지수 평활 기법 분류</a>
     </h1>
 </div>
 
@@ -384,19 +384,158 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="7-&#xC9C0;&#xC218;-&#xD3C9;&#xD65C;">7 &#xC9C0;&#xC218; &#xD3C9;&#xD65C;</h2>
-<p>&#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC740; 1950&#xB144;&#xB300; &#xD6C4;&#xBC18;&#xC5D0; &#xB4F1;&#xC7A5;&#xD588;&#xACE0;(Brown 1959, Holt 1957 &#xADF8;&#xB9AC;&#xACE0; Winters 1960 &#xB4F1;&#xC774; &#xC120;&#xAD6C;&#xC801;&#xC778; &#xC5ED;&#xD560;&#xC744; &#xD558;&#xC600;&#xB2E4;), &#xBA87; &#xAC00;&#xC9C0; &#xAC00;&#xC7A5; &#xC131;&#xACF5;&#xC801;&#xC778; &#xC608;&#xCE21; &#xAE30;&#xBC95;&#xC5D0; &#xC601;&#xAC10;&#xC744; &#xC8FC;&#xC5C8;&#xB2E4;. &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC744; &#xC0AC;&#xC6A9;&#xD55C; &#xC608;&#xCE21;&#xC740; &#xACFC;&#xAC70; &#xAD00;&#xCE21;&#xAC12;&#xC758; &#xAC00;&#xC911; &#xD3C9;&#xADE0;&#xC774;&#xB2E4;. &#xC5EC;&#xAE30;&#xC5D0;&#xC11C; &#xAC00;&#xC911;&#xCE58;&#xB294; &#xAD00;&#xCE21;&#xAC12;&#xC774; &#xC624;&#xB798;&#xB420; &#xC218;&#xB85D; &#xC9C0;&#xC218;&#xC801;&#xC73C;&#xB85C; &#xAC10;&#xC18C;&#xD55C;&#xB2E4;. &#xB2E4;&#xB974;&#xAC8C; &#xB9D0;&#xD558;&#xBA74;, &#xAC00;&#xC7A5; &#xCD5C;&#xADFC; &#xAD00;&#xCE21;&#xAC12;&#xC774; &#xAC00;&#xC7A5; &#xB192;&#xC740; &#xAC00;&#xC911;&#xCE58;&#xB97C; &#xAC16;&#xB294;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xBC29;&#xC2DD;&#xC740; &#xB2E4;&#xC591;&#xD55C; &#xC885;&#xB958;&#xC758; &#xC2DC;&#xACC4;&#xC5F4;&#xC5D0;&#xC11C; &#xC2E0;&#xB8B0;&#xD560;&#xB9CC;&#xD55C; &#xC608;&#xCE21; &#xC791;&#xC5C5;&#xC744; &#xBE60;&#xB974;&#xAC8C; &#xC218;&#xD589;&#xD560; &#xC218; &#xC788;&#xB2E4;. &#xC774;&#xB294; &#xC0B0;&#xC5C5; &#xBD84;&#xC57C;&#xC5D0; &#xC751;&#xC6A9;&#xD560; &#xB54C; &#xC544;&#xC8FC; &#xC911;&#xC694;&#xD55C; &#xC7A5;&#xC810;&#xC774;&#xB2E4;.</p>
-<p>&#xC774; &#xC7A5;&#xC740; &#xB450; &#xBD80;&#xBD84;&#xC73C;&#xB85C; &#xAD6C;&#xC131;&#xB41C;&#xB2E4;. &#xCCAB; &#xBC88;&#xC9F8; &#xBD80;&#xBD84;&#xC5D0;&#xC11C;&#xB294; &#xBAA8;&#xB4E0; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xBC95;&#xC758; &#xAD6C;&#xCCB4;&#xC801;&#xC778; &#xC791;&#xB3D9; &#xBC29;&#xC2DD;&#xACFC; &#xB2E4;&#xC591;&#xD55C; &#xD2B9;&#xC131;&#xC744; &#xAC00;&#xC9C0;&#xB294; &#xC2DC;&#xACC4;&#xC5F4;&#xC744; &#xC608;&#xCE21;&#xD560; &#xB54C; &#xC751;&#xC6A9;&#xD558;&#xB294; &#xBC95;&#xC744; &#xB2E4;&#xB8EC;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xAE30;&#xBC95;&#xC5D0; &#xC228;&#xC5B4;&#xC788;&#xB294; &#xC9C1;&#xAD00;&#xC744; &#xC774;&#xD574;&#xD560; &#xB54C; &#xC774; &#xBD80;&#xBD84;&#xC774; &#xD575;&#xC2EC;&#xC774;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xC124;&#xC815;&#xC5D0;&#xC11C;, &#xC608;&#xCE21; &#xAE30;&#xBC95;&#xC744; &#xC120;&#xD0DD;&#xD558;&#xACE0; &#xC815;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC5B4;&#xCA4C;&#xBA74; &#xC989;&#xD765;&#xC801;&#xC778; &#xAC83;&#xCC98;&#xB7FC; &#xBCF4;&#xC77C; &#xC218;&#xB3C4; &#xC788;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C;&#xB294; &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xD575;&#xC2EC; &#xC131;&#xBD84;(&#xCD94;&#xC138;&#xC640; &#xACC4;&#xC808;&#xC131;)&#xACFC; &#xC774;&#xB7EC;&#xD55C; &#xC131;&#xBD84;&#xC774; &#xD3C9;&#xD65C;&#xBC95;&#xC5D0; (&#xB367;&#xC148; &#xB610;&#xB294; &#xACF1;&#xC148; &#xBC29;&#xC2DD;&#xC774;&#xB77C;&#xB294; &#xCE21;&#xBA74;&#xC5D0;&#xC11C;) &#xC5B4;&#xB5BB;&#xAC8C; &#xB4E4;&#xC5B4;&#xAC08; &#xC9C0; &#xAC10;&#xC9C0;&#xD558;&#xC5EC; &#xAE30;&#xBC95;&#xC744; &#xC120;&#xD0DD;&#xD55C;&#xB2E4;.</p>
-<p>&#xC774; &#xC7A5;&#xC758; &#xB450; &#xBC88;&#xC9F8; &#xBD80;&#xBD84;&#xC5D0;&#xC11C;&#xB294; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xBC95;&#xC758; &#xADFC;&#xAC04;&#xC744; &#xC774;&#xB8E8;&#xB294; &#xD1B5;&#xACC4;&#xC801;&#xC778; &#xBAA8;&#xB378;&#xC744; &#xB2E4;&#xB8EC;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xBAA8;&#xB378;&#xC740; &#xC774; &#xC7A5;&#xC758; &#xCCAB; &#xBC88;&#xC9F8; &#xBD80;&#xBD84;&#xC5D0;&#xC11C; &#xC774;&#xC57C;&#xAE30;&#xD588;&#xB358; &#xC608;&#xCE21; &#xBC29;&#xC2DD;&#xACFC; &#xAC19;&#xC9C0;&#xB9CC;, &#xC608;&#xCE21; &#xAD6C;&#xAC04;&#xB3C4; &#xC0DD;&#xC131;&#xD55C;&#xB2E4;. &#xB354;&#xC6B1;&#xC774;, &#xC774;&#xB7EC;&#xD55C; &#xD1B5;&#xACC4;&#xC801;&#xC778; &#xBC29;&#xC2DD;&#xC740; &#xD6C4;&#xBCF4; &#xBAA8;&#xB378; &#xC911;&#xC5D0;&#xC11C; &#xC801;&#xC808;&#xD55C; &#xBAA8;&#xB378;&#xC744; &#xACE0;&#xB97C; &#xB54C; &#xC4F8;&#xBAA8; &#xC788;&#xB2E4;.</p>
-<p>7.1 &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;
-7.2 Holt&#xC758; &#xC120;&#xD615; &#xCD94;&#xC138; &#xAE30;&#xBC95;
-7.3 &#xC9C0;&#xC218; &#xCD94;&#xC138; &#xAE30;&#xBC95;
-7.4 &#xAC10;&#xC1E0; &#xCD94;&#xC138; &#xAE30;&#xBC95;
-7.5 Holt-Winters &#xACC4;&#xC808;&#xC131; &#xAE30;&#xBC95;
-7.6 &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xBC95;&#xC758; &#xBD84;&#xB958;
-7.7 &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC5D0; &#xB300;&#xD55C; &#xD601;&#xC2E0; &#xC0C1;&#xD0DC; &#xACF5;&#xAC04; &#xBAA8;&#xB378;
-7.8 &#xC5F0;&#xC2B5; &#xBB38;&#xC81C;
-7.9 &#xB354; &#xC77D;&#xC744; &#xAC70;&#xB9AC;</p>
+                                <h2 id="76-&#xC9C0;&#xC218;-&#xD3C9;&#xD65C;-&#xAE30;&#xBC95;-&#xBD84;&#xB958;">7.6 &#xC9C0;&#xC218; &#xD3C9;&#xD65C; &#xAE30;&#xBC95; &#xBD84;&#xB958;</h2>
+<p>&#xC6B0;&#xB9AC;&#xAC00; &#xC9C0;&#xAE08;&#xAE4C;&#xC9C0; &#xC0B4;&#xD3B4;&#xBCF8; &#xAC83;&#xC774; &#xC9C0;&#xC218; &#xD3C9;&#xD65C; &#xAE30;&#xBC95;&#xC758; &#xC804;&#xBD80;&#xAC00; &#xC544;&#xB2C8;&#xB2E4;. &#xCD94;&#xC138;&#xC640; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC758; &#xC870;&#xD569;&#xC744; &#xACE0;&#xB824;&#xD574;&#xBCF4;&#xBA74;, 15&#xAC1C;&#xC758; &#xC9C0;&#xC218; &#xD3C9;&#xD65C; &#xAE30;&#xBC95;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xACE0; &#xC774;&#xAC83;&#xC744; &#xD45C; 7.7&#xC5D0; &#xB098;&#xD0C0;&#xB0B4;&#xC5C8;&#xB2E4;. &#xAC01; &#xAE30;&#xBC95;&#xC740; &apos;&#xCD94;&#xC138;&apos;&#xC640; &apos;&#xACC4;&#xC808;&#xC801;&#xC778;&apos; &#xC131;&#xBD84;&#xC758; &#xC885;&#xB958;&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xBB38;&#xC790;&#xC758; &#xC30D;&#xC73C;&#xB85C; &#xD45C;&#xC2DC;&#xD558;&#xC600;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xBA74;, (A, M)&#xC740; &#xB367;&#xC148; &#xCD94;&#xC138;&#xC640; &#xACF1;&#xC148; &#xACC4;&#xC808;&#xC131;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAE30;&#xBC95;&#xC744;, (M, N)&#xC740; &#xACF1;&#xC149; &#xCD94;&#xC138;&#xC640; &#xACC4;&#xC808;&#xC131;&#xC774; &#xC5C6;&#xB294; &#xAE30;&#xBC95;&#xC744; &#xB098;&#xD0C0;&#xB0B8;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>&#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#xCD94;&#xC138; &#xC131;&#xBD84;</td>
+<td>N (&#xC5C6;&#xC74C;)</td>
+<td>A (&#xB367;&#xC148;)</td>
+<td>M (&#xACF1;&#xC148;)</td>
+</tr>
+<tr>
+<td>N (&#xC5C6;&#xC74C;)</td>
+<td>(N,N)</td>
+<td>(N,A)</td>
+<td>(N,M)</td>
+</tr>
+<tr>
+<td>A (&#xB367;&#xC148;)</td>
+<td>(A,N)</td>
+<td>(A,A)</td>
+<td>(A,M)</td>
+</tr>
+<tr>
+<td>Ad (&#xB367;&#xC148; &#xAC10;&#xC1E0;)</td>
+<td>(Ad,N)</td>
+<td>(Ad,A)</td>
+<td>(Ad,M)</td>
+</tr>
+<tr>
+<td>M (&#xACF1;&#xC148;)</td>
+<td>(M,N)</td>
+<td>(M,A)</td>
+<td>(M,M)</td>
+</tr>
+<tr>
+<td>Md (&#xACF1;&#xC148; &#xAC10;&#xC1E0;)</td>
+<td>(Md,N)</td>
+<td>(Md,A)</td>
+<td>(Md,M)</td>
+</tr>
+</tbody>
+</table>
+<p>&#xBA87;&#xBA87;&#xC740; &#xC774;&#xBBF8; &#xC0B4;&#xD3B4;&#xBCF8; &#xAC83;&#xC774;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(N,N)</td>
+<td>=</td>
+<td>simple exponential smoothing</td>
+</tr>
+<tr>
+<td>(A,N)</td>
+<td>=</td>
+<td>Holts linear method</td>
+</tr>
+<tr>
+<td>(M,N)</td>
+<td>=</td>
+<td>Exponential trend method</td>
+</tr>
+<tr>
+<td>(Ad,N)</td>
+<td>=</td>
+<td>additive damped trend method</td>
+</tr>
+<tr>
+<td>(Md,N)</td>
+<td>=</td>
+<td>multiplicative damped trend method</td>
+</tr>
+<tr>
+<td>(A,A)</td>
+<td>=</td>
+<td>additive Holt-Winters method</td>
+</tr>
+<tr>
+<td>(A,M)</td>
+<td>=</td>
+<td>multiplicative Holt-Winters method</td>
+</tr>
+<tr>
+<td>(Ad,M)</td>
+<td>=</td>
+<td>Holt-Winters damped method</td>
+</tr>
+</tbody>
+</table>
+<p>&#xC774;&#xB7EC;&#xD55C; &#xBD84;&#xB958;&#xB294; Pegels&#xAC00; 1969&#xB144;&#xC5D0; &#xC81C;&#xC548;&#xD55C; &#xAC83;&#xC774;&#xB2E4;. &#xC774;&#xD6C4;&#xC5D0; Gardner&#xAC00; 1985&#xB144;&#xC5D0; &#xB367;&#xC148; &#xAC10;&#xC1E0; &#xCD94;&#xC138; &#xAE30;&#xBC95;&#xC744;, Taylor&#xAC00; 2003&#xB144;&#xC5D0; &#xACF1;&#xC148; &#xAC10;&#xC1E0; &#xCD94;&#xC138; &#xAE30;&#xBC95;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xD655;&#xC7A5;&#xB418;&#xC5C8;&#xB2E4;.</p>
+<p>&#xD45C; 7.8&#xC740; &#xBAA8;&#xB4E0; &#xAC00;&#xB2A5;&#xD55C; 15&#xAC1C;&#xC758; &#xC9C0;&#xC218; &#xD3C9;&#xD65C; &#xAE30;&#xBC95;&#xC5D0; &#xB300;&#xD55C; &#xC7AC;&#xADC0;&#xC2DD;&#xC744; &#xB098;&#xD0C0;&#xB0B8; &#xAC83;&#xC774;&#xB2E4;. &#xD45C;&#xC758; &#xAC01; &#xCE78;&#xC5D0;&#xB294; <script type="math/tex; ">h</script> &#xB2E8;&#xACC4; &#xC55E; &#xC608;&#xCE21;&#xC2DD;&#xACFC; &#xD3C9;&#xD65C;&#xC2DD;&#xC774; &#xC788;&#xB2E4;. &#xD45C; 7.9&#xC5D0; &#xAC00;&#xC7A5; &#xD754;&#xD788; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC9C0;&#xC218; &#xD3C9;&#xD65C; &#xAE30;&#xBC95; &#xBA87; &#xAC00;&#xC9C0;&#xC5D0; &#xB300;&#xD574; &#xCD08;&#xAE30;&#xAC12;&#xC744; &#xC120;&#xD0DD;&#xD558;&#xB294; &#xC804;&#xB7B5;&#xC744; &#xB098;&#xD0C0;&#xB0C8;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xC804;&#xB7B5;&#xC744; &#xC9C1;&#xC811; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC744; &#xCD94;&#xCC9C;&#xD558;&#xC9C4; &#xC54A;&#xB294;&#xB2E4;. &#xB300;&#xC2E0;&#xC5D0;, &#xC774;&#xB7EC;&#xD55C; &#xAC12;&#xC740; &#xCD5C;&#xC801;&#xD654; &#xACFC;&#xC815;&#xC744; &#xC2DC;&#xC791;&#xD560; &#xB54C; &#xC720;&#xC6A9;&#xD558;&#xB2E4;.</p>
+<p><img src="https://www.otexts.org/sites/default/files/resize/fpp/images/Table7-8-570x295.png" alt=""></p>
+<p>&#xD45C; 7.8: &#xC7AC;&#xADC0;&#xC801; &#xACC4;&#xC0B0;&#xACFC; &#xC810; &#xC608;&#xCE21;&#xC5D0; &#xB300;&#xD55C; &#xC2DD;. &#xAC01; &#xACBD;&#xC6B0;&#xC5D0;, <script type="math/tex; "> l_{t} </script>&#xB294; &#xC2DC;&#xAC04; <script type="math/tex; ">t</script>&#xC5D0;&#xC11C; &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xC218;&#xC900;&#xC744;, <script type="math/tex; "> b_{t} </script>&#xB294; &#xC2DC;&#xAC04; <script type="math/tex; "> t </script>&#xC5D0;&#xC11C; &#xAE30;&#xC6B8;&#xAE30;&#xB97C;, <script type="math/tex; "> s_{t} </script>&#xB294; &#xC2DC;&#xAC04; <script type="math/tex; "> t </script>&#xC5D0;&#xC11C; &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC744;, <script type="math/tex; "> m </script>&#xC740; &#xD55C; &#xC5F0;&#xB3C4; &#xC548;&#xC5D0; &#xACC4;&#xC808;&#xC758; &#xAC2F;&#xC218;&#xB97C; &#xB098;&#xD0C0;&#xB0B8;&#xB2E4;. <script type="math/tex; "> \alpha, \beta^{*}, \gamma </script>&#xB294; &#xD3C9;&#xD65C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC774;&#xB2E4;. <script type="math/tex; "> \phi_{h}=\phi+\phi^{2}+\cdots+\phi^{h} </script>&#xC640; <script type="math/tex; "> h_{m}^{+} = \lfloor (h-1) \mod m \rfloor + 1</script>&#xC774;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>&#xAE30;&#xBC95;</th>
+<th>&#xCD08;&#xAE30;&#xAC12;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(N,N)</td>
+<td><script type="math/tex; ">l_{0}=y_{1}</script></td>
+</tr>
+<tr>
+<td>(A,N)  (Ad,N)</td>
+<td><script type="math/tex; ">l_{0}=y_{1}, b_{0}=y_{2}-y_{1}</script></td>
+</tr>
+<tr>
+<td>(M,N)  (Md,N)</td>
+<td><script type="math/tex; ">l_{0}=y_{1}, b_{0}=y_{2}/y_{1}</script></td>
+</tr>
+<tr>
+<td>(A,A)  (Ad,A)</td>
+<td><script type="math/tex; ">l_{0}=\frac{1}{m}(y_{1}+\cdots+y_{m}) </script></td>
+</tr>
+<tr>
+<td></td>
+<td><script type="math/tex; "> b_{0}=\frac{1}{m}[\frac{y_{m+1}-y_{1}}{m}+\cdots+\frac{y_{m+m}-y_{m}}{m}] </script></td>
+</tr>
+<tr>
+<td></td>
+<td><script type="math/tex; ">s_{0}=y_{m}-l_{0}, \ s_{-1}=y_{m-1}-l_{0}, \ \cdots, \ s_{-m+1}=y_{1}-l_{0}</script></td>
+</tr>
+<tr>
+<td>(A,M)  (Ad,M)</td>
+<td><script type="math/tex; ">l_{0}=\frac{1}{m}(y_{1}+\cdots+y_{m}) </script></td>
+</tr>
+<tr>
+<td></td>
+<td><script type="math/tex; "> b_{0}=\frac{1}{m}[\frac{y_{m+1}-y_{1}}{m}+\cdots+\frac{y_{m+m}-y_{m}}{m}] </script></td>
+</tr>
+<tr>
+<td></td>
+<td><script type="math/tex; ">s_{0}=y_{m}/l_{0}, \ s_{-1}=y_{m-1}/l_{0}, \ \cdots, \ s_{-m+1}=y_{1}/l_{0}</script></td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -424,12 +563,12 @@
 
             
                 
-                <a href="fpp-kr-6-8.md" class="navigation navigation-prev " aria-label="Previous page: 6.8 더 읽을거리">
+                <a href="fpp-kr-7-5.html" class="navigation navigation-prev " aria-label="Previous page: 7.5 Holt-Winters 계절적인 기법">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="fpp-kr-7-1.html" class="navigation navigation-next " aria-label="Next page: 7.1 단순 지수 평활">
+                <a href="fpp-kr-7-7.html" class="navigation navigation-next " aria-label="Next page: 7.7 지수 평활에 대한 혁신 상태 공간 모델">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -440,7 +579,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"7 지수 평활","level":"1.3","depth":1,"next":{"title":"7.1 단순 지수 평활","level":"1.3.1","depth":2,"path":"doc/fpp-kr-7-1.md","ref":"doc/fpp-kr-7-1.md","articles":[]},"previous":{"title":"6.8 더 읽을거리","level":"1.2.8","depth":2,"path":"doc/fpp-kr-6-8.md","ref":"doc/fpp-kr-6-8.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","comment","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"fpp-kr","gitbook":"3.x.x","description":"Translation"},"file":{"path":"doc/fpp-kr-7.md","mtime":"2017-01-11T11:18:08.631Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-11T12:41:12.311Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"7.6 지수 평활 기법 분류","level":"1.3.6","depth":2,"next":{"title":"7.7 지수 평활에 대한 혁신 상태 공간 모델","level":"1.3.7","depth":2,"path":"doc/fpp-kr-7-7.md","ref":"doc/fpp-kr-7-7.md","articles":[]},"previous":{"title":"7.5 Holt-Winters 계절적인 기법","level":"1.3.5","depth":2,"path":"doc/fpp-kr-7-5.md","ref":"doc/fpp-kr-7-5.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","comment","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"fpp-kr","gitbook":"3.x.x","description":"Translation"},"file":{"path":"doc/fpp-kr-7-6.md","mtime":"2017-01-11T12:37:15.880Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-11T12:41:12.311Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

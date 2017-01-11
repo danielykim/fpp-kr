@@ -1,0 +1,1271 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>7.5 Holt-Winters 계절적인 기법 · fpp-kr</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-comment/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="fpp-kr-7-6.html" />
+    
+    
+    <link rel="prev" href="fpp-kr-7-4.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="fpp-kr-6.html">
+            
+                <a href="fpp-kr-6.html">
+            
+                    
+                    6 시계열 분해
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="fpp-kr-6-1.html">
+            
+                <a href="fpp-kr-6-1.html">
+            
+                    
+                    6.1 시계열 성분
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="fpp-kr-6-2.html">
+            
+                <a href="fpp-kr-6-2.html">
+            
+                    
+                    6.2 이동 평균
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="fpp-kr-6-3.html">
+            
+                <a href="fpp-kr-6-3.html">
+            
+                    
+                    6.3 고전적인 분해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="fpp-kr-6-4.html">
+            
+                <a href="fpp-kr-6-4.html">
+            
+                    
+                    6.4 X-12-ARIMA 분해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="fpp-kr-6-5.html">
+            
+                <a href="fpp-kr-6-5.html">
+            
+                    
+                    6.5 STL 분해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="fpp-kr-6-6.html">
+            
+                <a href="fpp-kr-6-6.html">
+            
+                    
+                    6.6 분해를 사용한 예측
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="fpp-kr-6-7.md">
+            
+                <span>
+            
+                    
+                    6.7 연습문제
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="fpp-kr-6-8.md">
+            
+                <span>
+            
+                    
+                    6.8 더 읽을거리
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="fpp-kr-7.html">
+            
+                <a href="fpp-kr-7.html">
+            
+                    
+                    7 지수 평활
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="fpp-kr-7-1.html">
+            
+                <a href="fpp-kr-7-1.html">
+            
+                    
+                    7.1 단순 지수 평활
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="fpp-kr-7-2.html">
+            
+                <a href="fpp-kr-7-2.html">
+            
+                    
+                    7.2 Holt의 선형 추세 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="fpp-kr-7-3.html">
+            
+                <a href="fpp-kr-7-3.html">
+            
+                    
+                    7.3 지수 추세 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="fpp-kr-7-4.html">
+            
+                <a href="fpp-kr-7-4.html">
+            
+                    
+                    7.4 감쇠 추세 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.5" data-path="fpp-kr-7-5.html">
+            
+                <a href="fpp-kr-7-5.html">
+            
+                    
+                    7.5 Holt-Winters 계절적인 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="fpp-kr-7-6.html">
+            
+                <a href="fpp-kr-7-6.html">
+            
+                    
+                    7.6 지수 평활 기법 분류
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="fpp-kr-7-7.html">
+            
+                <a href="fpp-kr-7-7.html">
+            
+                    
+                    7.7 지수 평활에 대한 혁신 상태 공간 모델
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >7.5 Holt-Winters 계절적인 기법</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="75-holt-winters-&#xACC4;&#xC808;&#xC801;&#xC778;-&#xAE30;&#xBC95;">7.5 Holt-Winters &#xACC4;&#xC808;&#xC801;&#xC778; &#xAE30;&#xBC95;</h2>
+<p>Holt (1957)&#xC640; Winters (1960)&#xB294; &#xACC4;&#xC808;&#xC131;&#xC744; &#xACE0;&#xB824;&#xD558;&#xAE30; &#xC704;&#xD574; Holt&#xC758; &#xAE30;&#xBC95;&#xC744; &#xD655;&#xC7A5;&#xD558;&#xC600;&#xB2E4;. Holt-Winters &#xACC4;&#xC808;&#xC801;&#xC778; &#xAE30;&#xBC95;&#xC740; &#xC608;&#xCE21;&#xC2DD;&#xACFC; 3&#xAC1C;&#xC758; &#xD3C9;&#xD65C;&#xC2DD;&#xC73C;&#xB85C; &#xAD6C;&#xC131;&#xB41C;&#xB2E4;. &#xD558;&#xB098;&#xB294; &#xC218;&#xC900; <script type="math/tex; ">l_{t}</script>&#xC5D0; &#xB300;&#xD55C; &#xAC83;, &#xD558;&#xB098;&#xB294; &#xCD94;&#xC138; <script type="math/tex; ">b_{t}</script>&#xC5D0; &#xB300;&#xD55C; &#xAC83;, <script type="math/tex; ">s_{t}</script>&#xB85C; &#xB098;&#xD0C0;&#xB0B4;&#xACE0; &#xD3C9;&#xD65C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; <script type="math/tex; ">\alpha</script>, <script type="math/tex; ">\beta^{*}</script> &#xADF8;&#xB9AC;&#xACE0; <script type="math/tex; ">\gamma</script>&#xB97C; &#xACE0;&#xB824;&#xD558;&#xB294; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC774;&#xB2E4;. <script type="math/tex; ">m</script>&#xC744; &#xACC4;&#xC808;&#xC131;&#xC758; &#xC8FC;&#xAE30;&#xB85C; &#xD45C;&#xC2DC;&#xD558;&#xC790;. &#xC989;, &#xD55C; &#xD574;&#xC758; &#xACC4;&#xC808;&#xC758; &#xC218; &#xAC19;&#xC774; &#xB9D0;&#xC774;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xBA74;, 4&#xBD84;&#xAE30; &#xB370;&#xC774;&#xD130;&#xC5D0;&#xC11C;&#xB294; <script type="math/tex; ">m=4</script>&#xC774;&#xACE0;, &#xC6D4;&#xBCC4; &#xB370;&#xC774;&#xD130;&#xC5D0;&#xC11C;&#xB294; <script type="math/tex; ">m=12</script>&#xC774;&#xB2E4;.</p>
+<p>&#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC758; &#xC131;&#xC9C8;&#xC5D0; &#xB530;&#xB77C; &#xC774; &#xAE30;&#xBC95;&#xC5D0; &#xB450; &#xAC00;&#xC9C0; &#xBCC0;&#xD615;&#xC774; &#xC788;&#xB2E4;. &#xB367;&#xC148; &#xAE30;&#xBC95;&#xC740; &#xACC4;&#xC808;&#xC801;&#xC778; &#xBCC0;&#xB3D9;&#xC774; &#xC2DC;&#xACC4;&#xC5F4; &#xC804;&#xBC18;&#xC5D0; &#xAC78;&#xCCD0; &#xAC70;&#xC758; &#xC77C;&#xC815;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0;, &#xACF1;&#xC148; &#xAE30;&#xBC95;&#xC740; &#xACC4;&#xC808;&#xC801;&#xC778; &#xBCC0;&#xB3D9;&#xC774; &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xC218;&#xC900;&#xC5D0; &#xBE44;&#xB840;&#xD558;&#xAC8C; &#xBCC0;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;. &#xB367;&#xC148; &#xAE30;&#xBC95;&#xC5D0;&#xC11C; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC740; &#xAD00;&#xCE21;&#xB41C; &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xCC99;&#xB3C4;&#xB85C; &#xB098;&#xD0C0;&#xB0B4;&#xACE0;, &#xC218;&#xC900;&#xC2DD;&#xC5D0;&#xC11C; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC744; &#xBE7C;&#xC11C; &#xC2DC;&#xACC4;&#xC5F4;&#xC744; &#xACC4;&#xC808;&#xC801;&#xC73C;&#xB85C; &#xC870;&#xC808;&#xD55C;&#xB2E4;. &#xAC01; &#xC5F0;&#xB3C4; &#xB0B4;&#xC5D0;&#xC11C; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC740; &#xADFC;&#xC0AC;&#xC801;&#xC73C;&#xB85C; 0&#xC5D0; &#xB9DE;&#xCDB0;&#xC9C8; &#xAC83;&#xC774;&#xB2E4;. &#xACF1;&#xC148; &#xAE30;&#xBC95;&#xC5D0;&#xC11C;, &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC740; &#xC0C1;&#xB300;&#xC801;&#xC778; &#xD56D;(&#xBE44;&#xC728;)&#xC73C;&#xB85C; &#xD45C;&#xD604;&#xD558;&#xACE0; &#xC2DC;&#xACC4;&#xC5F4;&#xC740; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC73C;&#xB85C; &#xB098;&#xB204;&#xC5B4; &#xACC4;&#xC808;&#xC801;&#xC73C;&#xB85C; &#xC870;&#xC808;&#xD55C;&#xB2E4;. &#xAC01; &#xC5F0;&#xB3C4; &#xC548;&#xC5D0;&#xC11C; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC740; &#xADFC;&#xC0AC;&#xC801;&#xC73C;&#xB85C; <script type="math/tex; ">m</script>&#xC73C;&#xB85C; &#xB9DE;&#xCDB0;&#xC9C8; &#xAC83;&#xC774;&#xB2E4;.</p>
+<h3 id="holt-winters-&#xB367;&#xC148;-&#xAE30;&#xBC95;">Holt-Winters &#xB367;&#xC148; &#xAE30;&#xBC95;</h3>
+<p>&#xB367;&#xC148; &#xAE30;&#xBC95;&#xC5D0; &#xB300;&#xD55C; &#xC131;&#xBD84; &#xD615;&#xD0DC;&#xB294;</p>
+<p><script type="math/tex; ">
+\begin{align*}
+\hat{y})_{t+h \vert t} & = l_{t} + h b_{t} + s_{t-m \vert + h_{m}^{+} } \\
+l_{t} & = \alpha (y_{t} - s_{t-m}) + (1-\alpha)(l_{t-1} + b_{t-1}) \\
+b_{t} & = \beta^{*} (l_{t} - l_{t-1}) + (1-\beta^{*})b_{t-1} \\
+s_{t} & = \gamma (y_{t} - l_{t-1} - b_{t-1}) + (1-\gamma)s_{t-m},
+\end{align*}
+</script></p>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> h_{m}^{+} = \lfloor (h-1) \mod m \rfloor + 1 </script> &#xC774;&#xACE0;, &#xC774;&#xAC83;&#xC774; &#xC608;&#xCE21;&#xC744; &#xC704;&#xD55C; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC9C0;&#xC218; &#xCD94;&#xC815;&#xC774; &#xD45C;&#xBCF8;&#xC758; &#xB9C8;&#xC9C0;&#xB9C9; &#xC5F0;&#xB3C4;&#xC5D0;&#xC11C; &#xC720;&#xB798;&#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xBCF4;&#xC7A5;&#xD55C;&#xB2E4;. <script type="math/tex; "> \lfloor u \rfloor </script>&#xB294; <script type="math/tex; ">u</script>&#xBCF4;&#xB2E4; &#xD06C;&#xC9C0; &#xC54A;&#xC740; &#xAC00;&#xC7A5; &#xD070; &#xC815;&#xC218;&#xC774;&#xB2E4;. &#xC218;&#xC900;&#xC2DD;&#xC740; &#xACC4;&#xC808;&#xC801;&#xC73C;&#xB85C; &#xC870;&#xC808;&#xB41C; &#xAD00;&#xCE21;&#xAC12; ( <script type="math/tex; ">y_{t}-s_{t-m}</script> ) &#xC0AC;&#xC774;&#xC758; &#xAC00;&#xC911; &#xD3C9;&#xADE0;&#xACFC; &#xC2DC;&#xAC04; <script type="math/tex; ">t</script>&#xC5D0; &#xB300;&#xD55C; &#xBE44;-&#xAC8C;&#xC808;&#xC801;&#xC778; &#xC608;&#xCE21; (<script type="math/tex; ">l_{t-1}+b_{t-1}</script>)&#xC744; &#xB098;&#xD0C0;&#xB0B8;&#xB2E4;. &#xCD94;&#xC138;&#xC2DD;&#xC740; Holt&#xC758; &#xC120;&#xD615; &#xAE30;&#xBC95;&#xACFC; &#xAC19;&#xB2E4;. &#xACC4;&#xC808;&#xC801;&#xC778; &#xC2DD;&#xC740; &#xD604;&#xC7AC; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC9C0;&#xD45C;( <script type="math/tex; ">y_{t}-l_{t-1}-b_{t-1}</script> )&#xC640; &#xC774;&#xC804; &#xC5F0;&#xB3C4; &#xAC19;&#xC740; &#xACC4;&#xC808;(&#xC989;, <script type="math/tex; ">m</script> &#xC8FC;&#xAE30; &#xC774;&#xC804;)&#xC758; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC9C0;&#xD45C; &#xC0AC;&#xC774;&#xC758; &#xAC00;&#xC911; &#xD3C9;&#xADE0;&#xC744; &#xB098;&#xD0C0;&#xB0B8;&#xB2E4;.</p>
+<p>&#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC5D0; &#xB300;&#xD55C; &#xC2DD;&#xC740; &#xC885;&#xC885; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xB098;&#xD0C0;&#xB0B8;&#xB2E4;.</p>
+<p><script type="math/tex; ">
+s_{t} = \gamma^{*}(y_{t}-l_{t}) + (1-\gamma^{*})s_{t-m}.
+</script></p>
+<p>&#xB9CC;&#xC57D;&#xC5D0; &#xD3C9;&#xD65C;&#xC2DD;&#xC5D0;&#xC11C; l_{t}&#xB97C; &#xC704;&#xC758; &#xC131;&#xBD84; &#xD615;&#xD0DC;&#xC758; &#xC218;&#xC900;&#xC5D0; &#xB300;&#xC785;&#xD558;&#xBA74;,</p>
+<p><script type="math/tex; ">
+s_{t} = \gamma^{*}(1-\alpha)(y_{t} - l_{t-1} - b_{t-1}) + \left[ 1 - \gamma^{*}(1-\alpha) \right]s_{t-m}
+</script></p>
+<p>&#xC704;&#xC758; &#xC2DD;&#xC740; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC5D0; &#xB300;&#xD55C; &#xD3C9;&#xD65C;&#xC2DD;&#xACFC; &#xAC19;&#xB2E4;. &#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> \gamma = \gamma^{*}(1-\alpha) </script>&#xB85C; &#xB2E4;&#xC2DC; &#xC4F8; &#xC218; &#xC788;&#xACE0;, &#xBCF4;&#xD1B5;&#xC758; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218; &#xC81C;&#xD55C; &#xC870;&#xAC74;&#xC740; <script type="math/tex; "> 0 \le \gamma^{*} \le 1 </script>&#xC778;&#xB370;, <script type="math/tex; "> 0 \le \gamma \le 1- \alpha </script>&#xAC00; &#xB41C;&#xB2E4;.</p>
+<p>&#xD3C9;&#xD65C;&#xC2DD;&#xC758; &#xC624;&#xCC28; &#xBCF4;&#xC815; &#xD615;&#xD0DC;&#xB294;</p>
+<p><script type="math/tex; ">
+\begin{align*}
+l_{t} & = l_{t-1} + b_{t-1} + \alpha e_{t} \\
+b_{t} & = b_{t-1} + \alpha \beta^{*} e_{t} \\
+s_{t} & = s_{t-m} + \gamma e_{t}.
+\end{align*}
+</script></p>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> e_{t} = y_{t} - \left( l_{t-1} + b_{t-1} + s_{t-m} \right) = y_{t} - \hat{y}_{t \vert t-1} </script>&#xC740; &#xD55C; &#xB2E8;&#xACC4; &#xD6C8;&#xB828; &#xC608;&#xCE21; &#xC624;&#xCC28;&#xC774;&#xB2E4;.</p>
+<h3 id="holt-winters-&#xACF1;&#xC148;-&#xAE30;&#xBC95;">Holt-Winters &#xACF1;&#xC148; &#xAE30;&#xBC95;</h3>
+<p>&#xACF1;&#xC148; &#xAE30;&#xBC95;&#xC5D0; &#xB300;&#xD55C; &#xC131;&#xBD84; &#xD615;&#xD0DC;&#xB294;</p>
+<p><script type="math/tex; ">
+\begin{align*}
+\hat{y}_{t+h \vert t} & = \left( l_{t} + h b_{t} \right) s_{t-m \vert + h_{m}^{+} } \\
+l_{t} & = \alpha \frac{ y_{t} }{ s_{t-m} } + (1-\alpha)(l_{t-1} + b_{t-1}) \\
+b_{t} & = \beta^{*} (l_{t} - l_{t-1}) + (1-\beta^{*})b_{t-1} \\
+s_{t} & = \gamma \frac{ y_{t} }{ l_{t-1} + b_{t-1} } + (1-\gamma)s_{t-m},
+\end{align*}
+</script></p>
+<p>&#xADF8;&#xB9AC;&#xACE0; &#xC624;&#xCC28; &#xBCF4;&#xC815; &#xD45C;&#xD604;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xB2E4;.</p>
+<p><script type="math/tex; ">
+\begin{align*}
+l_{t} & = l_{t-1} + b_{t-1} + \alpha \frac{ e_{t} }{ s_{t-m} } \\
+b_{t} & = b_{t-1} + \alpha \beta^{*} \frac{ e_{t} }{ s_{t-m} } \\
+s_{t} & = s_{t-m} + \gamma \frac{ e_{t} }{ \left( l_{t-1} + b_{t-1} \right) }.
+\end{align*}
+</script></p>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> e_{t} = y_{t} - \left( l_{t-1} + b_{t-1} \right) s_{t-m} </script>&#xC774;&#xB2E4;.</p>
+<h3 id="&#xC608;&#xC81C;-74-&#xD638;&#xC8FC;&#xB97C;-&#xBC29;&#xBB38;&#xD558;&#xB294;-&#xAD6D;&#xC81C;-&#xC5EC;&#xD589;&#xAC1D;-&#xC219;&#xBC15;&#xC77C;-&#xC218;">&#xC608;&#xC81C; 7.4 &#xD638;&#xC8FC;&#xB97C; &#xBC29;&#xBB38;&#xD558;&#xB294; &#xAD6D;&#xC81C; &#xC5EC;&#xD589;&#xAC1D; &#xC219;&#xBC15;&#xC77C; &#xC218;</h3>
+<p><img src="https://www.otexts.org/sites/default/files/resize/fpp/images/fig_7_HW-570x360.png" alt=""></p>
+<p>&#xADF8;&#xB9BC; 7.6: &#xB367;&#xC148;&#xACFC; &#xACF1;&#xC148; &#xACC4;&#xC808;&#xC131; &#xB450; &#xACBD;&#xC6B0;&#xC758; Holt-Winters &#xAE30;&#xBC95;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xD638;&#xC8FC;&#xB97C; &#xBC29;&#xBB38;&#xD558;&#xB294; &#xAD6D;&#xC81C; &#xC5EC;&#xD589;&#xAC1D; &#xC219;&#xBC15;&#xC77C; &#xC218; &#xC608;&#xCE21;.</p>
+<pre><code class="lang-R">aust &lt;- window(austourists,start=<span class="hljs-number">2005</span>)
+fit1 &lt;- hw(aust,seasonal=<span class="hljs-string">&quot;additive&quot;</span>)
+fit2 &lt;- hw(aust,seasonal=<span class="hljs-string">&quot;multiplicative&quot;</span>)
+
+plot(fit2,ylab=<span class="hljs-string">&quot;International visitor night in Australia (millions)&quot;</span>,
+     plot.conf=<span class="hljs-literal">FALSE</span>, type=<span class="hljs-string">&quot;o&quot;</span>, fcol=<span class="hljs-string">&quot;white&quot;</span>, xlab=<span class="hljs-string">&quot;Year&quot;</span>)
+
+lines(fitted(fit1), col=<span class="hljs-string">&quot;red&quot;</span>, lty=<span class="hljs-number">2</span>)
+lines(fitted(fit2), col=<span class="hljs-string">&quot;green&quot;</span>, lty=<span class="hljs-number">2</span>)
+
+lines(fit1$mean, type=<span class="hljs-string">&quot;o&quot;</span>, col=<span class="hljs-string">&quot;red&quot;</span>)
+lines(fit2$mean, type=<span class="hljs-string">&quot;o&quot;</span>, col=<span class="hljs-string">&quot;green&quot;</span>)
+
+legend(<span class="hljs-string">&quot;topleft&quot;</span>,lty=<span class="hljs-number">1</span>, pch=<span class="hljs-number">1</span>, col=<span class="hljs-number">1</span>:<span class="hljs-number">3</span>, 
+  c(<span class="hljs-string">&quot;data&quot;</span>,<span class="hljs-string">&quot;Holt Winters&apos; Additive&quot;</span>,<span class="hljs-string">&quot;Holt Winters&apos; Multiplicative&quot;</span>))
+</code></pre>
+<p>&#xC774; &#xC608;&#xC81C;&#xC5D0;&#xC11C;&#xB294; &#xD638;&#xC8FC;&#xC5D0;&#xC11C; &#xAD6D;&#xC81C;&#xC120; &#xD56D;&#xACF5;&#xD3B8; &#xC2B9;&#xAC1D;&#xC758; &#xC219;&#xBC15;&#xC77C; &#xC218; &#xC608;&#xCE21;&#xC744; &#xC704;&#xD574; &#xB367;&#xC148;&#xACFC; &#xACF1;&#xC148; &#xACC4;&#xC808;&#xC131; &#xB450; &#xACBD;&#xC6B0;&#xC5D0; Holt-Winters &#xAE30;&#xBC95;&#xC744; &#xB3C4;&#xC785;&#xD558;&#xC600;&#xB2E4;. &#xADF8;&#xB9BC; 7.6&#xC740; 2005&#xB144; 1&#xBD84;&#xAE30;&#xBD80;&#xD130; 2010&#xB144; 4&#xBD84;&#xAE30;&#xAE4C;&#xC9C0;&#xC758; &#xD45C;&#xBCF8; &#xB0B4; &#xD55C; &#xB2E8;&#xACC4; &#xC608;&#xCE21;&#xACFC; &#xB370;&#xC774;&#xD130;&#xB97C; &#xAC19;&#xC774; &#xB098;&#xD0C0;&#xB0B8; &#xAC83;&#xACFC; 2011&#xB144; 1&#xBD84;&#xAE30;&#xC640; 2012&#xB144; 4&#xBD84;&#xAE30;&#xC5D0; &#xB300;&#xD55C; &#xC608;&#xCE21;&#xC744; &#xB098;&#xD0C0;&#xB0B8; &#xAC83;&#xC774;&#xB2E4;. &#xB370;&#xC774;&#xD130;&#xC5D0;&#xC11C; &#xBD84;&#xBA85;&#xD55C; &#xD638;&#xC8FC;&#xC758; &#xC5EC;&#xB984;&#xC778; &#xB9E4;&#xB144; 3&#xC6D4;&#xC774; &#xC131;&#xC218;&#xAE30;&#xB85C; &#xB098;&#xD0C0;&#xB098;&#xB294; &#xACC4;&#xC808;&#xC801;&#xC778; &#xD328;&#xD134;&#xC774; &#xBCF4;&#xC778;&#xB2E4;.</p>
+<p>&#xB367;&#xC148;&#xACFC; &#xACF1;&#xC148; &#xACC4;&#xC808;&#xC131;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC774; &#xAE30;&#xBC95;&#xC744; &#xC751;&#xC6A9;&#xD55C; &#xACB0;&#xACFC;&#xB97C; &#xD45C; 7.5&#xC640; 7.6&#xC5D0; &#xAC01;&#xAC01; &#xB098;&#xD0C0;&#xB0B4;&#xC5C8;&#xB2E4;. &#xACB0;&#xACFC;&#xB97C; &#xD1B5;&#xD574; &#xACF1;&#xC149; &#xACC4;&#xC808;&#xC131;&#xC774; &#xB370;&#xC774;&#xD130;&#xC5D0; &#xB354; &#xC798; &#xB9DE;&#xB294;&#xB2E4;&#xB294; &#xAC83;&#xC744; &#xC54C; &#xC218; &#xC788;&#xB2E4;. &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xC218;&#xC900;&#xC774; &#xC99D;&#xAC00;&#xD558;&#xBA74;&#xC11C; &#xB370;&#xC774;&#xD130;&#xC5D0; &#xB098;&#xD0C0;&#xB098;&#xB294; &#xACC4;&#xC808;&#xC801;&#xC778; &#xBCC0;&#xB3D9;&#xC774; &#xC99D;&#xAC00;&#xD558;&#xB294; &#xAC83;&#xC744; &#xBCF4;&#xC5EC;&#xC8FC;&#xB294; &#xB3C4;&#xD45C;&#xB97C; &#xBCF4;&#xACE0; &#xC608;&#xC0C1;&#xD560; &#xC218; &#xC788;&#xC5C8;&#xB358; &#xC0AC;&#xC2E4;&#xC774;&#xB2E4;. &#xC774; &#xACB0;&#xACFC;&#xB294; &#xB450; &#xAC00;&#xC9C0; &#xC608;&#xCE21; &#xC9D1;&#xD569;&#xB3C4; &#xBCF4;&#xC5EC;&#xC900;&#xB2E4;. &#xB367;&#xC148; &#xACC4;&#xC808;&#xC131;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC5BB;&#xC740; &#xC608;&#xCE21; &#xACB0;&#xACFC;&#xC640; &#xBE44;&#xAD50;&#xD560; &#xB54C;, &#xACF1;&#xC148; &#xACC4;&#xC808;&#xC131;&#xC744; &#xC774;&#xC6A9;&#xD55C; &#xAE30;&#xBC95;&#xC73C;&#xB85C; &#xC608;&#xCE21;&#xD55C; &#xACB0;&#xACFC;&#xAC00; &#xC608;&#xCE21;&#xAC12;&#xC758; &#xC218;&#xC900;&#xC774; &#xC99D;&#xAC00;&#xD568;&#xC5D0; &#xB530;&#xB77C; &#xB354; &#xD06C;&#xACE0; &#xC99D;&#xAC00;&#xD558;&#xB294; &#xACC4;&#xC808;&#xC801;&#xC778; &#xBCC0;&#xB3D9;&#xC744; &#xB098;&#xD0C0;&#xB0B8;&#xB2E4;.</p>
+<p>&#xD45C; 7.5 </p>
+<table>
+<thead>
+<tr>
+<th>&#xBD84;&#xAE30;-&#xC5F0;&#xB3C4;</th>
+<th><script type="math/tex; "> t </script></th>
+<th><script type="math/tex; "> y_{t} </script></th>
+<th><script type="math/tex; "> l_{t} </script></th>
+<th><script type="math/tex; "> b_{t} </script></th>
+<th><script type="math/tex; "> s_{t} </script></th>
+<th><script type="math/tex; "> \hat{y}_{t} </script></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3&#xC6D4;-04</td>
+<td>-3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>10.7</td>
+<td></td>
+</tr>
+<tr>
+<td>6&#xC6D4;-04</td>
+<td>-2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>-9.5</td>
+<td></td>
+</tr>
+<tr>
+<td>9&#xC6D4;-04</td>
+<td>-1</td>
+<td></td>
+<td></td>
+<td></td>
+<td>-2.6</td>
+<td></td>
+</tr>
+<tr>
+<td>12&#xC6D4;-04</td>
+<td>0</td>
+<td></td>
+<td>33.8</td>
+<td>0.65</td>
+<td>1.4</td>
+<td></td>
+</tr>
+<tr>
+<td>3&#xC6D4;-05</td>
+<td>1</td>
+<td>41.7</td>
+<td>34.4</td>
+<td>0.57</td>
+<td>10.7</td>
+<td>45.1</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-05</td>
+<td>2</td>
+<td>24.0</td>
+<td>34.9</td>
+<td>0.53</td>
+<td>-9.5</td>
+<td>25.5</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-05</td>
+<td>3</td>
+<td>32.3</td>
+<td>35.4</td>
+<td>0.52</td>
+<td>-2.6</td>
+<td>32.9</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-05</td>
+<td>4</td>
+<td>37.3</td>
+<td>35.9</td>
+<td>0.52</td>
+<td>1.4</td>
+<td>37.3</td>
+</tr>
+<tr>
+<td>3&#xC6D4;-06</td>
+<td>5</td>
+<td>46.2</td>
+<td>36.4</td>
+<td>0.50</td>
+<td>10.7</td>
+<td>47.1</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-06</td>
+<td>6</td>
+<td>29.3</td>
+<td>37.0</td>
+<td>0.54</td>
+<td>-9.5</td>
+<td>27.5</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-06</td>
+<td>7</td>
+<td>36.5</td>
+<td>37.6</td>
+<td>0.58</td>
+<td>-2.6</td>
+<td>35.0</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-06</td>
+<td>8</td>
+<td>43.0</td>
+<td>38.2</td>
+<td>0.66</td>
+<td>1.4</td>
+<td>39.5</td>
+</tr>
+<tr>
+<td>3&#xC6D4;-07</td>
+<td>9</td>
+<td>48.9</td>
+<td>38.9</td>
+<td>0.64</td>
+<td>10.7</td>
+<td>49.6</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-07</td>
+<td>10</td>
+<td>31.2</td>
+<td>39.6</td>
+<td>0.67</td>
+<td>-9.5</td>
+<td>30.0</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-07</td>
+<td>11</td>
+<td>37.7</td>
+<td>40.2</td>
+<td>0.67</td>
+<td>-2.6</td>
+<td>37.7</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-07</td>
+<td>12</td>
+<td>40.4</td>
+<td>40.9</td>
+<td>0.63</td>
+<td>1.4</td>
+<td>42.3</td>
+</tr>
+<tr>
+<td>3&#xC6D4;-08</td>
+<td>13</td>
+<td>51.2</td>
+<td>41.5</td>
+<td>0.61</td>
+<td>10.7</td>
+<td>52.1</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-08</td>
+<td>14</td>
+<td>31.9</td>
+<td>42.0</td>
+<td>0.59</td>
+<td>-9.5</td>
+<td>32.6</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-08</td>
+<td>15</td>
+<td>41.0</td>
+<td>42.7</td>
+<td>0.61</td>
+<td>-2.6</td>
+<td>40.1</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-08</td>
+<td>16</td>
+<td>43.8</td>
+<td>43.2</td>
+<td>0.59</td>
+<td>1.4</td>
+<td>44.7</td>
+</tr>
+<tr>
+<td>3&#xC6D4;-09</td>
+<td>17</td>
+<td>55.6</td>
+<td>43.9</td>
+<td>0.62</td>
+<td>10.7</td>
+<td>54.5</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-09</td>
+<td>18</td>
+<td>33.9</td>
+<td>44.4</td>
+<td>0.59</td>
+<td>-9.5</td>
+<td>35.0</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-09</td>
+<td>19</td>
+<td>42.1</td>
+<td>45.0</td>
+<td>0.58</td>
+<td>-2.6</td>
+<td>42.5</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-09</td>
+<td>20</td>
+<td>45.6</td>
+<td>45.6</td>
+<td>0.55</td>
+<td>1.4</td>
+<td>47.0</td>
+</tr>
+<tr>
+<td>3&#xC6D4;-10</td>
+<td>21</td>
+<td>59.8</td>
+<td>46.2</td>
+<td>0.62</td>
+<td>10.7</td>
+<td>56.8</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-10</td>
+<td>22</td>
+<td>35.2</td>
+<td>46.8</td>
+<td>0.57</td>
+<td>-9.5</td>
+<td>37.3</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-10</td>
+<td>23</td>
+<td>44.3</td>
+<td>47.3</td>
+<td>0.56</td>
+<td>-2.6</td>
+<td>44.8</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-10</td>
+<td>24</td>
+<td>47.9</td>
+<td>47.8</td>
+<td>0.53</td>
+<td>1.4</td>
+<td>49.3</td>
+</tr>
+<tr>
+<td></td>
+<td><script type="math/tex; "> h </script></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><script type="math/tex; "> y_{T+h \vert T} </script></td>
+</tr>
+<tr>
+<td>3&#xC6D4;-11</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>59.0</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-11</td>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>39.4</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-11</td>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>46.9</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-11</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>51.3</td>
+</tr>
+<tr>
+<td>3&#xC6D4;-12</td>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>61.1</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-12</td>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>41.5</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-12</td>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>49.0</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-12</td>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>53.4</td>
+</tr>
+</tbody>
+</table>
+<p>&#xD45C; 7.6</p>
+<table>
+<thead>
+<tr>
+<th>&#xBD84;&#xAE30;-&#xC5F0;&#xB3C4;</th>
+<th><script type="math/tex; ">t</script></th>
+<th><script type="math/tex; ">y_{t}</script></th>
+<th><script type="math/tex; ">l_{t}</script></th>
+<th><script type="math/tex; ">b_{t}</script></th>
+<th><script type="math/tex; ">s_{t}</script></th>
+<th><script type="math/tex; "> \hat{y}_{t} </script></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3&#xC6D4;-04</td>
+<td>-3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>1.3</td>
+<td></td>
+</tr>
+<tr>
+<td>6&#xC6D4;-04</td>
+<td>-2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.8</td>
+<td></td>
+</tr>
+<tr>
+<td>9&#xC6D4;-04</td>
+<td>-1</td>
+<td></td>
+<td></td>
+<td></td>
+<td>0.9</td>
+<td></td>
+</tr>
+<tr>
+<td>12&#xC6D4;-04</td>
+<td>0</td>
+<td></td>
+<td>32.2</td>
+<td>0.93</td>
+<td>1.0</td>
+<td></td>
+</tr>
+<tr>
+<td>3&#xC6D4;-05</td>
+<td>1</td>
+<td>41.7</td>
+<td>33.1</td>
+<td>0.93</td>
+<td>1.3</td>
+<td>41.8</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-05</td>
+<td>2</td>
+<td>24.0</td>
+<td>32.9</td>
+<td>0.78</td>
+<td>0.8</td>
+<td>25.9</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-05</td>
+<td>3</td>
+<td>32.3</td>
+<td>33.9</td>
+<td>0.81</td>
+<td>0.9</td>
+<td>31.9</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-05</td>
+<td>4</td>
+<td>37.3</td>
+<td>35.4</td>
+<td>0.91</td>
+<td>1.0</td>
+<td>35.7</td>
+</tr>
+<tr>
+<td>3&#xC6D4;-06</td>
+<td>5</td>
+<td>46.2</td>
+<td>36.4</td>
+<td>0.92</td>
+<td>1.3</td>
+<td>45.9</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-06</td>
+<td>6</td>
+<td>29.3</td>
+<td>37.9</td>
+<td>1.00</td>
+<td>0.8</td>
+<td>28.4</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-06</td>
+<td>7</td>
+<td>36.5</td>
+<td>38.7</td>
+<td>0.98</td>
+<td>0.9</td>
+<td>36.8</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-06</td>
+<td>8</td>
+<td>43.0</td>
+<td>40.6</td>
+<td>1.11</td>
+<td>1.0</td>
+<td>40.8</td>
+</tr>
+<tr>
+<td>3&#xC6D4;-07</td>
+<td>9</td>
+<td>48.9</td>
+<td>40.4</td>
+<td>0.92</td>
+<td>1.3</td>
+<td>52.7</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-07</td>
+<td>10</td>
+<td>31.2</td>
+<td>41.2</td>
+<td>0.90</td>
+<td>0.8</td>
+<td>31.5</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-07</td>
+<td>11</td>
+<td>37.7</td>
+<td>41.1</td>
+<td>0.76</td>
+<td>0.9</td>
+<td>39.8</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-07</td>
+<td>12</td>
+<td>40.4</td>
+<td>40.8</td>
+<td>0.60</td>
+<td>1.0</td>
+<td>43.0</td>
+</tr>
+<tr>
+<td>3&#xC6D4;-08</td>
+<td>13</td>
+<td>51.2</td>
+<td>41.0</td>
+<td>0.54</td>
+<td>1.3</td>
+<td>52.3</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-08</td>
+<td>14</td>
+<td>31.9</td>
+<td>41.7</td>
+<td>0.57</td>
+<td>0.8</td>
+<td>31.6</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-08</td>
+<td>15</td>
+<td>41.0</td>
+<td>42.7</td>
+<td>0.63</td>
+<td>0.9</td>
+<td>40.0</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-08</td>
+<td>16</td>
+<td>43.8</td>
+<td>43.0</td>
+<td>0.58</td>
+<td>1.0</td>
+<td>44.6</td>
+</tr>
+<tr>
+<td>3&#xC6D4;-09</td>
+<td>17</td>
+<td>55.6</td>
+<td>43.7</td>
+<td>0.61</td>
+<td>1.3</td>
+<td>55.1</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-09</td>
+<td>18</td>
+<td>33.9</td>
+<td>44.4</td>
+<td>0.61</td>
+<td>0.8</td>
+<td>33.8</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-09</td>
+<td>19</td>
+<td>42.1</td>
+<td>44.8</td>
+<td>0.58</td>
+<td>0.9</td>
+<td>42.6</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-09</td>
+<td>20</td>
+<td>45.6</td>
+<td>44.9</td>
+<td>0.52</td>
+<td>1.0</td>
+<td>46.6</td>
+</tr>
+<tr>
+<td>3&#xC6D4;-10</td>
+<td>21</td>
+<td>59.8</td>
+<td>46.2</td>
+<td>0.63</td>
+<td>1.3</td>
+<td>57.5</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-10</td>
+<td>22</td>
+<td>35.2</td>
+<td>46.6</td>
+<td>0.59</td>
+<td>0.8</td>
+<td>35.7</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-10</td>
+<td>23</td>
+<td>44.3</td>
+<td>47.0</td>
+<td>0.57</td>
+<td>0.9</td>
+<td>44.6</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-10</td>
+<td>24</td>
+<td>47.9</td>
+<td>47.2</td>
+<td>0.51</td>
+<td>1.0</td>
+<td>48.9</td>
+</tr>
+<tr>
+<td></td>
+<td><script type="math/tex; ">h</script></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><script type="math/tex; "> y_{T+h \vert T} </script></td>
+</tr>
+<tr>
+<td>3&#xC6D4;-11</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>60.3</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-11</td>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>36.7</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-11</td>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>46.1</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-11</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>50.6</td>
+</tr>
+<tr>
+<td>3&#xC6D4;-12</td>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>62.8</td>
+</tr>
+<tr>
+<td>6&#xC6D4;-12</td>
+<td>6</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>38.2</td>
+</tr>
+<tr>
+<td>9&#xC6D4;-12</td>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>48.2</td>
+</tr>
+<tr>
+<td>12&#xC6D4;-12</td>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>52.7</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://www.otexts.org/sites/default/files/resize/fpp/images/fig_7_LevelTrendSeas-570x329.png" alt=""></p>
+<p>&#xADF8;&#xB9BC; 7.7: &#xB367;&#xC148;&#xACFC; &#xACF1;&#xC148; &#xACC4;&#xC808;&#xC801;&#xC778; &#xC131;&#xBD84;&#xC758; Holt-Winters &#xAE30;&#xBC95;&#xC5D0; &#xB300;&#xD574; &#xCD94;&#xC815;&#xB41C; &#xC131;&#xBD84;&#xB4E4;.</p>
+<pre><code class="lang-R">states &lt;- cbind(fit1$model$states[,<span class="hljs-number">1</span>:<span class="hljs-number">3</span>],fit2$model$states[,<span class="hljs-number">1</span>:<span class="hljs-number">3</span>])
+colnames(states) &lt;- c(<span class="hljs-string">&quot;level&quot;</span>,<span class="hljs-string">&quot;slope&quot;</span>,<span class="hljs-string">&quot;seasonal&quot;</span>,<span class="hljs-string">&quot;level&quot;</span>,<span class="hljs-string">&quot;slope&quot;</span>,<span class="hljs-string">&quot;seasonal&quot;</span>)
+plot(states, xlab=<span class="hljs-string">&quot;Year&quot;</span>)
+fit1$model$state[,<span class="hljs-number">1</span>:<span class="hljs-number">3</span>]
+fitted(fit1)
+fit1$mean
+</code></pre>
+<h3 id="holt-winters-&#xAC10;&#xC1E0;-&#xAE30;&#xBC95;">Holt-Winters &#xAC10;&#xC1E0; &#xAE30;&#xBC95;</h3>
+<p>&#xACC4;&#xC808;&#xC801;&#xC778; &#xB370;&#xC774;&#xD130;&#xC5D0; &#xB300;&#xD574; &#xB2E8;&#xC77C; &#xAE30;&#xBC95;&#xC73C;&#xB85C;&#xB294; &#xAC00;&#xC7A5; &#xC815;&#xD655;&#xD55C; &#xC608;&#xCE21;&#xC744; &#xC8FC;&#xB294; &#xAC10;&#xC1E0; &#xCD94;&#xC138;&#xC640; &#xACF1;&#xC148; &#xACC4;&#xC808;&#xC131;&#xC758; Holt-Winters &#xAE30;&#xBC95;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xB2E4;.</p>
+<p><script type="math/tex; ">
+\begin{align*}
+\hat{y}_{t+h \vert t} & = \left[ l_{t} + \left( \phi + \phi^{2} + \cdots + \phi^{h} \right) b_{t} \right]s_{t-m + h_{m}^{+}} \\
+l_{t} & = \alpha \frac{ y_{t} }{ s_{t-m} } + (1-\alpha)( l_{t-1} + \phi b_{t-1} ) \\
+b_{t} & = \beta^{*} (l_{t} - l_{t-1}) + (1 - \beta^{*})\phi b_{t-1} \\
+s_{t} & = \gamma \frac{ y_{t} }{ \left( l_{t-1} + \phi b_{t-1} \right) } + (1-\gamma)s_{t-m}.
+\end{align*}
+</script></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="fpp-kr-7-4.html" class="navigation navigation-prev " aria-label="Previous page: 7.4 감쇠 추세 기법">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="fpp-kr-7-6.html" class="navigation navigation-next " aria-label="Next page: 7.6 지수 평활 기법 분류">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"7.5 Holt-Winters 계절적인 기법","level":"1.3.5","depth":2,"next":{"title":"7.6 지수 평활 기법 분류","level":"1.3.6","depth":2,"path":"doc/fpp-kr-7-6.md","ref":"doc/fpp-kr-7-6.md","articles":[]},"previous":{"title":"7.4 감쇠 추세 기법","level":"1.3.4","depth":2,"path":"doc/fpp-kr-7-4.md","ref":"doc/fpp-kr-7-4.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","comment","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"fpp-kr","gitbook":"3.x.x","description":"Translation"},"file":{"path":"doc/fpp-kr-7-5.md","mtime":"2017-01-11T12:28:44.759Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-11T12:41:12.311Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-comment/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

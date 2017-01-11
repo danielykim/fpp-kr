@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>7 지수 평활 · fpp-kr</title>
+        <title>7.3 지수 추세 기법 · fpp-kr</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="fpp-kr-7-1.html" />
+    <link rel="next" href="fpp-kr-7-4.html" />
     
     
-    <link rel="prev" href="fpp-kr-6-8.md" />
+    <link rel="prev" href="fpp-kr-7-2.html" />
     
 
     </head>
@@ -229,7 +229,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="fpp-kr-7.html">
+        <li class="chapter " data-level="1.3" data-path="fpp-kr-7.html">
             
                 <a href="fpp-kr-7.html">
             
@@ -269,7 +269,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="fpp-kr-7-3.html">
+        <li class="chapter active" data-level="1.3.3" data-path="fpp-kr-7-3.html">
             
                 <a href="fpp-kr-7-3.html">
             
@@ -369,7 +369,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >7 지수 평활</a>
+        <a href=".." >7.3 지수 추세 기법</a>
     </h1>
 </div>
 
@@ -384,19 +384,26 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="7-&#xC9C0;&#xC218;-&#xD3C9;&#xD65C;">7 &#xC9C0;&#xC218; &#xD3C9;&#xD65C;</h2>
-<p>&#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC740; 1950&#xB144;&#xB300; &#xD6C4;&#xBC18;&#xC5D0; &#xB4F1;&#xC7A5;&#xD588;&#xACE0;(Brown 1959, Holt 1957 &#xADF8;&#xB9AC;&#xACE0; Winters 1960 &#xB4F1;&#xC774; &#xC120;&#xAD6C;&#xC801;&#xC778; &#xC5ED;&#xD560;&#xC744; &#xD558;&#xC600;&#xB2E4;), &#xBA87; &#xAC00;&#xC9C0; &#xAC00;&#xC7A5; &#xC131;&#xACF5;&#xC801;&#xC778; &#xC608;&#xCE21; &#xAE30;&#xBC95;&#xC5D0; &#xC601;&#xAC10;&#xC744; &#xC8FC;&#xC5C8;&#xB2E4;. &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC744; &#xC0AC;&#xC6A9;&#xD55C; &#xC608;&#xCE21;&#xC740; &#xACFC;&#xAC70; &#xAD00;&#xCE21;&#xAC12;&#xC758; &#xAC00;&#xC911; &#xD3C9;&#xADE0;&#xC774;&#xB2E4;. &#xC5EC;&#xAE30;&#xC5D0;&#xC11C; &#xAC00;&#xC911;&#xCE58;&#xB294; &#xAD00;&#xCE21;&#xAC12;&#xC774; &#xC624;&#xB798;&#xB420; &#xC218;&#xB85D; &#xC9C0;&#xC218;&#xC801;&#xC73C;&#xB85C; &#xAC10;&#xC18C;&#xD55C;&#xB2E4;. &#xB2E4;&#xB974;&#xAC8C; &#xB9D0;&#xD558;&#xBA74;, &#xAC00;&#xC7A5; &#xCD5C;&#xADFC; &#xAD00;&#xCE21;&#xAC12;&#xC774; &#xAC00;&#xC7A5; &#xB192;&#xC740; &#xAC00;&#xC911;&#xCE58;&#xB97C; &#xAC16;&#xB294;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xBC29;&#xC2DD;&#xC740; &#xB2E4;&#xC591;&#xD55C; &#xC885;&#xB958;&#xC758; &#xC2DC;&#xACC4;&#xC5F4;&#xC5D0;&#xC11C; &#xC2E0;&#xB8B0;&#xD560;&#xB9CC;&#xD55C; &#xC608;&#xCE21; &#xC791;&#xC5C5;&#xC744; &#xBE60;&#xB974;&#xAC8C; &#xC218;&#xD589;&#xD560; &#xC218; &#xC788;&#xB2E4;. &#xC774;&#xB294; &#xC0B0;&#xC5C5; &#xBD84;&#xC57C;&#xC5D0; &#xC751;&#xC6A9;&#xD560; &#xB54C; &#xC544;&#xC8FC; &#xC911;&#xC694;&#xD55C; &#xC7A5;&#xC810;&#xC774;&#xB2E4;.</p>
-<p>&#xC774; &#xC7A5;&#xC740; &#xB450; &#xBD80;&#xBD84;&#xC73C;&#xB85C; &#xAD6C;&#xC131;&#xB41C;&#xB2E4;. &#xCCAB; &#xBC88;&#xC9F8; &#xBD80;&#xBD84;&#xC5D0;&#xC11C;&#xB294; &#xBAA8;&#xB4E0; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xBC95;&#xC758; &#xAD6C;&#xCCB4;&#xC801;&#xC778; &#xC791;&#xB3D9; &#xBC29;&#xC2DD;&#xACFC; &#xB2E4;&#xC591;&#xD55C; &#xD2B9;&#xC131;&#xC744; &#xAC00;&#xC9C0;&#xB294; &#xC2DC;&#xACC4;&#xC5F4;&#xC744; &#xC608;&#xCE21;&#xD560; &#xB54C; &#xC751;&#xC6A9;&#xD558;&#xB294; &#xBC95;&#xC744; &#xB2E4;&#xB8EC;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xAE30;&#xBC95;&#xC5D0; &#xC228;&#xC5B4;&#xC788;&#xB294; &#xC9C1;&#xAD00;&#xC744; &#xC774;&#xD574;&#xD560; &#xB54C; &#xC774; &#xBD80;&#xBD84;&#xC774; &#xD575;&#xC2EC;&#xC774;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xC124;&#xC815;&#xC5D0;&#xC11C;, &#xC608;&#xCE21; &#xAE30;&#xBC95;&#xC744; &#xC120;&#xD0DD;&#xD558;&#xACE0; &#xC815;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC5B4;&#xCA4C;&#xBA74; &#xC989;&#xD765;&#xC801;&#xC778; &#xAC83;&#xCC98;&#xB7FC; &#xBCF4;&#xC77C; &#xC218;&#xB3C4; &#xC788;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C;&#xB294; &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xD575;&#xC2EC; &#xC131;&#xBD84;(&#xCD94;&#xC138;&#xC640; &#xACC4;&#xC808;&#xC131;)&#xACFC; &#xC774;&#xB7EC;&#xD55C; &#xC131;&#xBD84;&#xC774; &#xD3C9;&#xD65C;&#xBC95;&#xC5D0; (&#xB367;&#xC148; &#xB610;&#xB294; &#xACF1;&#xC148; &#xBC29;&#xC2DD;&#xC774;&#xB77C;&#xB294; &#xCE21;&#xBA74;&#xC5D0;&#xC11C;) &#xC5B4;&#xB5BB;&#xAC8C; &#xB4E4;&#xC5B4;&#xAC08; &#xC9C0; &#xAC10;&#xC9C0;&#xD558;&#xC5EC; &#xAE30;&#xBC95;&#xC744; &#xC120;&#xD0DD;&#xD55C;&#xB2E4;.</p>
-<p>&#xC774; &#xC7A5;&#xC758; &#xB450; &#xBC88;&#xC9F8; &#xBD80;&#xBD84;&#xC5D0;&#xC11C;&#xB294; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xBC95;&#xC758; &#xADFC;&#xAC04;&#xC744; &#xC774;&#xB8E8;&#xB294; &#xD1B5;&#xACC4;&#xC801;&#xC778; &#xBAA8;&#xB378;&#xC744; &#xB2E4;&#xB8EC;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xBAA8;&#xB378;&#xC740; &#xC774; &#xC7A5;&#xC758; &#xCCAB; &#xBC88;&#xC9F8; &#xBD80;&#xBD84;&#xC5D0;&#xC11C; &#xC774;&#xC57C;&#xAE30;&#xD588;&#xB358; &#xC608;&#xCE21; &#xBC29;&#xC2DD;&#xACFC; &#xAC19;&#xC9C0;&#xB9CC;, &#xC608;&#xCE21; &#xAD6C;&#xAC04;&#xB3C4; &#xC0DD;&#xC131;&#xD55C;&#xB2E4;. &#xB354;&#xC6B1;&#xC774;, &#xC774;&#xB7EC;&#xD55C; &#xD1B5;&#xACC4;&#xC801;&#xC778; &#xBC29;&#xC2DD;&#xC740; &#xD6C4;&#xBCF4; &#xBAA8;&#xB378; &#xC911;&#xC5D0;&#xC11C; &#xC801;&#xC808;&#xD55C; &#xBAA8;&#xB378;&#xC744; &#xACE0;&#xB97C; &#xB54C; &#xC4F8;&#xBAA8; &#xC788;&#xB2E4;.</p>
-<p>7.1 &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;
-7.2 Holt&#xC758; &#xC120;&#xD615; &#xCD94;&#xC138; &#xAE30;&#xBC95;
-7.3 &#xC9C0;&#xC218; &#xCD94;&#xC138; &#xAE30;&#xBC95;
-7.4 &#xAC10;&#xC1E0; &#xCD94;&#xC138; &#xAE30;&#xBC95;
-7.5 Holt-Winters &#xACC4;&#xC808;&#xC131; &#xAE30;&#xBC95;
-7.6 &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xBC95;&#xC758; &#xBD84;&#xB958;
-7.7 &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC5D0; &#xB300;&#xD55C; &#xD601;&#xC2E0; &#xC0C1;&#xD0DC; &#xACF5;&#xAC04; &#xBAA8;&#xB378;
-7.8 &#xC5F0;&#xC2B5; &#xBB38;&#xC81C;
-7.9 &#xB354; &#xC77D;&#xC744; &#xAC70;&#xB9AC;</p>
+                                <h2 id="73-&#xC9C0;&#xC218;-&#xCD94;&#xC138;-&#xAE30;&#xBC95;">7.3 &#xC9C0;&#xC218; &#xCD94;&#xC138; &#xAE30;&#xBC95;</h2>
+<p>&#xC218;&#xC900;&#xACFC; &#xAE30;&#xC6B8;&#xAE30; &#xAD00;&#xB828;&#xD56D;&#xC744; &#xB367;&#xC148; &#xB300;&#xC2E0; &#xACF1;&#xC148;&#xC73C;&#xB85C; &#xBC14;&#xAFB8;&#xC5B4; Holt&#xC758; &#xC120;&#xD615; &#xCD94;&#xC138; &#xAE30;&#xBC95;&#xC758; &#xD55C; &#xAC00;&#xC9C0; &#xBCC0;&#xD615;&#xC744; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB2E4;.</p>
+<p><script type="math/tex; ">
+\begin{align*}
+\hat{y}_{t+h \vert t} &= l_{t}b_{t}^{h} \\
+l_{t} &= \alpha y_{t} + (1-\alpha)(l_{t-1} b_{t-1}) \\
+b_{t} &= \beta^{*} \frac{ l_{t} }{ l_{t-1} } + (1-\beta^{*})b_{t-1}
+\end{align*}
+</script></p>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> b_{t} </script>&#xB294; &#xCD94;&#xC815;&#xB41C; &#xC218;&#xC900;&#xC5D0; &#xB354;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xACF1;&#xD558;&#xB294; &#xAC12;&#xC778; &#xCD94;&#xC815;&#xB41C; &#xC99D;&#xAC00;&#xC728;(&#xC808;&#xB300;&#xAC12;&#xC774; &#xC544;&#xB2CC; &#xC0C1;&#xB300;&#xC801; &#xD56D;)&#xC774;&#xB2E4;. &#xC608;&#xCE21; &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xCD94;&#xC138;&#xB294; &#xC120;&#xD615;&#xC774; &#xC544;&#xB2C8;&#xACE0; &#xC77C;&#xC815;&#xD55C; &#xAE30;&#xC6B8;&#xAE30; &#xB300;&#xC2E0; &#xC77C;&#xC815;&#xD55C; &#xC99D;&#xAC00;&#xC728;&#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xC9C0;&#xC218;&#xAF34;&#xB85C; &#xBC14;&#xB00C;&#xC5C8;&#xB2E4;. &#xC624;&#xCC28; &#xBCF4;&#xC815; &#xD615;&#xD0DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xB2E4;.</p>
+<p><script type="math/tex; ">
+\begin{align*}
+l_{t} & = l_{t-1} b_{t-1} + \alpha e_{t} \\
+b_{t} & = b_{t-1} + \alpha \beta^{*} \frac{e_{t}}{l_{t-1}}
+\end{align*}
+</script></p>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> e_{t}=y_{t}-(l_{t-1}b_{t-1})=y_{t}-\hat{y}_{t \vert t-1} </script> &#xC774;&#xB2E4;.</p>
+<h3 id="&#xC608;&#xC81C;-72-&#xD56D;&#xACF5;&#xAC1D;&#xACC4;&#xC18D;">&#xC608;&#xC81C; 7.2 &#xD56D;&#xACF5;&#xAC1D;(&#xACC4;&#xC18D;)</h3>
+<p>&#xD45C; 7.3&#xC5D0;&#xC11C; &#xC9C0;&#xC218; &#xCD94;&#xC138; &#xAE30;&#xBC95;&#xC744; &#xC801;&#xC6A9;&#xD558;&#xC5EC; &#xC0B4;&#xD3B4;&#xBCF4;&#xC558;&#xB2E4;. Holt&#xC758; &#xC120;&#xD615; &#xAE30;&#xBC95;&#xCC98;&#xB7FC; <script type="math/tex; ">\alpha=0.8</script>, <script type="math/tex; ">\beta^{*}=0.2</script>, &#xADF8;&#xB9AC;&#xACE0; <script type="math/tex; ">l_{0}=y_{1}</script>&#xB85C; &#xB450;&#xC9C0;&#xB9CC;, &#xD45C; 7.9&#xC5D0;&#xC11C; &#xC81C;&#xC548;&#xD55C; &#xAC83;&#xCC98;&#xB7FC; <script type="math/tex; ">b_{0}=\frac{y_{2}}{y_{1}}</script>&#xB85C; &#xB454;&#xB2E4;.</p>
+<p><script type="math/tex; ">b_{t}</script>&#xB77C;&#xACE0; &#xC774;&#xB984; &#xBD99;&#xC778; &#xC5F4;&#xC5D0;&#xC11C; &#xB450; &#xBC29;&#xBC95;&#xC758; &#xCD94;&#xC138;&#xC640; &#xC99D;&#xAC00;&#xC728;&#xC758; &#xCC28;&#xC774;&#xB97C; &#xC0B4;&#xD3B4;&#xBCF4;&#xC790;. Holt&#xC758; &#xC120;&#xD615; &#xAE30;&#xBC95;&#xC5D0;&#xC11C;&#xB294; <script type="math/tex; ">b_{t}</script>&#xB294; &#xAD00;&#xB828;&#xB41C; &#xC218;&#xC900; &#xD56D;&#xC5D0; &#xB354;&#xD574;&#xC9C0;&#xACE0;, &#xC9C0;&#xC218; &#xCD94;&#xC138; &#xAE30;&#xBC95;&#xC5D0;&#xC11C;&#xB294; <script type="math/tex; ">b_{t}</script>&#xB294; &#xAD00;&#xB828;&#xB41C; &#xC218;&#xC900; &#xD56D;&#xC5D0; &#xACF1;&#xD574;&#xC9C4;&#xB2E4;.</p>
 
                                 
                                 </section>
@@ -424,12 +431,12 @@
 
             
                 
-                <a href="fpp-kr-6-8.md" class="navigation navigation-prev " aria-label="Previous page: 6.8 더 읽을거리">
+                <a href="fpp-kr-7-2.html" class="navigation navigation-prev " aria-label="Previous page: 7.2 Holt의 선형 추세 기법">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="fpp-kr-7-1.html" class="navigation navigation-next " aria-label="Next page: 7.1 단순 지수 평활">
+                <a href="fpp-kr-7-4.html" class="navigation navigation-next " aria-label="Next page: 7.4 감쇠 추세 기법">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -440,7 +447,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"7 지수 평활","level":"1.3","depth":1,"next":{"title":"7.1 단순 지수 평활","level":"1.3.1","depth":2,"path":"doc/fpp-kr-7-1.md","ref":"doc/fpp-kr-7-1.md","articles":[]},"previous":{"title":"6.8 더 읽을거리","level":"1.2.8","depth":2,"path":"doc/fpp-kr-6-8.md","ref":"doc/fpp-kr-6-8.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","comment","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"fpp-kr","gitbook":"3.x.x","description":"Translation"},"file":{"path":"doc/fpp-kr-7.md","mtime":"2017-01-11T11:18:08.631Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-11T12:41:12.311Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"7.3 지수 추세 기법","level":"1.3.3","depth":2,"next":{"title":"7.4 감쇠 추세 기법","level":"1.3.4","depth":2,"path":"doc/fpp-kr-7-4.md","ref":"doc/fpp-kr-7-4.md","articles":[]},"previous":{"title":"7.2 Holt의 선형 추세 기법","level":"1.3.2","depth":2,"path":"doc/fpp-kr-7-2.md","ref":"doc/fpp-kr-7-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","comment","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"fpp-kr","gitbook":"3.x.x","description":"Translation"},"file":{"path":"doc/fpp-kr-7-3.md","mtime":"2017-01-11T12:14:17.612Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-11T12:41:12.311Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

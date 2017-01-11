@@ -98,7 +98,7 @@
                 <a href="../">
             
                     
-                    Introduction
+                    소개
             
                 </a>
             
@@ -234,7 +234,7 @@
                 <a href="fpp-kr-7.html">
             
                     
-                    7
+                    7 지수 평활
             
                 </a>
             
@@ -248,7 +248,85 @@
                 <a href="fpp-kr-7-1.html">
             
                     
-                    7.1 
+                    7.1 단순 지수 평활
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="fpp-kr-7-2.html">
+            
+                <a href="fpp-kr-7-2.html">
+            
+                    
+                    7.2 Holt의 선형 추세 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="fpp-kr-7-3.html">
+            
+                <a href="fpp-kr-7-3.html">
+            
+                    
+                    7.3 지수 추세 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="fpp-kr-7-4.html">
+            
+                <a href="fpp-kr-7-4.html">
+            
+                    
+                    7.4 감쇠 추세 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="fpp-kr-7-5.html">
+            
+                <a href="fpp-kr-7-5.html">
+            
+                    
+                    7.5 Holt-Winters 계절적인 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="fpp-kr-7-6.html">
+            
+                <a href="fpp-kr-7-6.html">
+            
+                    
+                    7.6 지수 평활 기법 분류
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="fpp-kr-7-7.html">
+            
+                <a href="fpp-kr-7-7.html">
+            
+                    
+                    7.7 지수 평활에 대한 혁신 상태 공간 모델
             
                 </a>
             
@@ -312,9 +390,9 @@
 <p>&#xCC28;&#xC218; <script type="math/tex; "> m </script> &#xC774;&#xB3D9; &#xD3C9;&#xADE0;&#xC740; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC4F8; &#xC218; &#xC788;&#xB2E4;.</p>
 <p><script type="math/tex; ">
 \begin{align*}
-\hat{ T }_{t} = \frac{1}{m} \sum_{j = -k}^{k} y_{t+j} 
+\hat{ T }_{t} = \frac{1}{m} \sum_{j = -k}^{k} y_{t+j},
 \end{align*}
-</script>,</p>
+</script></p>
 <p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> m = 2 k + 1 </script>&#xC774;&#xB2E4;. &#xC989;, <script type="math/tex; "> k </script> &#xAE30;&#xAC04; &#xC548;&#xC758; &#xC2DC;&#xACC4;&#xC5F4; &#xAC12;&#xC744; &#xD3C9;&#xADE0;&#xD558;&#xC5EC; &#xC2DC;&#xAC04; <script type="math/tex; "> t </script>&#xC5D0;&#xC11C; &#xCD94;&#xC138;-&#xC8FC;&#xAE30;&#xB97C; &#xCE21;&#xC815;&#xD560; &#xC218; &#xC788;&#xB2E4;. &#xCE21;&#xC815; &#xC2DC;&#xAE30;&#xAC00; &#xBE44;&#xC2B7;&#xD55C; &#xAC12;&#xC740; &#xAC12;&#xC774; &#xBE44;&#xC2B7;&#xD558;&#xAE30;&#xB3C4; &#xD558;&#xB2E4;. &#xD3C9;&#xADE0;&#xC774; &#xB370;&#xC774;&#xD130;&#xC758; &#xBB34;&#xC791;&#xC704;&#xC131;&#xC744; &#xAC10;&#xC18C;&#xC2DC;&#xCF1C;&#xC900;&#xB2E4;. &#xC774; &#xC791;&#xC5C5;&#xC744; &#xD1B5;&#xD574; &#xD3C9;&#xD65C;&#xD654;&#xB41C; &#xCD94;&#xC138;-&#xC8FC;&#xAE30; &#xC131;&#xBD84;&#xC744; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB2E4;. &#xCC28;&#xC218; <script type="math/tex; ">m</script>&#xC758; &#xC774;&#xB3D9; &#xD3C9;&#xADE0; &#xC791;&#xC5C5;&#xC744; <script type="math/tex; "> m </script>-MA &#xB77C;&#xACE0; &#xBD80;&#xB978;&#xB2E4;. &#xC608;&#xB85C;, &#xADF8;&#xB9BC; 6.6&#xC744; &#xBCF4;&#xC790;. &#xC774; &#xADF8;&#xB9BC;&#xC5D0;&#xC11C; 1989&#xB144;&#xBD80;&#xD130; 2008&#xB144;&#xAE4C;&#xC9C0; &#xD638;&#xC8FC; &#xB0A8;&#xBD80;&#xC758; &#xB9E4;&#xB144; &#xC8FC;&#xAC70;&#xC6A9; &#xC804;&#xAE30; &#xD310;&#xB9E4;&#xB7C9;&#xC744; &#xC54C; &#xC218; &#xC788;&#xB2E4;(hot water sales&#xB294; &#xC81C;&#xC678;). &#xD45C; 6.1&#xC5D0; &#xB370;&#xC774;&#xD130;&#xB3C4; &#xC788;&#xB2E4;.</p>
 <p><img src="https://www.otexts.org/sites/default/files/resize/fpp/images/ressales1-570x362.png" alt=""></p>
 <p>&#xADF8;&#xB9BC; 6.6: &#xD638;&#xC8FC; &#xB0A8;&#xBD80; &#xC8FC;&#xAC70;&#xC6A9; &#xC804;&#xAE30; &#xD310;&#xB9E4;&#xB7C9;(&#xC628;&#xC218; &#xC81C;&#xC678;): 1989-2008.</p>
@@ -796,7 +874,6 @@ lines(ma(elecequip, order=<span class="hljs-number">12</span>), col=<span class=
 </table>
 <p>S = Spencer&#xC758; &#xAC00;&#xC911; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;</p>
 <p>H = Henderson&#xC758; &#xAC00;&#xC911; &#xC774;&#xB3D9; &#xD3C9;&#xADE0;</p>
-<p>6.1 &#xC2DC;&#xACC4;&#xC5F4; &#xC131;&#xBD84;   &#xC704;  6.3 &#xACE0;&#xC804;&#xC801;&#xC778; &#xBD84;&#xD574;&#xBC95;</p>
 <p><a href="https://www.otexts.org/fpp/6/2" target="_blank">&#xC6D0;&#xBB38; &#xBCF4;&#xAE30;</a></p>
 
                                 
@@ -841,7 +918,7 @@ lines(ma(elecequip, order=<span class="hljs-number">12</span>), col=<span class=
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6.2 이동 평균","level":"1.2.2","depth":2,"next":{"title":"6.3 고전적인 분해","level":"1.2.3","depth":2,"path":"doc/fpp-kr-6-3.md","ref":"doc/fpp-kr-6-3.md","articles":[]},"previous":{"title":"6.1 시계열 성분","level":"1.2.1","depth":2,"path":"doc/fpp-kr-6-1.md","ref":"doc/fpp-kr-6-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","comment","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"fpp-kr","gitbook":"3.x.x","description":"Translation"},"file":{"path":"doc/fpp-kr-6-2.md","mtime":"2017-01-06T13:02:54.981Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-06T13:11:29.247Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6.2 이동 평균","level":"1.2.2","depth":2,"next":{"title":"6.3 고전적인 분해","level":"1.2.3","depth":2,"path":"doc/fpp-kr-6-3.md","ref":"doc/fpp-kr-6-3.md","articles":[]},"previous":{"title":"6.1 시계열 성분","level":"1.2.1","depth":2,"path":"doc/fpp-kr-6-1.md","ref":"doc/fpp-kr-6-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","comment","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"fpp-kr","gitbook":"3.x.x","description":"Translation"},"file":{"path":"doc/fpp-kr-6-2.md","mtime":"2017-01-06T13:25:44.099Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-11T12:41:12.311Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,0 +1,788 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>7.2 Holt의 선형 추세 기법 · fpp-kr</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-comment/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="fpp-kr-7-3.html" />
+    
+    
+    <link rel="prev" href="fpp-kr-7-1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    소개
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="fpp-kr-6.html">
+            
+                <a href="fpp-kr-6.html">
+            
+                    
+                    6 시계열 분해
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="fpp-kr-6-1.html">
+            
+                <a href="fpp-kr-6-1.html">
+            
+                    
+                    6.1 시계열 성분
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="fpp-kr-6-2.html">
+            
+                <a href="fpp-kr-6-2.html">
+            
+                    
+                    6.2 이동 평균
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="fpp-kr-6-3.html">
+            
+                <a href="fpp-kr-6-3.html">
+            
+                    
+                    6.3 고전적인 분해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="fpp-kr-6-4.html">
+            
+                <a href="fpp-kr-6-4.html">
+            
+                    
+                    6.4 X-12-ARIMA 분해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="fpp-kr-6-5.html">
+            
+                <a href="fpp-kr-6-5.html">
+            
+                    
+                    6.5 STL 분해
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="fpp-kr-6-6.html">
+            
+                <a href="fpp-kr-6-6.html">
+            
+                    
+                    6.6 분해를 사용한 예측
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="fpp-kr-6-7.md">
+            
+                <span>
+            
+                    
+                    6.7 연습문제
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="fpp-kr-6-8.md">
+            
+                <span>
+            
+                    
+                    6.8 더 읽을거리
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="fpp-kr-7.html">
+            
+                <a href="fpp-kr-7.html">
+            
+                    
+                    7 지수 평활
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="fpp-kr-7-1.html">
+            
+                <a href="fpp-kr-7-1.html">
+            
+                    
+                    7.1 단순 지수 평활
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="fpp-kr-7-2.html">
+            
+                <a href="fpp-kr-7-2.html">
+            
+                    
+                    7.2 Holt의 선형 추세 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="fpp-kr-7-3.html">
+            
+                <a href="fpp-kr-7-3.html">
+            
+                    
+                    7.3 지수 추세 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="fpp-kr-7-4.html">
+            
+                <a href="fpp-kr-7-4.html">
+            
+                    
+                    7.4 감쇠 추세 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="fpp-kr-7-5.html">
+            
+                <a href="fpp-kr-7-5.html">
+            
+                    
+                    7.5 Holt-Winters 계절적인 기법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="fpp-kr-7-6.html">
+            
+                <a href="fpp-kr-7-6.html">
+            
+                    
+                    7.6 지수 평활 기법 분류
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="fpp-kr-7-7.html">
+            
+                <a href="fpp-kr-7-7.html">
+            
+                    
+                    7.7 지수 평활에 대한 혁신 상태 공간 모델
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >7.2 Holt의 선형 추세 기법</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="72-holt&#xC758;-&#xC120;&#xD615;-&#xCD94;&#xC138;-&#xAE30;&#xBC95;">7.2 Holt&#xC758; &#xC120;&#xD615; &#xCD94;&#xC138; &#xAE30;&#xBC95;</h2>
+<p>Holt&#xC758; 1957&#xB144; &#xB17C;&#xBB38;&#xC5D0;&#xC11C; &#xCD94;&#xC138;&#xAC00; &#xC788;&#xB294; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC608;&#xCE21;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xC744; &#xD655;&#xC7A5;&#xD55C;&#xB2E4;. &#xC774; &#xBC29;&#xBC95;&#xC740; &#xC608;&#xCE21;&#xC2DD;&#xACFC; &#xB450; &#xAC1C;&#xC758; &#xD3C9;&#xD65C;&#xC2DD;(&#xD558;&#xB098;&#xB294; &#xC218;&#xC900;&#xC5D0; &#xAD00;&#xD55C; &#xAC83;, &#xB2E4;&#xB978; &#xD558;&#xB098;&#xB294; &#xCD94;&#xC138;&#xC5D0; &#xAD00;&#xD55C; &#xAC83;)&#xC744; &#xD3EC;&#xD568;&#xD55C;&#xB2E4;.</p>
+<p><script type="math/tex; ">
+\begin{equation}
+\begin{aligned}
+예측식 \qquad \hat{y}_{t+h|t} &= l_{t} + h b_{t} \\
+수준식 \qquad\quad\:\:\:\: l_{t} &= \alpha y_{t} + (1-\alpha)(l_{t-1} + b_{t-1}) \\
+추세식 \qquad\quad\:\:\: b_{t} &= \beta^{*} ( l_{t} - l_{t-1} ) + (1-\beta^{*})b_{t-1}
+\end{aligned}
+\end{equation}
+</script></p>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> l_{t} </script>&#xB294; &#xC2DC;&#xAC04; <script type="math/tex; "> t </script>&#xC5D0;&#xC11C; &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xC218;&#xC900; &#xCD94;&#xC815;&#xAC12;, <script type="math/tex; ">b_{t}</script>&#xB294; &#xC2DC;&#xAC04; <script type="math/tex; "> t </script>&#xC5D0;&#xC11C; &#xC2DC;&#xACC4;&#xC5F4;&#xC758; &#xCD94;&#xC138; &#xCD94;&#xC815;&#xAC12;, <script type="math/tex; ">0 \le \alpha \le 1</script>&#xB294; &#xC218;&#xC900;&#xC5D0; &#xB300;&#xD55C; &#xD3C9;&#xD65C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;, <script type="math/tex; ">0 \le \beta^{*} \le 1</script>&#xB294; &#xCD94;&#xC138;&#xC5D0; &#xB300;&#xD55C; &#xD3C9;&#xD65C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xC774;&#xB2E4;. (7.7&#xC808;&#xC5D0;&#xC11C; &#xC124;&#xBA85;&#xD560; &#xC774;&#xC720; &#xB54C;&#xBB38;&#xC5D0; &#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> \beta </script>&#xB300;&#xC2E0; <script type="math/tex; "> \beta^{*} </script>&#xC744; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;.)</p>
+<p>&#xB2E8;&#xC21C; &#xC9C0;&#xC218; &#xD3C9;&#xD65C;&#xACFC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C;, &#xC218;&#xC900;&#xC2DD;&#xC5D0;&#xC11C; <script type="math/tex; "> l_{t} </script>&#xAC00; &#xAD00;&#xCE21;&#xAC12; <script type="math/tex; "> y_{t} </script>&#xC758; &#xAC00;&#xC911; &#xD3C9;&#xADE0;&#xC774;&#xB77C;&#xB294; &#xAC83;&#xACFC; &#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> l_{t-1}+b_{t-1} </script>&#xB85C; &#xC8FC;&#xC5B4;&#xC9C0;&#xB294; &#xC2DC;&#xAC04; <script type="math/tex; "> t </script>&#xC5D0; &#xB300;&#xD55C; &#xD45C;&#xBCF8; &#xB0B4; &#xD55C; &#xB2E8;&#xACC4; &#xC55E; &#xC608;&#xCE21;&#xC774;&#xB77C;&#xB294; &#xAC83;&#xC744; &#xC54C; &#xC218; &#xC788;&#xB2E4;. &#xCD94;&#xC138;&#xC2DD;&#xC5D0;&#xC11C; <script type="math/tex; "> b_{t} </script>&#xAC00; &#xCD94;&#xC138;&#xC5D0; &#xB300;&#xD55C; &#xC774;&#xC804; &#xCD94;&#xC815; <script type="math/tex; "> l_{t}-l_{t-1} </script>&#xACFC; <script type="math/tex; "> b_{t-1} </script>&#xC5D0; &#xADFC;&#xAC70;&#xD558;&#xC5EC; &#xC2DC;&#xAC04; <script type="math/tex; "> t </script>&#xC5D0;&#xC11C; &#xCD94;&#xC815;&#xB41C; &#xCD94;&#xC138;&#xC758; &#xAC00;&#xC911;&#xD3C9;&#xADE0;&#xC774;&#xB77C;&#xB294; &#xAC83;&#xC744; &#xC54C; &#xC218; &#xC788;&#xB2E4;.</p>
+<p>&#xC608;&#xCE21; &#xD568;&#xC218;&#xB294; &#xB354;&#xC774;&#xC0C1; &#xD3C9;&#xD3C9;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xCD94;&#xC138;&#xB97C; &#xB098;&#xD0C0;&#xB0B8;&#xB2E4;. <script type="math/tex; "> h </script>&#xB2E8;&#xACC4; &#xC55E; &#xC608;&#xCE21;&#xC740; &#xB9C8;&#xC9C0;&#xB9C9; &#xCD94;&#xC815; &#xC218;&#xC900;&#xC5D0; &#xB9C8;&#xC9C0;&#xB9C9; &#xCD94;&#xC815; &#xCD94;&#xC138;&#xAC12;&#xC758; <script type="math/tex; "> h </script>&#xBC30; &#xD55C; &#xAC83;&#xC744; &#xB354;&#xD55C; &#xAC12;&#xC774;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC608;&#xCE21;&#xAC12;&#xC740; <script type="math/tex; "> h </script>&#xC758; &#xC120;&#xD615; &#xD568;&#xC218;&#xC774;&#xB2E4;.</p>
+<p>&#xC218;&#xC900;&#xACFC; &#xCD94;&#xC138;&#xC2DD;&#xC758; &#xC624;&#xCC28; &#xBCF4;&#xC815;&#xC2DD;&#xC740; &#xD45C;&#xBCF8; &#xB0B4; &#xD55C; &#xB2E8;&#xACC4; &#xC608;&#xCE21; &#xC624;&#xCC28;&#xC5D0; &#xB300;&#xD55C; &#xC870;&#xC815;&#xC774; &#xB4E4;&#xC5B4;&#xAC00; &#xC788;&#xB2E4;.</p>
+<p><script type="math/tex; ">
+\begin{align*}
+l_{t} &= l_{t-1} + b_{t-1} + \alpha e_{t} \\
+b_{t} &= b_{t-1} + \alpha \beta^{*} e_{t}
+\end{align*}
+</script></p>
+<p>&#xC5EC;&#xAE30;&#xC5D0;&#xC11C; <script type="math/tex; "> e_{t} = y_{t} - (l_{t-1} + b_{t-1}) = y_{t} - \hat{y}_{t \vert t-1} </script>&#xC774;&#xB2E4;.</p>
+<h3 id="&#xC608;&#xC81C;-72-&#xD56D;&#xACF5;&#xAC1D;">&#xC608;&#xC81C; 7.2 &#xD56D;&#xACF5;&#xAC1D;</h3>
+<p>&#xD45C; 7.3&#xC5D0;&#xC11C; Holt&#xC758; &#xC120;&#xD615; &#xAE30;&#xBC95;&#xC744; &#xD638;&#xC8FC; &#xD56D;&#xACF5;&#xC758; &#xBAA8;&#xB4E0; &#xC2B9;&#xAC1D;&#xC5D0; &#xB300;&#xD55C; &#xD56D;&#xACF5; &#xC218;&#xC1A1; &#xB370;&#xC774;&#xD130;&#xC5D0; &#xC801;&#xC6A9;&#xD55C; &#xACB0;&#xACFC;&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xC5C8;&#xB2E4;. &#xAE30;&#xBC95;&#xC744; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xAE30; &#xC704;&#xD574; &#xD45C; 7.9&#xC5D0;&#xC11C; &#xC81C;&#xC548;&#xD55C; &#xAC83;&#xCC98;&#xB7FC; <script type="math/tex; "> l_{0}=y_{1} </script> &#xADF8;&#xB9AC;&#xACE0; <script type="math/tex; "> b_{0}=y_{2}-y_{1} </script>&#xB85C; &#xB450;&#xC5C8;&#xB2E4;. &#xC120;&#xD615; &#xCD94;&#xC138;&#xB85C; &#xCC98;&#xC74C; &#xBA87; &#xAD00;&#xCE21;&#xAC12;&#xC744; &#xB9DE;&#xCD9C; &#xC218; &#xC788;&#xC744; &#xAC83;&#xC774;&#xACE0; <script type="math/tex; "> y </script>&#xC808;&#xD3B8;&#xACFC; &#xAE30;&#xC6B8;&#xAE30; &#xCD94;&#xC815;&#xAC12;&#xC744; &#xC218;&#xC900;&#xACFC; &#xCD94;&#xC138;&#xC758; &#xCD08;&#xAE30;&#xAC12;&#xC73C;&#xB85C; &#xAC01;&#xAC01; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC744; &#xAC83;&#xC774;&#xB2E4;.</p>
+<p>&#xC2DC;&#xC5F0; &#xBAA9;&#xC801;&#xC5D0;&#xC11C; &#xD3C9;&#xD65C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB97C; <script type="math/tex; "> \alpha=0.8 </script>&#xACFC; <script type="math/tex; "> \beta^{*}=0.2 </script>&#xB85C; &#xB450;&#xC5C8;&#xB2E4;. &#xC774;&#xB807;&#xAC8C; &#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74;, 7.1&#xC808;&#xCC98;&#xB7FC; &#xD45C;&#xBCF8; &#xB0B4; &#xD55C; &#xB2E8;&#xACC4; &#xC608;&#xCE21; &#xC624;&#xCC28;&#xC5D0; &#xB300;&#xD55C; SSE&#xB97C; &#xCD5C;&#xC18C;&#xD654;&#xD558;&#xC5EC; &#xD3C9;&#xD65C; &#xB9E4;&#xAC1C;&#xBCC0;&#xC218;&#xB3C4; &#xCD08;&#xAE30;&#xAC12;&#xACFC; &#xD568;&#xAED8; &#xCD94;&#xC815;&#xD560; &#xC218; &#xC788;&#xC744; &#xAC83;&#xC774;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>&#xC5F0;&#xB3C4;</th>
+<th><script type="math/tex; "> t </script></th>
+<th><script type="math/tex; "> y_{t} </script></th>
+<th><script type="math/tex; "> l_{t} </script></th>
+<th><script type="math/tex; "> b_{t} </script></th>
+<th><script type="math/tex; "> \hat{y}_{t} </script></th>
+<th><script type="math/tex; "> l_{t} </script></th>
+<th><script type="math/tex; "> b_{t} </script></th>
+<th><script type="math/tex; "> \hat{y}_{t} </script></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1989</td>
+<td>0</td>
+<td></td>
+<td>17.55</td>
+<td>4.31</td>
+<td></td>
+<td>17.55</td>
+<td>1.25</td>
+<td></td>
+</tr>
+<tr>
+<td>1990</td>
+<td>1</td>
+<td>17.55</td>
+<td>18.41</td>
+<td>3.62</td>
+<td>21.86</td>
+<td>18.41</td>
+<td>1.21</td>
+<td>21.86</td>
+</tr>
+<tr>
+<td>1991</td>
+<td>2</td>
+<td>21.86</td>
+<td>21.89</td>
+<td>3.59</td>
+<td>22.03</td>
+<td>21.93</td>
+<td>1.20</td>
+<td>22.21</td>
+</tr>
+<tr>
+<td>1992</td>
+<td>3</td>
+<td>23.89</td>
+<td>24.21</td>
+<td>3.33</td>
+<td>25.48</td>
+<td>24.39</td>
+<td>1.18</td>
+<td>26.38</td>
+</tr>
+<tr>
+<td>1993</td>
+<td>4</td>
+<td>26.93</td>
+<td>27.05</td>
+<td>3.24</td>
+<td>27.54</td>
+<td>27.32</td>
+<td>1.17</td>
+<td>28.89</td>
+</tr>
+<tr>
+<td>1994</td>
+<td>5</td>
+<td>26.89</td>
+<td>27.57</td>
+<td>2.69</td>
+<td>30.29</td>
+<td>27.91</td>
+<td>1.14</td>
+<td>32.02</td>
+</tr>
+<tr>
+<td>1995</td>
+<td>6</td>
+<td>28.83</td>
+<td>29.12</td>
+<td>2.46</td>
+<td>30.26</td>
+<td>29.44</td>
+<td>1.12</td>
+<td>31.88</td>
+</tr>
+<tr>
+<td>1996</td>
+<td>7</td>
+<td>30.08</td>
+<td>30.38</td>
+<td>2.22</td>
+<td>31.58</td>
+<td>30.68</td>
+<td>1.11</td>
+<td>33.10</td>
+</tr>
+<tr>
+<td>1997</td>
+<td>8</td>
+<td>30.95</td>
+<td>31.28</td>
+<td>1.96</td>
+<td>32.60</td>
+<td>31.56</td>
+<td>1.09</td>
+<td>33.99</td>
+</tr>
+<tr>
+<td>1998</td>
+<td>9</td>
+<td>30.19</td>
+<td>30.80</td>
+<td>1.47</td>
+<td>33.24</td>
+<td>31.04</td>
+<td>1.07</td>
+<td>34.47</td>
+</tr>
+<tr>
+<td>1999</td>
+<td>10</td>
+<td>31.58</td>
+<td>31.72</td>
+<td>1.36</td>
+<td>32.27</td>
+<td>31.91</td>
+<td>1.06</td>
+<td>33.23</td>
+</tr>
+<tr>
+<td>2000</td>
+<td>11</td>
+<td>32.58</td>
+<td>32.68</td>
+<td>1.28</td>
+<td>33.08</td>
+<td>32.84</td>
+<td>1.06</td>
+<td>33.89</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>12</td>
+<td>33.48</td>
+<td>33.57</td>
+<td>1.20</td>
+<td>33.96</td>
+<td>33.71</td>
+<td>1.05</td>
+<td>34.66</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>13</td>
+<td>39.02</td>
+<td>38.17</td>
+<td>1.88</td>
+<td>34.78</td>
+<td>38.29</td>
+<td>1.07</td>
+<td>35.39</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>14</td>
+<td>41.39</td>
+<td>41.12</td>
+<td>2.10</td>
+<td>40.06</td>
+<td>41.28</td>
+<td>1.07</td>
+<td>40.86</td>
+</tr>
+<tr>
+<td>2004</td>
+<td>15</td>
+<td>41.60</td>
+<td>41.92</td>
+<td>1.84</td>
+<td>43.22</td>
+<td>42.10</td>
+<td>1.06</td>
+<td>44.13</td>
+</tr>
+<tr>
+<td></td>
+<td><script type="math/tex; "> h </script></td>
+<td></td>
+<td></td>
+<td></td>
+<td><script type="math/tex; "> \hat{y}_{T+h} </script></td>
+<td><script type="math/tex; "> T </script></td>
+<td></td>
+<td><script type="math/tex; "> \hat{y}_{T+h \vert T} </script></td>
+</tr>
+<tr>
+<td>2005</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td>43.76</td>
+<td></td>
+<td></td>
+<td>44.60</td>
+</tr>
+<tr>
+<td>2006</td>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>45.59</td>
+<td></td>
+<td></td>
+<td>47.24</td>
+</tr>
+<tr>
+<td>2007</td>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td>47.43</td>
+<td></td>
+<td></td>
+<td>50.04</td>
+</tr>
+<tr>
+<td>2008</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td>49.27</td>
+<td></td>
+<td></td>
+<td>53.01</td>
+</tr>
+<tr>
+<td>2009</td>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+<td>51.10</td>
+<td></td>
+<td></td>
+<td>56.15</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-R">air &lt;- window(ausair, start=<span class="hljs-number">1990</span>, end=<span class="hljs-number">2004</span>)
+fit1 &lt;- holt(air, alpha=<span class="hljs-number">0.8</span>, beta=<span class="hljs-number">0.2</span>, initial=<span class="hljs-string">&quot;simple&quot;</span>, h=<span class="hljs-number">5</span>)
+fit2 &lt;- holt(air, alpha=<span class="hljs-number">0.8</span>, beta=<span class="hljs-number">0.2</span>, initial=<span class="hljs-string">&quot;simple&quot;</span>, exponential=<span class="hljs-literal">TRUE</span>, h=<span class="hljs-number">5</span>)
+
+fit1.model.state <span class="hljs-comment"># &#xCCAB;&#xBC88;&#xC9F8; &#xBAA8;&#xB378;&#xC5D0; &#xB300;&#xD55C; &#xACB0;&#xACFC;</span>
+fitted(fit1)
+fit1.mean
+</code></pre>
+<p><img src="https://www.otexts.org/sites/default/files/resize/fpp/images/fig_7_trend-570x360.png" alt=""></p>
+<p>&#xADF8;&#xB9BC; 7.3: &#xD638;&#xC8FC; &#xD56D;&#xACF5;&#xAC1D; &#xC608;&#xCE21;. &#xBAA8;&#xB4E0; &#xAE30;&#xBC95;&#xC5D0; &#xB300;&#xD574; <script type="math/tex; "> \alpha = 0.8 </script>, <script type="math/tex; "> \beta^{*} = 0.2 </script>&#xC774;&#xACE0; &#xB367;&#xC148; &#xAC10;&#xC1E0; &#xCD94;&#xC138; &#xAE30;&#xBC95;&#xC5D0;&#xC11C; <script type="math/tex; "> \phi = 0.85 </script>&#xC774;&#xB2E4;.</p>
+<pre><code class="lang-R">fit3 &lt;- holt(air, alpha=<span class="hljs-number">0.8</span>, beta=<span class="hljs-number">0.2</span>, damped=<span class="hljs-literal">TRUE</span>, initial=<span class="hljs-string">&quot;simple&quot;</span>, h=<span class="hljs-number">5</span>)
+plot(fit2, type=<span class="hljs-string">&quot;o&quot;</span>, ylab=<span class="hljs-string">&quot;Air passengers in Australia (millions)&quot;</span>, xlab=<span class="hljs-string">&quot;Year&quot;</span>,
+     fcol=<span class="hljs-string">&quot;white&quot;</span>, plot.conf=<span class="hljs-literal">FALSE</span>)
+lines(fitted(fit1), col=<span class="hljs-string">&quot;blue&quot;</span>)
+lines(fitted(fit2), col=<span class="hljs-string">&quot;red&quot;</span>)
+lines(fitted(fit3), col=<span class="hljs-string">&quot;green&quot;</span>)
+lines(fit1$mean, col=<span class="hljs-string">&quot;blue&quot;</span>, type=<span class="hljs-string">&quot;o&quot;</span>)
+lines(fit2$mean, col=<span class="hljs-string">&quot;red&quot;</span>, type=<span class="hljs-string">&quot;o&quot;</span>)
+lines(fit3$mean, col=<span class="hljs-string">&quot;green&quot;</span>, type=<span class="hljs-string">&quot;o&quot;</span>)
+legend(<span class="hljs-string">&quot;topleft&quot;</span>, lty=<span class="hljs-number">1</span>, col=c(<span class="hljs-string">&quot;black&quot;</span>,<span class="hljs-string">&quot;blue&quot;</span>,<span class="hljs-string">&quot;red&quot;</span>,<span class="hljs-string">&quot;green&quot;</span>),
+   c(<span class="hljs-string">&quot;Data&quot;</span>,<span class="hljs-string">&quot;Holt&apos;s linear trend&quot;</span>,<span class="hljs-string">&quot;Exponential trend&quot;</span>,<span class="hljs-string">&quot;Additive damped trend&quot;</span>))
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="fpp-kr-7-1.html" class="navigation navigation-prev " aria-label="Previous page: 7.1 단순 지수 평활">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="fpp-kr-7-3.html" class="navigation navigation-next " aria-label="Next page: 7.3 지수 추세 기법">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"7.2 Holt의 선형 추세 기법","level":"1.3.2","depth":2,"next":{"title":"7.3 지수 추세 기법","level":"1.3.3","depth":2,"path":"doc/fpp-kr-7-3.md","ref":"doc/fpp-kr-7-3.md","articles":[]},"previous":{"title":"7.1 단순 지수 평활","level":"1.3.1","depth":2,"path":"doc/fpp-kr-7-1.md","ref":"doc/fpp-kr-7-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","comment","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"comment":{"highlightCommented":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"fpp-kr","gitbook":"3.x.x","description":"Translation"},"file":{"path":"doc/fpp-kr-7-2.md","mtime":"2017-01-11T12:05:42.946Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-11T12:41:12.311Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-comment/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
